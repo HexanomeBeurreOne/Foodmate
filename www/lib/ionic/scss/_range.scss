@@ -99,6 +99,9 @@
   &.range-calm {
     input { @include range-style($range-calm-track-bg); }
   }
+  &.range-orange {
+    input { @include range-style($range-orange-track-bg); }
+  }
   &.range-balanced {
     input { @include range-style($range-balanced-track-bg); }
   }
