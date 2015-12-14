@@ -62,6 +62,11 @@
   @include tab-style($tabs-calm-bg, $tabs-calm-border, $tabs-calm-text);
   @include tab-badge-style($tabs-calm-text, $tabs-calm-bg);
 }
+.tabs-orange > .tabs,
+.tabs.tabs-orange {
+  @include tab-style($tabs-orange-bg, $tabs-orange-border, $tabs-orange-text);
+  @include tab-badge-style($tabs-orange-text, $tabs-orange-bg);
+}
 .tabs-assertive > .tabs,
 .tabs.tabs-assertive {
   @include tab-style($tabs-assertive-bg, $tabs-assertive-border, $tabs-assertive-text);
@@ -215,6 +220,7 @@
   @include tabs-striped('tabs-stable', $dark, $stable);
   @include tabs-striped('tabs-positive', $light, $positive);
   @include tabs-striped('tabs-calm', $light, $calm);
+  @include tabs-striped('tabs-orange', $light, $orange);
   @include tabs-striped('tabs-assertive', $light, $assertive);
   @include tabs-striped('tabs-balanced', $light, $balanced);
   @include tabs-striped('tabs-energized', $light, $energized);
@@ -226,6 +232,7 @@
   @include tabs-striped-background('tabs-background-stable', $stable);
   @include tabs-striped-background('tabs-background-positive', $positive);
   @include tabs-striped-background('tabs-background-calm', $calm);
+  @include tabs-striped-background('tabs-background-orange', $orange);
   @include tabs-striped-background('tabs-background-assertive', $assertive);
   @include tabs-striped-background('tabs-background-balanced', $balanced);
   @include tabs-striped-background('tabs-background-energized',$energized);
@@ -236,6 +243,7 @@
   @include tabs-striped-color('tabs-color-stable', $stable);
   @include tabs-striped-color('tabs-color-positive', $positive);
   @include tabs-striped-color('tabs-color-calm', $calm);
+  @include tabs-striped-color('tabs-color-orange', $orange);
   @include tabs-striped-color('tabs-color-assertive', $assertive);
   @include tabs-striped-color('tabs-color-balanced', $balanced);
   @include tabs-striped-color('tabs-color-energized',$energized);
@@ -248,6 +256,7 @@
 @include tabs-background('tabs-background-stable', $stable, $bar-stable-border);
 @include tabs-background('tabs-background-positive', $positive, $bar-positive-border);
 @include tabs-background('tabs-background-calm', $calm, $bar-calm-border);
+@include tabs-background('tabs-background-orange', $orange, $bar-orange-border);
 @include tabs-background('tabs-background-assertive', $assertive, $bar-assertive-border);
 @include tabs-background('tabs-background-balanced', $balanced, $bar-balanced-border);
 @include tabs-background('tabs-background-energized',$energized, $bar-energized-border);
@@ -258,6 +267,7 @@
 @include tabs-color('tabs-color-stable', $stable);
 @include tabs-color('tabs-color-positive', $positive);
 @include tabs-color('tabs-color-calm', $calm);
+@include tabs-color('tabs-color-orange', $orange);
 @include tabs-color('tabs-color-assertive', $assertive);
 @include tabs-color('tabs-color-balanced', $balanced);
 @include tabs-color('tabs-color-energized',$energized);
@@ -282,6 +292,7 @@ ion-tabs {
   @include tabs-standard-color('tabs-color-active-stable', $stable, $dark);
   @include tabs-standard-color('tabs-color-active-positive', $positive, $dark);
   @include tabs-standard-color('tabs-color-active-calm', $calm, $dark);
+  @include tabs-standard-color('tabs-color-active-orange', $orange, $dark);
   @include tabs-standard-color('tabs-color-active-assertive', $assertive, $dark);
   @include tabs-standard-color('tabs-color-active-balanced', $balanced, $dark);
   @include tabs-standard-color('tabs-color-active-energized',$energized, $dark);
@@ -486,6 +497,9 @@ ion-tabs {
   &.tab-item-calm {
     color: $calm;
   }
+  &.tab-item-orange {
+    color: $orange;
+  }
   &.tab-item-assertive {
     color: $assertive;
   }
@@ -525,4 +539,3 @@ ion-tabs {
 .pane[hide-nav-bar="true"] .has-tabs-top{
   top:49px
 }
-
