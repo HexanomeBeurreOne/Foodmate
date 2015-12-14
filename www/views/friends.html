@@ -15,7 +15,6 @@
 		  	<div class="item">
 		  		<button class="button button-icon">
 		  			<img src="img/ionic.png">
-		  			{{test}}
 		  		</button>
 			    
 			    <button class="button button-icon">
@@ -39,37 +38,18 @@
 			</div>
 			
 			<!-- ****************** AVATARS ********************** -->
-		  	<div class="item item-avatar item-button-right">
-			    <img src="img/ionic.png">
-			    <h2>Victor</h2>
-			    <p>Allergic Gluten</p>
+		  	<div class="item item-avatar item-button-right" ng-repeat="contact in contacts">
+			    <img ng-src="{{contact.picture}}">
+			    <h2>{{contact.name}}</h2>
+			    <p>{{contact.description}}</p>
 
 
 				<button class="button button-icon">
-				    <i class="icon ion-checkmark-circled" style="color:green"></i>
+				    <i class="icon ion-plus-circled" style="color:{{buttonColor}}"></i>
 				</button>
 
 		    </div>
 
-		    <div class="item item-avatar item-button-right" href="#">
-			    <img src="img/images.jpg">
-			    <h2>Cyril</h2>
-			    <p>Back off, man. I'm a scientist.</p>
-
-			    <button class="button button-icon">
-				    <i class="icon ion-plus-circled"></i>
-				</button>
-		    </div>
-
-		    <div class="item item-avatar item-button-right" href="#">
-			    <img src="img/images.jpg">
-			    <h2>Gui</h2>
-			    <p>I'm GUI!</p>
-
-			    <button class="button button-icon">
-				    <i class="icon ion-close-circled"  style="color:red"></i>
-				</button>
-		    </div>
 
 		</div>
 

@@ -1,0 +1,19 @@
+{
+	"contacts" : [
+		{
+			"name" : "Victor",
+			"description" : "Allergique Gluten",
+			"picture" : "img/images.jpg"
+		},
+		{
+			"name" : "Cyril",
+			"description" : "Back off, man. I'm a scientist.",
+			"picture" : "img/images.jpg"
+		},
+		{
+			"name" : "Gui",
+			"description" : "I'm GUI!",
+			"picture" : "img/images.jpg"
+		}	
+	]
+}
