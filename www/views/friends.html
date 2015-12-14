@@ -11,14 +11,12 @@
 			    Groups
 			</div>
 
-		  	<div class="item">
-		  		<button class="button button-icon">
-		  			<img src="img/ionic.png">
+		  	<div class="item item-text-wrap">
+		  		<button class="button button-icon" ng-repeat="group in groups">
+		  			<img src="{{group.picture}}">
 		  		</button>
 			    
-			    <button class="button button-icon">
-		  			<img src="img/ionic.png">
-		  		</button>
+			   
 				
 				<!-- ****** NEW GROUP ******* -->
 		  		<button class="button button-icon">
@@ -56,13 +54,9 @@
 				<button class="button button-icon" style="margin-top:10px" ng-click="switchContactIcon($index)">
 				    <i class="icon {{contact.contactIcon}}" style="color:{{contact.buttonColor}}"></i>
 				</button>
-				
 		    </div>
 
-
 		</div>
-
-
 		
     </ion-content>
 

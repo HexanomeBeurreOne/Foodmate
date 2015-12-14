@@ -4,7 +4,16 @@
 angular.module('FriendsController', [])
 
     .controller('FriendsCtrl', function ($scope, $rootScope, $http) {
+    	//Creation de groupes fictifs
+    	$http.get('data/friendGroups.json')
+			.success(function(data) {
+				$scope.groups = data.groups;
+			})
+			.error(function(err) {
+				alert("Failed reading friendGroups.json")
+			});
 
+    	// Creations de d'amis fictifs
 	    $http.get('data/contacts.json')
 			.success(function(data) {
 				$scope.contacts = data.contacts;
@@ -36,7 +45,7 @@ angular.module('FriendsController', [])
 
 
 
-		  //Fonction filtre sur la search bar
+		  //Fonction d'ajout d'un ami
 		  $scope.addFriend = function() {
 		  	//TODO
 		  	alert($scope.query);
