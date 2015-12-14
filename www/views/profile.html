@@ -17,16 +17,14 @@
 
 		<div ng-show="prefRegime">
       <div class="list">
-        <ion-checkbox ng-model="regime.halal">Halal</ion-checkbox>
-        <ion-checkbox ng-model="regime.cacher">Cacher</ion-checkbox>
-        <ion-checkbox ng-model="regime.sanssel">Sans sel</ion-checkbox>
-        <ion-checkbox ng-model="regime.sansgluten">Sans gluten</ion-checkbox>
-        <ion-checkbox ng-model="regime.popotteandco">Sans arachide</ion-checkbox>
+        <div ng-repeat="regime in dataRegimes">
+          <ion-checkbox ng-model="choixRegime[regime.nom]">{{regime.nom}}</ion-checkbox>
+        </div>
 	    </div>
     </div>
 
 		<div ng-show="prefResto">
-
+      {{choixResto}}
       <div class="list">
         <div ng-repeat="typeResto in dataRestos">
 
@@ -35,7 +33,7 @@
           </div>
 
           <div ng-repeat="resto in typeResto.liste">
-            <ion-checkbox>{{resto.nom}}</ion-checkbox>
+            <ion-checkbox ng-model="choixResto[typeResto.type][resto.nom]">{{resto.nom}}</ion-checkbox>
           </div>
 
         </div>
