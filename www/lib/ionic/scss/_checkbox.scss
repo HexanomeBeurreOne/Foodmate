@@ -25,6 +25,9 @@
 .checkbox-calm  {
   @include checkbox-style($checkbox-off-border-calm, $checkbox-on-bg-calm, $checkbox-off-border-calm);
 }
+.checkbox-orange  {
+  @include checkbox-style($checkbox-off-border-orange, $checkbox-on-bg-orange, $checkbox-off-border-orange);
+}
 .checkbox-assertive  {
   @include checkbox-style($checkbox-off-border-assertive, $checkbox-on-bg-assertive, $checkbox-off-border-assertive);
 }

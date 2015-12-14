@@ -1,4 +1,3 @@
-
 .profile-image {
   width: 100px;
   height: 100px;
@@ -9,4 +8,27 @@
   margin-right: auto;
   margin-top: 10px;
   margin-bottom: 15px;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.orange-back {
+    background-color: #FF7F00;
+}
+
+.orange {
+    color: #FF7F00;
+}
+
+.special-size {
+  width:  40%;
+  height: 40%;
+}
+
+.police-size {
+  font-size: 1.5em;
 }

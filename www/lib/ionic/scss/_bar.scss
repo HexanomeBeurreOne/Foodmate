@@ -90,6 +90,12 @@
       background-image: linear-gradient(180deg, $bar-calm-border, $bar-calm-border 50%, transparent 50%);
     }
   }
+  &.bar-orange {
+    @include bar-style($bar-orange-bg, $bar-orange-border, $bar-orange-text);
+    &.bar-footer{
+      background-image: linear-gradient(180deg, $bar-orange-border, $bar-orange-border 50%, transparent 50%);
+    }
+  }
   &.bar-assertive {
     @include bar-style($bar-assertive-bg, $bar-assertive-border, $bar-assertive-text);
     &.bar-footer{
@@ -307,6 +313,12 @@
     @include button-clear(#fff, $bar-title-font-size);
   }
 }
+.bar-orange {
+  .button {
+    @include button-style($bar-orange-bg, $bar-orange-border, $bar-orange-active-bg, $bar-orange-active-border, $bar-orange-text);
+    @include button-clear(#fff, $bar-title-font-size);
+  }
+}
 .bar-assertive {
   .button {
     @include button-style($bar-assertive-bg, $bar-assertive-border, $bar-assertive-active-bg, $bar-assertive-active-border, $bar-assertive-text);
@@ -401,4 +413,3 @@
 .nav-bar-tabs-top .bar {
   background-image: none;
 }
-
