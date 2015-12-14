@@ -1,5 +1,14 @@
 <ion-view view-title="homepage">
     <ion-content>
-	   <h1>Bienvenu sur {{viewName}}</h1>
+    </br>
+      <h1>Invitations en cours</h1>
+      <div ng-repeat="invitation in invitations" class="list invitation">
+        <a class="item item-thumbnail-left" href="#">
+          <img src="cover.jpg">
+          <h2>{{invitation.date}} at {{invitation.hour}}</h2>
+          <p>Host: {{invitation.hostFriend.name}}</p>
+          <span ng-repeat="friend in invitation.friends">{{friend.name}}, </span>
+        </a>
+      </div>
 	</ion-content>
 </ion-view>
