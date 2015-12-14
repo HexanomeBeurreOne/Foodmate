@@ -20,6 +20,27 @@
 			"picture" : "img/images.jpg",
 			"contactIcon" : "ion-plus-circled",
 			"buttonColor" : "grey"
+		},
+		{
+			"name" : "Gui",
+			"description" : "I'm GUI!",
+			"picture" : "img/images.jpg",
+			"contactIcon" : "ion-plus-circled",
+			"buttonColor" : "grey"
+		},
+		{
+			"name" : "Gui",
+			"description" : "I'm GUI!",
+			"picture" : "img/images.jpg",
+			"contactIcon" : "ion-plus-circled",
+			"buttonColor" : "grey"
+		},
+		{
+			"name" : "Gui",
+			"description" : "I'm GUI!",
+			"picture" : "img/images.jpg",
+			"contactIcon" : "ion-plus-circled",
+			"buttonColor" : "grey"
 		}	
 	]
 }
