@@ -9092,11 +9092,20 @@ a.button {
 /* Empty. Add your own CSS if you like */
 /* invitation view */
 .friend-avatar {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  max-width: 40px;
-  max-height: 40px;
+  margin-top: 10px;
+  max-width: 30px;
+  max-height: 30px;
   width: 100%;
   height: 100%;
   border-radius: 50%; }
+
+.invitation-friends {
+  display: inline-flex; }
+
+.friend-item {
+  margin-right: 10px; }
+
+.friend-separator {
+  margin-top: 10px;
+  height: 30px;
+  border-left: ridge 1px rgba(0, 0, 0, 0.5); }

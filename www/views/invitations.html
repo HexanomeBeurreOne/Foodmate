@@ -1,11 +1,14 @@
 <ion-view view-title="invitations">
     <ion-content>
     </br></br>
-      <div ng-repeat="invitation in invitations" class="list invitation">
-        <a class="item item-avatar" href="#">
+      <div class="list invitation">
+        <div class="item item-divider">
+          Today
+        </div>
+        <a ng-repeat="invitation in invitations" class="item invitation" href="#">
           <div class="invitation-header">
             <div class "invitation-hour">
-              <span>{{invitation.date}} at {{invitation.hour}}</span>
+              <span>{{invitation.hour}}</span>
             </div>
             <div class "invitation-state">
               <span ng-if="invitation.pending"> Are you going ? [Yes] [No] <span>
@@ -15,10 +18,10 @@
           </div>
 
           <div class="invitation-friends">
-            <img class="friend-avatar" src="{{invitation.hostFriend.pictureUrl}}">
-            <span> | </span>
+            <img class="friend-avatar friend-item" src="{{invitation.hostFriend.pictureUrl}}">
+            <div class="friend-separator friend-item"></div>
             <div ng-repeat="friend in invitation.friends">
-              <img src="{{friend.pictureUrl}}">
+              <img class="friend-avatar friend-item" src="{{friend.pictureUrl}}">
             </div>
           </div>
         </a>
