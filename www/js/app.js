@@ -33,7 +33,7 @@ angular.module('foodmate', ['ionic', 'HomeController', 'InvitationsController'])
       templateUrl: 'views/invitations.html',
       controller: 'InvitationsCtrl'
     })
-    
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app');
 });

@@ -16,7 +16,7 @@ angular.module('InvitationsController', [])
             id: 'f1',
             name: 'Cyril Canete',
             profileUrl: '',
-            pictureUrl: ''
+            pictureUrl: 'https://scontent.xx.fbcdn.net/hphotos-xfa1/v/t1.0-9/10262052_10203873046533432_5401981285565284598_n.jpg?oh=10d2c0d6442b063b8fefe18623471b31&oe=5713EC05'
           },
           friends: [
             {
