@@ -30,12 +30,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 
    .state('app.choix-menus', {
     url: '/choix-menus',
-    views: {
-      'menuContent': {
-        templateUrl: 'views/choix-menus.html'
-      }
-    }
-  })
+    templateUrl: 'views/choix-menus.html'
+  });
 /*  .state('home.choix-menu', {
     url: '/choix-menu',
     templateUrl: 'modules/choix-menu/views/choix-menu.html',
