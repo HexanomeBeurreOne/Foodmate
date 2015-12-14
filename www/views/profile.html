@@ -1,21 +1,48 @@
 <ion-view view-title="Profil">
-  <div class="tabs-striped tabs-color-assertive">
-    <div class="tabs">
-      <a class="tab-item active" href="#">
-        <i class="icon ion-home"></i>
-        Test
-      </a>
-      <a class="tab-item" href="#">
-        <i class="icon ion-gear-a"></i>
-        Settings
-      </a>
-    </div>
-  </div>
-  <ion-content>
-    
-    <div class="profile-image">
+  <div class="has-tabs-top tabs-striped tabs-top tabs-background-positive tabs-color-light">
+	    <div class="tabs">
+	      <a class="tab-item" ng-click="afficherRegime()" ng-class="{active: prefRegime}">
+	        Régime
+	      </a>
 
+	      <a class="tab-item" ng-click="afficherResto()" ng-class="{active: prefResto}">
+	        Restaurants
+	      </a>
+	    </div>
+	</div>
+
+  <ion-content padding="true" class="has-tabs-top">
+
+    <div class="profile-image"></div>
+
+		<div ng-show="prefRegime">
+      <div class="list">
+        <ion-checkbox ng-model="regime.halal">Halal</ion-checkbox>
+        <ion-checkbox ng-model="regime.cacher">Cacher</ion-checkbox>
+        <ion-checkbox ng-model="regime.sanssel">Sans sel</ion-checkbox>
+        <ion-checkbox ng-model="regime.sansgluten">Sans gluten</ion-checkbox>
+        <ion-checkbox ng-model="regime.popotteandco">Sans arachide</ion-checkbox>
+	    </div>
     </div>
 
-  </ion-content>
+		<div ng-show="prefResto">
+      <div class="list">
+        <div class="item item-divider">
+        Restaurants universitaires
+        </div>
+        <ion-checkbox ng-model="restaurant.rujussieu">RU Jussieu</ion-checkbox>
+        <ion-checkbox ng-model="restaurant.grillon">Grillon</ion-checkbox>
+        <div class="item item-divider">
+        Snacks
+        </div>
+        <ion-checkbox ng-model="restaurant.hammamet">Hammamet</ion-checkbox>
+        <ion-checkbox ng-model="restaurant.alamaiz">A la maiz</ion-checkbox>
+        <div class="item item-divider">
+        Restaurants
+        </div>
+        <ion-checkbox ng-model="restaurant.popotteandco">Popotte and co</ion-checkbox>
+        <ion-checkbox ng-model="restaurant.lamerejean">La mère Jean</ion-checkbox>
+	    </div>
+		</div>
+	</ion-content>
 </ion-view>
