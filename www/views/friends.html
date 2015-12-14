@@ -12,17 +12,21 @@
 			</div>
 
 		  	<div class="item item-text-wrap">
-		  		<button class="button button-icon" ng-repeat="group in groups">
-		  			<img src="{{group.picture}}">
-		  		</button>
-			    
-			   
+		  		<div style="display:inline-block" ng-repeat="group in groups">
+		  			<button class="button button-icon">
+			  			<img src="{{group.picture}}" style="width:80px">
+			  		</button>
+			  		<p style="text-align:center">{{group.name}}</p>
+		  		</div>
 				
 				<!-- ****** NEW GROUP ******* -->
-		  		<button class="button button-icon">
-		  			<i class="icon ion-plus-circled"></i>
-		  		</button>
-			    
+		  		<div style="display:inline-block">
+		  			<button class="button button-icon" ng-click="addGroup()">
+			  			<img src="img/ionic.png" style="width:80px">
+			  		</button>
+			  		<p style="text-align:center">New</p>
+		  		</div>
+		  			
 		  	</div>
 			
 			<!-- ******************* FRIENDS ************************* -->

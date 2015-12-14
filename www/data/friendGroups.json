@@ -11,10 +11,6 @@
 		{
 			"name" : "PDS",
 			"picture" : "img/ionic.png"
-		},
-		{
-			"name" : "New",
-			"picture" : "img/ionic.png"
 		}	
 	]
 }

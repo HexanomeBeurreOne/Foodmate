@@ -25,7 +25,7 @@ angular.module('FriendsController', [])
 
 
 		//Fonction permettant de changer l'icon ajout/suppr d'un contact
-		  $scope.switchContactIcon = function($index) {
+		$scope.switchContactIcon = function($index) {
 		    if ($scope.contacts[$index].contactIcon == "ion-plus-circled")
 		    {
 		      $scope.contacts[$index].contactIcon = "ion-checkmark-circled";
@@ -41,15 +41,20 @@ angular.module('FriendsController', [])
 		      updateTimerInterval = $interval(updateTimer,100);
 		    }
 		    
-		  };
+		};
 
+		//Fonction d'ajout d'un groupe d'amis
+		$scope.addGroup = function() {
+			//TODO
+			alert("Ajout groupe!");
 
+		};
 
-		  //Fonction d'ajout d'un ami
-		  $scope.addFriend = function() {
-		  	//TODO
-		  	alert($scope.query);
-		    
-		  };
+		//Fonction d'ajout d'un ami
+		$scope.addFriend = function() {
+			//TODO
+			alert($scope.query);
+
+		};
 
     });
