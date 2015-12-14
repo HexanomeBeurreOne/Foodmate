@@ -28,7 +28,7 @@ angular.module('foodmate', ['ionic', 'HomeController', 'InvitationsController'])
       controller: 'HomeCtrl'
     })
 
-   .state('inviationsPanel', {
+   .state('app.invitationsPanel', {
       url: '/invitations',
       templateUrl: 'views/invitations.html',
       controller: 'InvitationsCtrl'
