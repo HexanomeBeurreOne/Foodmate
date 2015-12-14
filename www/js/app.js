@@ -23,30 +23,17 @@ angular.module('foodmate', ['ionic', 'HomeController', 'InvitationsController'])
   $stateProvider
 
     .state('app', {
-    url: '/app',
-    templateUrl: 'views/home.html',
-    controller: 'HomeCtrl'
-  })
+      url: '/app',
+      templateUrl: 'views/home.html',
+      controller: 'HomeCtrl'
+    })
 
    .state('inviationsPanel', {
-    url: '/invitations',
-    templateUrl: 'views/invitations.html',
-    controller: 'InvitationsCtrl'
-  })
-/*  .state('home.choix-menu', {
-    url: '/choix-menu',
-    templateUrl: 'modules/choix-menu/views/choix-menu.html',
-    controller: 'ChoixMenuCtrl'
-  })*/
-
-/*  .state('home.choix-menu', {
-    url: '/choix-menu/choix-resto',
-    views: {
-        templateUrl: 'modules/choix-menu/views/choix-resto.html',
-        controller: 'ChoixRestoCtrl'
-    }
-  })*/
-
+      url: '/invitations',
+      templateUrl: 'views/invitations.html',
+      controller: 'InvitationsCtrl'
+    })
+    
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app');
 });
