@@ -95,6 +95,12 @@
     @include button-outline($button-calm-bg);
   }
 
+  &.button-orange {
+    @include button-style($button-orange-bg, $button-orange-border, $button-orange-active-bg, $button-orange-active-border, $button-orange-text);
+    @include button-clear($button-orange-bg);
+    @include button-outline($button-orange-bg);
+  }
+
   &.button-assertive {
     @include button-style($button-assertive-bg, $button-assertive-border, $button-assertive-active-bg, $button-assertive-active-border, $button-assertive-text);
     @include button-clear($button-assertive-bg);
