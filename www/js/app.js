@@ -38,11 +38,14 @@ angular.module('foodmate', ['ionic', 'HomeController', 'InvitationsController', 
       }
     })
 
-
-   .state('app.repasPanel', {
+   .state('app.repas', {
       url: '/home/repas',
-      templateUrl: 'views/repas.html',
-      controller: 'RepasCtrl'
+      views: {
+        'app': {
+          templateUrl: 'views/repas.html',
+          controller: 'RepasCtrl'
+        }
+      }
     })
 
    .state('app.invitations', {
