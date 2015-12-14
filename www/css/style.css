@@ -1,1 +1,11 @@
 /* Empty. Add your own CSS if you like */
+
+.no-padding {
+    padding: 0px !important;
+}
+
+.center {
+	margin-left: auto;
+  	margin-right: auto;
+  	position: relative;
+}
