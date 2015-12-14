@@ -6,7 +6,7 @@
 	      </a>
 
 	      <a class="tab-item" ng-click="afficherResto()" ng-class="{active: prefResto}">
-	        Restaurants
+	        Favoris
 	      </a>
 	    </div>
 	</div>
@@ -26,23 +26,21 @@
     </div>
 
 		<div ng-show="prefResto">
+
       <div class="list">
-        <div class="item item-divider">
-        Restaurants universitaires
+        <div ng-repeat="typeResto in dataRestos">
+
+          <div class="item item-divider">
+            {{typeResto.type}}
+          </div>
+
+          <div ng-repeat="resto in typeResto.liste">
+            <ion-checkbox>{{resto.nom}}</ion-checkbox>
+          </div>
+
         </div>
-        <ion-checkbox ng-model="restaurant.rujussieu">RU Jussieu</ion-checkbox>
-        <ion-checkbox ng-model="restaurant.grillon">Grillon</ion-checkbox>
-        <div class="item item-divider">
-        Snacks
-        </div>
-        <ion-checkbox ng-model="restaurant.hammamet">Hammamet</ion-checkbox>
-        <ion-checkbox ng-model="restaurant.alamaiz">A la maiz</ion-checkbox>
-        <div class="item item-divider">
-        Restaurants
-        </div>
-        <ion-checkbox ng-model="restaurant.popotteandco">Popotte and co</ion-checkbox>
-        <ion-checkbox ng-model="restaurant.lamerejean">La mère Jean</ion-checkbox>
 	    </div>
+
 		</div>
 	</ion-content>
 </ion-view>
