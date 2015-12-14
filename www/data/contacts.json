@@ -1,19 +1,25 @@
 {
 	"contacts" : [
 		{
-			"name" : "Victor",
-			"description" : "Allergique Gluten",
-			"picture" : "img/images.jpg"
+			"name" : "Victor Nouvelé",
+			"description" : "Allergique Gluten #Fragile",
+			"picture" : "img/images.jpg",
+			"contactIcon" : "ion-plus-circled",
+			"buttonColor" : "grey"
 		},
 		{
 			"name" : "Cyril",
 			"description" : "Back off, man. I'm a scientist.",
-			"picture" : "img/images.jpg"
+			"picture" : "img/images.jpg",
+			"contactIcon" : "ion-plus-circled",
+			"buttonColor" : "grey"
 		},
 		{
 			"name" : "Gui",
 			"description" : "I'm GUI!",
-			"picture" : "img/images.jpg"
+			"picture" : "img/images.jpg",
+			"contactIcon" : "ion-plus-circled",
+			"buttonColor" : "grey"
 		}	
 	]
 }

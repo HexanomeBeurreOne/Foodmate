@@ -43,9 +43,8 @@
 			    <h2>{{contact.name}}</h2>
 			    <p>{{contact.description}}</p>
 
-
-				<button class="button button-icon">
-				    <i class="icon ion-plus-circled" style="color:{{buttonColor}}"></i>
+				<button class="button button-icon" style="margin-top:10px" ng-click="switchContactIcon($index)">
+				    <i class="icon {{contact.contactIcon}}" style="color:{{contact.buttonColor}}"></i>
 				</button>
 
 		    </div>
