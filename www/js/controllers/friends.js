@@ -5,7 +5,6 @@ angular.module('FriendsController', [])
 
     .controller('FriendsCtrl', function ($scope, $rootScope, $http) {
 
-
 	    $http.get('data/contacts.json')
 			.success(function(data) {
 				$scope.contacts = data.contacts;
@@ -18,7 +17,6 @@ angular.module('FriendsController', [])
 
 		//Fonction permettant de changer l'icon ajout/suppr d'un contact
 		  $scope.switchContactIcon = function($index) {
-		  	$scope.test = $index;
 		    if ($scope.contacts[$index].contactIcon == "ion-plus-circled")
 		    {
 		      $scope.contacts[$index].contactIcon = "ion-checkmark-circled";
@@ -33,6 +31,15 @@ angular.module('FriendsController', [])
 		      // on instancie un $interval que l'on nomme updateTimerInterval qui va appeler la fonction updateInterval toutes les 100ms
 		      updateTimerInterval = $interval(updateTimer,100);
 		    }
+		    
+		  };
+
+
+
+		  //Fonction filtre sur la search bar
+		  $scope.addFriend = function() {
+		  	//TODO
+		  	alert($scope.query);
 		    
 		  };
 
