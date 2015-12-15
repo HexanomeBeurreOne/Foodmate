@@ -14,28 +14,12 @@
 					  </a>
 			  		</div>
 			  		<div class="row">
-			  			<div class="col col-top card no-padding">
+			  			<div class="col col-top card no-padding"  ng-repeat="restaurant in chosenRestaurants | orderBy:'+rank'">
 								<div class="item item-divider">
-								1er /3 pers.
+								{{restaurant.rank}}e /{{restaurant.votes}} pers.
 								</div>
 								<div class="item item-text-wrap">
-								RU
-								</div>
-						</div>
-						<div class="col col-top card no-padding">
-								<div class="item item-divider">
-								2e /1 pers.
-								</div>
-								<div class="item item-text-wrap">
-								Grillon
-								</div>
-						</div>
-						<div class="col col-top card no-padding">
-								<div class="item item-divider">
-								3e /1 pers.
-								</div>
-								<div class="item item-text-wrap">
-								Castor et Pollux
+								{{restaurant.name}}
 								</div>
 						</div>
 			  		</div>
@@ -48,20 +32,9 @@
 			  	</a>
 			  	<div class="center">
 			  	</br>
-					<button class="button button-icon">
-						<img src="img/ionic.png">
-					</button>
-					<button class="button button-icon">
-						<img src="img/ionic.png">
-					</button>
-					<button class="button button-icon">
-						<img src="img/ionic.png">
-					</button>
-					<button class="button button-icon">
-						<img src="img/ionic.png">
-					</button>
-					<button class="button button-icon">
-						<img src="img/ionic.png">
+					<button class="button button-icon" ng-repeat="friend in mealFriends | orderBy:'+name'">
+						<img src={{friend.picture}} height="120" width="120">
+						<div>{{friend.name}}</div>
 					</button>
 				</div>
 			</div>
