@@ -217,6 +217,16 @@
   border-color: $button-calm-border;
 }
 
+.orange, a.orange {
+  color: $orange;
+}
+.orange-bg {
+  background-color: $orange;
+}
+.orange-border {
+  border-color: $button-orange-border;
+}
+
 .assertive, a.assertive {
   color: $assertive;
 }

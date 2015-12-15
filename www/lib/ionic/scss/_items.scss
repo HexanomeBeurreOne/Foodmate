@@ -80,6 +80,9 @@
   &.item-calm {
     @include item-style($item-calm-bg, $item-calm-border, $item-calm-text);
   }
+  &.item-orange {
+    @include item-style($item-orange-bg, $item-orange-border, $item-orange-text);
+  }
   &.item-assertive {
     @include item-style($item-assertive-bg, $item-assertive-border, $item-assertive-text);
   }
@@ -128,6 +131,9 @@
   }
   &.item-calm {
     @include item-active-style($item-calm-active-bg, $item-calm-active-border);
+  }
+  &.item-orange {
+    @include item-active-style($item-orange-active-bg, $item-orange-active-border);
   }
   &.item-assertive {
     @include item-active-style($item-assertive-active-bg, $item-assertive-active-border);
@@ -269,6 +275,12 @@ a.item-content {
     @include item-style($item-calm-bg, $item-calm-border, $item-calm-text);
     &.active, &:active {
       @include item-active-style($item-calm-active-bg, $item-calm-active-border);
+    }
+  }
+  &.item-orange > .item-content{
+    @include item-style($item-orange-bg, $item-orange-border, $item-orange-text);
+    &.active, &:active {
+      @include item-active-style($item-orange-active-bg, $item-orange-active-border);
     }
   }
   &.item-assertive > .item-content{

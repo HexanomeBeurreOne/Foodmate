@@ -39,6 +39,9 @@
   &.toggle-calm  {
     @include toggle-style($toggle-on-calm-border, $toggle-on-calm-bg);
   }
+  &.toggle-orange  {
+    @include toggle-style($toggle-on-orange-border, $toggle-on-orange-bg);
+  }
   &.toggle-assertive  {
     @include toggle-style($toggle-on-assertive-border, $toggle-on-assertive-bg);
   }
@@ -179,6 +182,9 @@
   }
   .toggle-calm  {
     @include toggle-small-style($toggle-on-calm-bg);
+  }
+  .toggle-orange  {
+    @include toggle-small-style($toggle-on-orange-bg);
   }
   .toggle-assertive  {
     @include toggle-small-style($toggle-on-assertive-bg);

@@ -5,7 +5,24 @@
 }
 
 .center {
-	margin-left: auto;
-  	margin-right: auto;
-  	position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.orange-back {
+    background-color: #FF7F00;
+}
+
+.orange {
+    color: #FF7F00;
+}
+
+.special-size {
+  width:  40%;
+  height: 40%;
+}
+
+.police-size {
+  font-size: 1.5em;
 }
