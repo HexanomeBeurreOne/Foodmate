@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 
-angular.module('foodmate', ['ionic', 'HomeController', 'InvitationsController'])
+angular.module('foodmate', ['ionic', 'HomeController', 'InvitationsController', 'FriendsController', 'ProfileController', 'ChoixMenusController'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -22,7 +22,6 @@ angular.module('foodmate', ['ionic', 'HomeController', 'InvitationsController'])
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
-
   .state('app', {
     url: '/app',
     abstract: true,
@@ -31,12 +30,22 @@ angular.module('foodmate', ['ionic', 'HomeController', 'InvitationsController'])
     .state('app.home', {
       url: '/home',
       views: {
-        'app': { 
+        'app': {
           templateUrl: 'views/home.html',
           controller: 'HomeCtrl'
         }
       }
     })
+
+    .state('app.profile', {
+       url: '/home/profile',
+       views: {
+         'app': {
+           templateUrl: 'views/profile.html',
+           controller: 'ProfileCtrl'
+         }
+       }
+     })
 
    .state('app.invitations', {
       url: '/home/invitations',
@@ -46,8 +55,27 @@ angular.module('foodmate', ['ionic', 'HomeController', 'InvitationsController'])
           controller: 'InvitationsCtrl'
         }
       }
+    })
+
+   .state('app.choix-menus', {
+      url: '/home/choix-menus',
+      views: {
+        'app': {
+          templateUrl: 'views/choix-menus.html',
+          controller: 'ChoixMenusCtrl'
+        }
+      }
+    })
+
+   .state('app.friends', {
+      url: '/home/friends',
+      views: {
+        'app': {
+          templateUrl: 'views/friends.html',
+          controller: 'FriendsCtrl'
+        }
+      }
     });
-    
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/home');
 });

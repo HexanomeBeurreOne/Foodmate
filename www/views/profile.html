@@ -1,0 +1,43 @@
+<ion-view view-title="Profil">
+  <div class="has-tabs-top tabs-striped tabs-top tabs-background-positive tabs-color-light">
+	    <div class="tabs">
+	      <a class="tab-item" ng-click="afficherRegime()" ng-class="{active: prefRegime}">
+	        Régime
+	      </a>
+
+	      <a class="tab-item" ng-click="afficherResto()" ng-class="{active: prefResto}">
+	        Favoris
+	      </a>
+	    </div>
+	</div>
+
+  <ion-content padding="true" class="has-tabs-top">
+
+    <div class="profile-image"></div>
+
+		<div ng-show="prefRegime">
+      <div class="list">
+        <div ng-repeat="regime in dataRegimes">
+          <ion-checkbox ng-model="choixRegime[regime]">{{regime}}</ion-checkbox>
+        </div>
+	    </div>
+    </div>
+
+		<div ng-show="prefResto">
+      <div class="list">
+        <div ng-repeat="typeResto in dataRestos">
+
+          <div class="item item-divider">
+            {{typeResto.type}}
+          </div>
+
+          <div ng-repeat="resto in typeResto.nom">
+            <ion-checkbox ng-model="choixResto[typeResto.type][resto]">{{resto}}</ion-checkbox>
+          </div>
+
+        </div>
+	    </div>
+
+		</div>
+	</ion-content>
+</ion-view>

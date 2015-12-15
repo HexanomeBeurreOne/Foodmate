@@ -1,0 +1,16 @@
+{
+	"groups" : [
+		{
+			"name" : "Sport'Et",
+			"picture" : "img/ionic.png"
+		},
+		{
+			"name" : "Hexa",
+			"picture" : "img/ionic.png"
+		},
+		{
+			"name" : "PDS",
+			"picture" : "img/ionic.png"
+		}	
+	]
+}
