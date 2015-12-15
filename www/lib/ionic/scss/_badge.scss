@@ -38,6 +38,9 @@
   &.badge-calm {
     @include badge-style($badge-calm-bg, $badge-calm-text);
   }
+  &.badge-orange {
+    @include badge-style($badge-orange-bg, $badge-orange-text);
+  }
   &.badge-assertive {
     @include badge-style($badge-assertive-bg, $badge-assertive-text);
   }

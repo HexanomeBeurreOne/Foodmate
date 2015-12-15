@@ -1,7 +1,41 @@
-	<ion-view view-title="Page accueil">
+	<ion-view view-title="Accueil">
 	    <ion-content>
-      </br>
-        <h1>Bienvenue sur {{viewName}}</h1>
-       <a href="#/app/home/invitations">Se connecter</a>
+
+        <img src="../img/logo_repas.jpg" class="center special-size">
+
+        <div class="list list-inset">
+          <label class="item item-input">
+            <input type="text" placeholder="Adresse e-mail">
+          </label>
+          <label class="item item-input">
+            <input type="text" placeholder="Mot de passe">
+          </label>
+        </div>
+
+         <a href="#/app/home/invitations" class="button button-full icon-right ion-chevron-right orange-back police-size">
+           <b>Se connecter<b/>
+         </a>
+
+         <br/>
+
+         <div class="card">
+           <div class="item item-divider">
+            Créer un compte
+          </div>
+           <div class="item item-text-wrap">
+             <button class="button button-outline orange-border">
+							 <div class="orange">
+                 <b>INSA</b>
+							 </div>
+             </button>
+             <button class="button button-outline">
+               <i class="icon ion-social-facebook orange"></i>
+             </button>
+             <button class="button button-outline">
+               <i class="icon ion-social-googleplus orange"></i>
+             </button>
+           </div>
+         </div>
+
 		</ion-content>
 	</ion-view>

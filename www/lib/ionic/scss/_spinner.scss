@@ -28,6 +28,10 @@
     stroke: $spinner-calm-stroke;
     fill: $spinner-calm-fill;
   }
+  &.spinner-orange {
+    stroke: $spinner-orange-stroke;
+    fill: $spinner-orange-fill;
+  }
   &.spinner-balanced {
     stroke: $spinner-balanced-stroke;
     fill: $spinner-balanced-fill;
@@ -81,6 +85,9 @@
   }
   &.spinner-calm .stop2 {
     stop-color: $spinner-calm-fill;
+  }
+  &.spinner-orange .stop2 {
+    stop-color: $spinner-orange-fill;
   }
   &.spinner-balanced .stop2 {
     stop-color: $spinner-balanced-fill;
