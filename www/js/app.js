@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 
-angular.module('foodmate', ['ionic', 'HomeController', 'InvitationsController', 'FriendsController', 'ProfileController', 'ChoixMenusController'])
+angular.module('foodmate', ['ionic', 'HomeController', 'InvitationsListController', 'FriendsController', 'ProfileController', 'ChoixMenusController'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -27,55 +27,52 @@ angular.module('foodmate', ['ionic', 'HomeController', 'InvitationsController', 
     abstract: true,
     templateUrl: 'views/racine.html'
   })
-    .state('app.home', {
-      url: '/home',
-      views: {
-        'app': {
-          templateUrl: 'views/home.html',
-          controller: 'HomeCtrl'
-        }
+  .state('app.home', {
+    url: '/home',
+    views: {
+      'app': {
+        templateUrl: 'views/home.html',
+        controller: 'HomeCtrl'
       }
-    })
-
-    .state('app.profile', {
-       url: '/home/profile',
-       views: {
-         'app': {
-           templateUrl: 'views/profile.html',
-           controller: 'ProfileCtrl'
-         }
+    }
+  })
+  .state('app.profile', {
+     url: '/home/profile',
+     views: {
+       'app': {
+         templateUrl: 'views/profile.html',
+         controller: 'ProfileCtrl'
        }
-     })
-
-   .state('app.invitations', {
-      url: '/home/invitations',
-      views: {
-        'app': {
-          templateUrl: 'views/invitations.html',
-          controller: 'InvitationsCtrl'
-        }
+     }
+   })
+ .state('app.invitations-list', {
+    url: '/home/list-invitations',
+    views: {
+      'app': {
+        templateUrl: 'views/invitations-list.html',
+        controller: 'InvitationsListCtrl'
       }
-    })
-
-   .state('app.choix-menus', {
-      url: '/home/choix-menus',
-      views: {
-        'app': {
-          templateUrl: 'views/choix-menus.html',
-          controller: 'ChoixMenusCtrl'
-        }
+    }
+  })
+ .state('app.choix-menus', {
+    url: '/home/choix-menus',
+    views: {
+      'app': {
+        templateUrl: 'views/choix-menus.html',
+        controller: 'ChoixMenusCtrl'
       }
-    })
-
-   .state('app.friends', {
-      url: '/home/friends',
-      views: {
-        'app': {
-          templateUrl: 'views/friends.html',
-          controller: 'FriendsCtrl'
-        }
+    }
+  })
+ .state('app.friends', {
+    url: '/home/friends',
+    views: {
+      'app': {
+        templateUrl: 'views/friends.html',
+        controller: 'FriendsCtrl'
       }
-    });
+    }
+  });
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/home');
 });
