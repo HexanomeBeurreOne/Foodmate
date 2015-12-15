@@ -59,3 +59,4 @@ angular.module('FriendsController', [])
 
     });
     
+    

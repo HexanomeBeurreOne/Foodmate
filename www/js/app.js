@@ -4,11 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 
-<<<<<<< HEAD
-angular.module('foodmate', ['ionic', 'HomeController', 'InvitationsController', 'FriendsController', 'RepasController'])
-=======
-angular.module('foodmate', ['ionic', 'HomeController', 'InvitationsListController', 'FriendsController', 'ProfileController', 'ChoixMenusController'])
->>>>>>> origin
+angular.module('foodmate', ['ionic', 'HomeController', 'InvitationsListController', 'FriendsController', 'ProfileController', 'ChoixMenusController', 'RepasController'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
