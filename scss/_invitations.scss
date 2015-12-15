@@ -3,12 +3,12 @@
 
 /* invitation view */
 .friend-avatar {
+    object-fit: cover;
+    display: block;
+    border-radius: 100%;
     margin-top: 10px;
     max-width: 30px;
     max-height: 30px;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
 }
 
 .invitation-friends {
@@ -24,4 +24,16 @@
   margin-top: 10px;
   height: 30px;
   border-left: ridge 1px rgba(0,0,0,0.5);
+}
+
+.invitation-hour {
+  background-color: orange;
+  width: 50px;
+  height: 25px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.invitation-header > div {
+  display: inline-block;
 }

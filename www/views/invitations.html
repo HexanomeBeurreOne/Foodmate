@@ -2,20 +2,29 @@
     <ion-content>
       <div class="list invitation">
         <div class="item item-divider">
-          Today
+          Aujourd'hui
         </div>
+        <!-- TODO: Link an invitation, /invitation/id-->
         <a ng-repeat="invitation in invitations" class="item invitation" href="#">
           <div class="invitation-header">
             <div class "invitation-hour">
               <span>{{invitation.hour}}</span>
             </div>
             <div class "invitation-state">
-              <span ng-if="invitation.pending"> Are you going ? [Yes] [No] <span>
-              <span ng-if="!invitation.pending && invitation.going"> Your are going <span>
-              <span ng-if="!invitation.pending && !invitation.going"> Your are not going <span>
+              <span ng-if="invitation.pending">
+                <i class="icon ion-help-circled" style="color:orange"></i>
+                <span> Invitation en attente </span>
+              </span>
+              <span ng-if="!invitation.pending && invitation.going">
+                <i class="icon ion-checkmark-circled" style="color:green"></i>
+                <span> Invitation acceptée </span>
+              </span>
+              <span ng-if="!invitation.pending && !invitation.going">
+                <i class="icon ion-close-circled" style="color:red"></i>
+                <span> Invitation refusée </span>
+             </span>
             </div>
           </div>
-
           <div class="invitation-friends">
             <img class="friend-avatar friend-item" src="{{invitation.hostFriend.pictureUrl}}">
             <div class="friend-separator friend-item"></div>
