@@ -1,10 +1,9 @@
 'use strict';
 
 
-angular.module('InvitationsController', [])
+angular.module('InvitationsListController', [])
 
-    .controller('InvitationsCtrl', function ($scope, $rootScope) {
-      $scope.viewName = "Foodmate invits";
+    .controller('InvitationsListCtrl', function ($scope, $rootScope) {
       $scope.invitations = [
         {
           id: '1',
