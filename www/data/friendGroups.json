@@ -2,15 +2,11 @@
 	"groups" : [
 		{
 			"name" : "Sport'Et",
-			"picture" : "img/ionic.png"
+			"picture" : "img/groups/sportet.jpg"
 		},
 		{
 			"name" : "Hexa",
-			"picture" : "img/ionic.png"
-		},
-		{
-			"name" : "PDS",
-			"picture" : "img/ionic.png"
-		}	
+			"picture" : "img/groups/hexa.jpg"
+		}
 	]
 }
