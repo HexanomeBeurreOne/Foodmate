@@ -2,36 +2,15 @@
   "restaurants" : [
     {
       "type" : "Restaurants Universitaires",
-      "liste" : [
-        {
-          "nom" : "RU Jussieu"
-        },
-        {
-          "nom" : "Grillon"
-        }
-      ]
+      "nom" : ["RU Jussieu", "Grillon"]
     },
     {
       "type" : "Snacks",
-      "liste" : [
-        {
-          "nom" : "Hammamet"
-        },
-        {
-          "nom" : "Quick"
-        }
-      ]
+      "nom" : ["Quick", "Hammamet"]
     },
     {
       "type" : "Restaurants",
-      "liste" : [
-        {
-          "nom" : "Popotte and Co"
-        },
-        {
-          "nom" : "La Mère Jean"
-        }
-      ]
+      "nom" : ["Popotte and Co", "La Mère Jean"]
     }
   ]
 }

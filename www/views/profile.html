@@ -18,7 +18,7 @@
 		<div ng-show="prefRegime">
       <div class="list">
         <div ng-repeat="regime in dataRegimes">
-          <ion-checkbox ng-model="choixRegime[regime.nom]">{{regime.nom}}</ion-checkbox>
+          <ion-checkbox ng-model="choixRegime[regime]">{{regime}}</ion-checkbox>
         </div>
 	    </div>
     </div>
@@ -31,8 +31,8 @@
             {{typeResto.type}}
           </div>
 
-          <div ng-repeat="resto in typeResto.liste">
-            <ion-checkbox ng-model="choixResto[typeResto.type][resto.nom]">{{resto.nom}}</ion-checkbox>
+          <div ng-repeat="resto in typeResto.nom">
+            <ion-checkbox ng-model="choixResto[typeResto.type][resto]">{{resto}}</ion-checkbox>
           </div>
 
         </div>

@@ -1,15 +1,3 @@
 {
-  "regimes" : [
-    {
-      "nom" : "Halal"
-    },{
-      "nom" : "Cacher"
-    },{
-      "nom" : "Sans sel"
-    },{
-      "nom" : "Sans gluten"
-    },{
-      "nom" : "Sans arachide"
-    }
-  ]
+  "regimes" : ["Halal", "Cacher", "Sans sel", "Sans arachide", "Sans gluten"]
 }
