@@ -2,11 +2,13 @@
 	"groups" : [
 		{
 			"name" : "Sport'Et",
-			"picture" : "img/groups/sportet.jpg"
+			"picture" : "img/groups/sportet.jpg",
+			"members" : [{"id" : 2}, {"id" : 3}]
 		},
 		{
 			"name" : "Hexa",
-			"picture" : "img/groups/hexa.jpg"
+			"picture" : "img/groups/hexa.jpg",
+			"members" : [{"id" : 0}, {"id" : 1}, {"id" : 2}, {"id" : 3}]
 		}
 	]
 }
