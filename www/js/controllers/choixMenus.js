@@ -3,7 +3,7 @@
 
 angular.module('ChoixMenusController', [])
 
-    .controller('ChoixMenusCtrl', function ($scope, $rootScope, $http) {
+    .controller('ChoixMenusCtrl', function ($scope, $rootScope, $http, $compile) {
       $scope.viewName= "Choix menus";
 
 	// Génération des restos et menus
@@ -31,7 +31,10 @@ angular.module('ChoixMenusController', [])
 			 	var rowRestoId = "row-resto-"+compteurRestos;
 
 				if (compteurRestos%2==0) {
-					angular.element(document.getElementById('restos-container')).append("<div class='row responsive-sm' id="+rowRestoId+"><div class='col col-50'><div class='card'><div class='item item-text-wrap background-center' style='background-image:url("+resto.picture+")'></div><div class='item item-divider text-center color-white' style=background-color:"+resto.color+">"+resto.name+"</div></div>");
+	
+					var restoCardRow = "<div class='row responsive-sm' id="+rowRestoId+"><div class='col col-50'><div class='card'><div class='item item-text-wrap background-center' style='background-image:url("+resto.picture+")' ng-click='toggleSelect($event)' data-resto="+resto.name+" data-selected='0'></div><div class='item item-divider text-center color-white' style=background-color:"+resto.color+">"+resto.name+"</div></div>";
+
+					angular.element(document.getElementById('restos-container')).append($compile(restoCardRow)( $scope ));
 				} 
 				// si le compteur est IMPAIRE on ajoute seulement l'ensemble du html pour représenter une card de resto
 				else {
@@ -40,7 +43,10 @@ angular.module('ChoixMenusController', [])
 					var previousRowRestoId = "row-resto-"+lastRestoIndex;
 
 					// après avoir récupérè la dernière div.row (grâce à l'id recréé précédemment) on ajoute l'ensemble du html pour représenter une card de resto
-					angular.element(document.getElementById(previousRowRestoId)).append("<div class='col col-50'><div class='card'><div class='item item-text-wrap background-center' style='background-image:url("+resto.picture+")'></div><div class='item item-divider text-center color-white' style=background-color:"+resto.color+">"+resto.name+"</div>");
+
+					var restoCard = "<div class='col col-50'><div class='card'><div class='item item-text-wrap background-center' style='background-image:url("+resto.picture+")' ng-click='toggleSelect($event)' data-resto="+resto.name+" data-selected='0'></div><div class='item item-divider text-center color-white' style=background-color:"+resto.color+">"+resto.name+"</div>";
+
+					angular.element(document.getElementById(previousRowRestoId)).append($compile(restoCard)( $scope ));
 				};
 
 				compteurRestos++;
@@ -61,7 +67,10 @@ angular.module('ChoixMenusController', [])
 
 			 		// si le compteur est PAIRE on ajoute une div avec la classe row ET l'ensemble du html pour représenter une card de menu
 			 		if (compteurMenus%2==0) {
-						angular.element(document.getElementById('menus-container')).append("<div class='row responsive-sm' id="+rowMenuId+"><div class='col col-50'><div class='card'><div class='item item-text-wrap background-center' style='background-image:url("+resto.picture+")'><span class='price'>"+menu.price+" €</span></div><div class='item item-divider text-center color-white' style=background-color:"+resto.color+">"+menu.name+"</div></div>");
+
+			 			var menuCardRow = "<div class='row responsive-sm' id="+rowMenuId+"><div class='col col-50'><div class='card'><div class='item item-text-wrap background-center' style='background-image:url("+menu.picture+")' ng-click='toggleSelect($event)' data-resto="+resto.name+" data-selected='0'><span class='price'>"+menu.price+" €</span></div><div class='item item-divider text-center color-white' style=background-color:"+resto.color+">"+menu.name+"</div></div>";
+
+						angular.element(document.getElementById('menus-container')).append($compile(menuCardRow)( $scope ));
 					} 
 					// si le compteur est IMPAIRE on ajoute seulement l'ensemble du html pour représenter une card de menu
 					else {
@@ -69,8 +78,10 @@ angular.module('ChoixMenusController', [])
 						var lastMenuIndex = compteurMenus-1;
 						var previousRowMenuId = "row-menu-"+lastMenuIndex;
 
+						var menuCard = "<div class='col col-50'><div class='card'><div class='item item-text-wrap background-center' style='background-image:url("+menu.picture+")' ng-click='toggleSelect($event)' data-resto="+resto.name+" data-selected='0'><span class='price'>"+menu.price+" €</span></div><div class='item item-divider text-center color-white' style=background-color:"+resto.color+">"+menu.name+"</div>";
+
 						// après avoir récupérè la dernière div.row (grâce à l'id recréé précédemment) on ajoute l'ensemble du html pour représenter une card de menu
-						angular.element(document.getElementById(previousRowMenuId)).append("<div class='col col-50'><div class='card'><div class='item item-text-wrap background-center' style='background-image:url("+resto.picture+")'><span class='price'>"+menu.price+" €</span></div><div class='item item-divider text-center color-white' style=background-color:"+resto.color+">"+menu.name+"</div>");
+						angular.element(document.getElementById(previousRowMenuId)).append($compile(menuCard)( $scope ));
 					};
 
 					// on incrémente le compteur de menus
@@ -87,6 +98,38 @@ angular.module('ChoixMenusController', [])
 		});
 
 		
-		
+		$scope.selectedResto = [];
+
+		//var selectedCount = 0;
+
+		$scope.toggleSelect = function($event) {
+			angular.element($event.currentTarget).toggleClass("custom-overlay icon ion-checkmark-circled");
+			/*var restoName = $event.currentTarget.getAttribute("data-resto");
+			var alreadySelected = $event.currentTarget.getAttribute("data-selected");
+
+			if ($scope.selectedResto.length == 0) {
+				$scope.selectedResto.push({restoName, nbSelected:1});
+				$event.currentTarget.setAttribute("data-selected", 1);
+			} else {
+				for (var i = 0; i < $scope.selectedResto.length; i++) {
+					var newResto = false;
+					if($scope.selectedResto[i].restoName == restoName && alreadySelected==0) {
+						//console.log("déjà selectionné");
+						$scope.selectedResto[i].nbSelected++;
+						$event.currentTarget.setAttribute("data-selected", 1);
+					} else if($scope.selectedResto[i].restoName == restoName && alreadySelected==1){
+						//console.log("nouveau selectionné");
+						$scope.selectedResto[i].nbSelected--;
+						$event.currentTarget.setAttribute("data-selected", 0);
+					} else if( $scope.selectedResto[i].restoName != restoName ) newResto = true;
+				};
+				if (newResto) {
+					$scope.selectedResto.push({restoName, nbSelected:1});
+					$event.currentTarget.setAttribute("data-selected", 1);
+				}
+			}
+
+			console.log( JSON.stringify($scope.selectedResto));*/
+		}
 
  });
