@@ -2,15 +2,13 @@
 	"groups" : [
 		{
 			"name" : "Sport'Et",
-			"picture" : "img/ionic.png"
+			"picture" : "img/groups/sportet.jpg",
+			"members" : [{"id" : 2}, {"id" : 3}]
 		},
 		{
 			"name" : "Hexa",
-			"picture" : "img/ionic.png"
-		},
-		{
-			"name" : "PDS",
-			"picture" : "img/ionic.png"
-		}	
+			"picture" : "img/groups/hexa.jpg",
+			"members" : [{"id" : 0}, {"id" : 1}, {"id" : 2}, {"id" : 3}]
+		}
 	]
 }

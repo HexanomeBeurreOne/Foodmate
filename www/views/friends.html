@@ -12,7 +12,15 @@
 			</div>
 
 			<div class="item">
+				<div class="item-input-inset" style="height:40px">
+				<div class="item item-input-wrapper" style="height:30px">
+			   		<input type="date" placeholder="{{01/01/1994 | date}}">
+			    </div>
 
+			    Time
+			</div>
+
+			       
 			</div>
 			<!-- ******************* GROUPS ************************* -->
 			<div class="item item-divider">
@@ -21,7 +29,7 @@
 
 		  	<div class="item item-text-wrap">
 		  		<div style="display:inline-block" ng-repeat="group in groups">
-		  			<button class="button button-icon">
+		  			<button class="button button-icon" ng-click="selectGroup({{group.members}})">
 			  			<img src="{{group.picture}}" style="width:80px">
 			  		</button>
 			  		<p style="text-align:center">{{group.name}}</p>
