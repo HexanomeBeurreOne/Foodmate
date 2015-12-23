@@ -87,6 +87,15 @@
       color:$item-calm-text;
     }
   }
+  &.item-orange {
+    select{
+      background:$item-orange-bg;
+      color:$item-orange-text;
+    }
+    &:after, .input-label{
+      color:$item-orange-text;
+    }
+  }
   &.item-assertive {
     select{
       background:$item-assertive-bg;

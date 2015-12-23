@@ -6,6 +6,7 @@ $light:                           #fff !default;
 $stable:                          #f8f8f8 !default;
 $positive:                        #387ef5 !default;
 $calm:                            #11c1f3 !default;
+$orange:                          #FF7F00 !default;
 $balanced:                        #33cd5f !default;
 $energized:                       #ffc900 !default;
 $assertive:                       #ef473a !default;
@@ -116,6 +117,12 @@ $button-calm-border:              darken($calm, 10%) !default;
 $button-calm-active-bg:           darken($calm, 10%) !default;
 $button-calm-active-border:       darken($calm, 10%) !default;
 
+$button-orange-bg:                  $orange !default;
+$button-orange-text:                #fff !default;
+$button-orange-border:              darken($orange, 10%) !default;
+$button-orange-active-bg:           darken($orange, 10%) !default;
+$button-orange-active-border:       darken($orange, 10%) !default;
+
 $button-assertive-bg:             $assertive !default;
 $button-assertive-text:           #fff !default;
 $button-assertive-border:         darken($assertive, 10%) !default;
@@ -190,6 +197,12 @@ $bar-calm-border:                 $button-calm-border !default;
 $bar-calm-active-bg:              $button-calm-active-bg !default;
 $bar-calm-active-border:          $button-calm-active-border !default;
 
+$bar-orange-bg:                     rgba($button-orange-bg, $bar-transparency) !default;
+$bar-orange-text:                   $button-orange-text !default;
+$bar-orange-border:                 $button-orange-border !default;
+$bar-orange-active-bg:              $button-orange-active-bg !default;
+$bar-orange-active-border:          $button-orange-active-border !default;
+
 $bar-assertive-bg:                rgba($button-assertive-bg, $bar-transparency) !default;
 $bar-assertive-text:              $button-assertive-text !default;
 $bar-assertive-border:            $button-assertive-border !default;
@@ -252,6 +265,10 @@ $tabs-positive-text:              $button-positive-text !default;
 $tabs-calm-bg:                    $button-calm-bg !default;
 $tabs-calm-border:                $button-calm-border !default;
 $tabs-calm-text:                  $button-calm-text !default;
+
+$tabs-orange-bg:                    $button-orange-bg !default;
+$tabs-orange-border:                $button-orange-border !default;
+$tabs-orange-text:                  $button-orange-text !default;
 
 $tabs-assertive-bg:               $button-assertive-bg !default;
 $tabs-assertive-border:           $button-assertive-border !default;
@@ -335,6 +352,12 @@ $item-calm-border:                $button-calm-border !default;
 $item-calm-text:                  $button-calm-text !default;
 $item-calm-active-bg:             $button-calm-active-bg !default;
 $item-calm-active-border:         $button-calm-active-border !default;
+
+$item-orange-bg:                    $button-orange-bg !default;
+$item-orange-border:                $button-orange-border !default;
+$item-orange-text:                  $button-orange-text !default;
+$item-orange-active-bg:             $button-orange-active-bg !default;
+$item-orange-active-border:         $button-orange-active-border !default;
 
 $item-assertive-bg:               $button-assertive-bg !default;
 $item-assertive-border:           $button-assertive-border !default;
@@ -467,6 +490,8 @@ $toggle-on-positive-bg:           $positive !default;
 $toggle-on-positive-border:       $toggle-on-positive-bg !default;
 $toggle-on-calm-bg:               $calm !default;
 $toggle-on-calm-border:           $toggle-on-calm-bg !default;
+$toggle-on-orange-bg:               $orange !default;
+$toggle-on-orange-border:           $toggle-on-orange-bg !default;
 $toggle-on-assertive-bg:          $assertive !default;
 $toggle-on-assertive-border:      $toggle-on-assertive-bg !default;
 $toggle-on-balanced-bg:           $balanced !default;
@@ -505,6 +530,8 @@ $checkbox-off-border-positive:    $positive !default;
 $checkbox-on-bg-positive:         $positive !default;
 $checkbox-off-border-calm:        $calm !default;
 $checkbox-on-bg-calm:             $calm !default;
+$checkbox-off-border-orange:      $orange !default;
+$checkbox-on-bg-orange:           $orange !default;
 $checkbox-off-border-assertive:   $assertive !default;
 $checkbox-on-bg-assertive:        $assertive !default;
 $checkbox-off-border-balanced:    $balanced !default;
@@ -537,6 +564,7 @@ $range-light-track-bg:            $button-light-border !default;
 $range-stable-track-bg:           $button-stable-border !default;
 $range-positive-track-bg:         $button-positive-bg !default;
 $range-calm-track-bg:             $button-calm-bg !default;
+$range-orange-track-bg:           $button-orange-bg !default;
 $range-balanced-track-bg:         $button-balanced-bg !default;
 $range-assertive-track-bg:        $button-assertive-bg !default;
 $range-energized-track-bg:        $button-energized-bg !default;
@@ -661,6 +689,9 @@ $badge-positive-text:             $button-positive-text !default;
 $badge-calm-bg:                   $button-calm-bg !default;
 $badge-calm-text:                 $button-calm-text !default;
 
+$badge-orange-bg:                 $button-orange-bg !default;
+$badge-orange-text:               $button-orange-text !default;
+
 $badge-balanced-bg:               $button-balanced-bg !default;
 $badge-balanced-text:             $button-balanced-text !default;
 
@@ -697,6 +728,9 @@ $spinner-positive-fill:           $positive !default;
 
 $spinner-calm-stroke:             $calm !default;
 $spinner-calm-fill:               $calm !default;
+
+$spinner-orange-stroke:           $orange !default;
+$spinner-orange-fill:             $orange !default;
 
 $spinner-balanced-stroke:         $balanced !default;
 $spinner-balanced-fill:           $balanced !default;
