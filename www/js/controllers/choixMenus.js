@@ -97,39 +97,85 @@ angular.module('ChoixMenusController', [])
 			angular.element(document.getElementById('menus-container')).append("<h2>Une erreur est survenue</h2>");
 		});
 
-		
+
+		// on créé un tableau vide qui va stocker l'ensemble des restaurants séléctionnés
 		$scope.selectedResto = [];
 
-		//var selectedCount = 0;
-
 		$scope.toggleSelect = function($event) {
+
+			// on ajoute ou enlève les classes css pour affichage de la selection
 			angular.element($event.currentTarget).toggleClass("custom-overlay icon ion-checkmark-circled");
-			/*var restoName = $event.currentTarget.getAttribute("data-resto");
+
+			// on récupère le nom du restaurant qui correspond à la card séléctionnée
+			var restoName = $event.currentTarget.getAttribute("data-resto");
+
+			// on récupère la valeur du booléen qui indique si la card est déjà séléctionné
 			var alreadySelected = $event.currentTarget.getAttribute("data-selected");
 
+			// si le tableau est vide
 			if ($scope.selectedResto.length == 0) {
+
+				// on ajoute dans le tableau le nom du restaurant et on définit son nombre de sélection à 1
 				$scope.selectedResto.push({restoName, nbSelected:1});
+
+				// on définit la card à l'état sélectionné (booléen true --> 1)
 				$event.currentTarget.setAttribute("data-selected", 1);
-			} else {
+
+			} // si le tableau n'est pas vide
+			else { 
+
+				// on instancie un booléen à vrai pour savoir s'il s'agit d'un resto qui n'a pas encore été ajouté dans le tableau
+				var newResto = true;
+
+				// pour chaque élément du tableau {nomResto, nbSelection}
 				for (var i = 0; i < $scope.selectedResto.length; i++) {
-					var newResto = false;
+
+					// si le resto selectionné est déjà dans le tableau et que la card N'A PAS été séléctionné
 					if($scope.selectedResto[i].restoName == restoName && alreadySelected==0) {
-						//console.log("déjà selectionné");
+
+						// on incrémente le nb de selection correspondant à ce resto
 						$scope.selectedResto[i].nbSelected++;
+
+						// on définit le booléen de la card sélectionnée à true (1)
 						$event.currentTarget.setAttribute("data-selected", 1);
-					} else if($scope.selectedResto[i].restoName == restoName && alreadySelected==1){
-						//console.log("nouveau selectionné");
+
+						// on indique qu'il ne s'agit pas d'un nouveau restaurant
+						newResto = false;
+
+					} // si le resto selectionné est déjà dans le tableau et que la card A ETE séléctionné
+					else if($scope.selectedResto[i].restoName == restoName && alreadySelected==1){
+						
+						// on décrémente le nb de selection correspondant à ce resto
 						$scope.selectedResto[i].nbSelected--;
+
+						// on définit le booléen de la card sélectionnée à false (0)
 						$event.currentTarget.setAttribute("data-selected", 0);
-					} else if( $scope.selectedResto[i].restoName != restoName ) newResto = true;
+
+						// on indique qu'il ne s'agit pas d'un nouveau restaurant
+						newResto = false;
+					}
+
+					// si le nb de selection d'un élément du tableau est nul
+					if($scope.selectedResto[i].nbSelected == 0) {
+
+						// on retire cet élément du tableau
+						$scope.selectedResto.splice(i, 1);
+					}
+
 				};
+
+				// s'il s'agit d'un nouveau restaurant
 				if (newResto) {
+
+					// on ajoute dans le tableau le nom du restaurant et on définit son nombre de sélection à 1
 					$scope.selectedResto.push({restoName, nbSelected:1});
+
+					// on définit la card à l'état sélectionné (booléen true --> 1)
 					$event.currentTarget.setAttribute("data-selected", 1);
 				}
 			}
 
-			console.log( JSON.stringify($scope.selectedResto));*/
+			//console.log( JSON.stringify($scope.selectedResto));
 		}
 
  });
