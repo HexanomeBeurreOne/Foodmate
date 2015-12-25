@@ -8,22 +8,22 @@
 			  	</a>
 				<div class="col no-padding">
 			  		<div class="row row-top">
-			  			<div class="col card no-padding">
-							<a href="#" class="item item-icon-left">
+			  			<span class="col card no-padding">
+							<a href="#/app/home/choix-menus" class="item item-icon-left">
 						    	<i class="icon ion-ios-location"></i>
 						    	<div><b>Resto Universitaire</b></div>
 						  	</a>
-						</div>
+						</span>
 			  		</div>
 			  		<div class="row">
-			  			<div class="col card no-padding"  ng-repeat="restaurant in chosenRestaurants | orderBy:'+rank'">
+			  			<span class="col card no-padding"  ng-repeat="restaurant in chosenRestaurants | orderBy:'+rank'">
 								<div class="item item-divider">
 								{{restaurant.rank}}e | {{restaurant.votes}} p.
 								</div>
 								<p class="item item-text-wrap">
 								{{restaurant.name}}
 								</p>
-						</div>
+						</span>
 			  		</div>
 				</div>
 			</div>
