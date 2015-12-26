@@ -86,3 +86,5 @@ angular.module('FriendsController', [])
 		};
 
     });
+    
+    

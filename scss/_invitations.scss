@@ -1,0 +1,39 @@
+/* Empty. Add your own CSS if you like */
+///* TODO: Create one stylesheet per view and @import it here */
+
+/* invitation view */
+.friend-avatar {
+    object-fit: cover;
+    display: block;
+    border-radius: 100%;
+    margin-top: 10px;
+    max-width: 30px;
+    max-height: 30px;
+}
+
+.invitation-friends {
+  display: inline-flex;
+
+}
+
+.friend-item {
+  margin-right: 10px;
+}
+
+.friend-separator {
+  margin-top: 10px;
+  height: 30px;
+  border-left: ridge 1px rgba(0,0,0,0.5);
+}
+
+.invitation-hour {
+  background-color: orange;
+  width: 50px;
+  height: 25px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.invitation-header > div {
+  display: inline-block;
+}

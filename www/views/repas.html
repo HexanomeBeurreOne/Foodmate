@@ -1,0 +1,43 @@
+<ion-view view-title="homepage">
+    <ion-content>
+		<div class="col no-padding">
+			<div class="row-50 no-padding">
+				<a href="#" class="item item-icon-left">
+				    	<i class="icon ion-android-restaurant"></i>
+				   		<div><b>Restaurants</b></div>
+			  	</a>
+				<div class="col no-padding">
+			  		<div class="row row-top list card">
+					  <a href="#/app/home/choix-menus" class="item item-icon-left">
+					    <i class="icon ion-ios-location"></i>
+					    <div><b>Resto Universitaire</b></div>
+					  </a>
+			  		</div>
+			  		<div class="row">
+			  			<div class="col col-top card no-padding"  ng-repeat="restaurant in chosenRestaurants | orderBy:'+rank'">
+								<div class="item item-divider">
+								{{restaurant.rank}}e /{{restaurant.votes}} pers.
+								</div>
+								<div class="item item-text-wrap">
+								{{restaurant.name}}
+								</div>
+						</div>
+			  		</div>
+				</div>
+			</div>
+			<div class="row-50 no-padding">
+				<a href="#amis" class="item item-icon-left">
+				    	<i class="icon ion-person-stalker"></i>
+				   		<div><b>Amis</b></div>
+			  	</a>
+			  	<div class="center">
+			  	</br>
+					<button class="button button-icon" ng-repeat="friend in mealFriends | orderBy:'+name'">
+						<img src={{friend.picture}} height="120" width="120">
+						<div>{{friend.name}}</div>
+					</button>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

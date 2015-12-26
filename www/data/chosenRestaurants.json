@@ -1,0 +1,22 @@
+{
+	"chosenRestaurants" : [
+		{
+			"name" : "RU",
+			"picture" : "img/ionic.png",
+			"rank" : 1,
+			"votes" : 3
+		},
+		{
+			"name" : "Castor & Pollux",
+			"picture" : "img/ionic.png",
+			"rank" : 3,
+			"votes" : 1
+		},
+		{
+			"name" : "Grillon",
+			"picture" : "img/ionic.png",
+			"rank" : 2,
+			"votes" : 1
+		}	
+	]
+}

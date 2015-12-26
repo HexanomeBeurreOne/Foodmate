@@ -1,0 +1,50 @@
+{
+	"restos" : [
+		{
+			"name" : "RU Jussieux",
+			"color" : "#E82C0C",
+			"picture" : "img/resto-u.jpg",
+			"menus" : [
+				{
+					"name" : "Pizza 4 fromages",
+					"price" : "3.25",
+					"picture" : "img/pizza-4-fromages.jpg"
+				},
+				{
+					"name" : "Feuilleté saumon",
+					"price" : "3.25",
+					"picture" : "img/feuillete-saumon.jpg"
+				},
+				{
+					"name" : "Paupiette de veau",
+					"price" : "3.25",
+					"picture" : "img/paupiette-veau.jpg"
+				}
+			]
+		},
+		{
+			"name" : "Beurk",
+			"color" : "#2F8CFF",
+			"picture" : "img/bistrot.jpg",
+			"menus" : [
+				{
+					"name" : "Tartiflette",
+					"price" : "3.40",
+					"picture" : "img/tartiflette.jpg"
+				}
+			]
+		},
+		{
+			"name" : "Olivier",
+			"color" : "#0CE835",
+			"picture" : "img/resto-italien.jpg",
+			"menus" : [
+				{
+					"name" : "Spaghetti bolognaise",
+					"price" : "3.10",
+					"picture" : "img/spaghetti-bolognaise.jpg"
+				}
+			]
+		}
+	]
+}
