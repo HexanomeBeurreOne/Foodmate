@@ -22,7 +22,12 @@ angular.module('FriendsController', [])
 				alert("Failed reading contacts.json")
 			});
 
-
+		//Date fictive
+		$scope.date = new Date();
+		$scope.date.setHours(12);
+		$scope.date.setMinutes(0);
+		$scope.date.setSeconds(0);
+		$scope.date.setMilliseconds(0);
 
 		//Fonction permettant de changer l'icon ajout/suppr d'un contact
 		$scope.switchContactIcon = function($index) {

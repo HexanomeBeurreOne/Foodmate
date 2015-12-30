@@ -13,14 +13,11 @@
 
 			<div class="item">
 				<div class="item-input-inset" style="height:40px">
-				<div class="item item-input-wrapper" style="height:30px">
-			   		<input type="date" placeholder="{{01/01/1994 | date}}">
-			    </div>
+					<div class="item item-input-wrapper" style="height:30px">
+				   		 <input type="datetime-local" id="exampleInput" name="input" ng-model="date" placeholder="HH:mm dd/MM/yyyy" style="text-align:center; width:100%"/>
+				    </div>
+				</div>
 
-			    Time
-			</div>
-
-			       
 			</div>
 			<!-- ******************* GROUPS ************************* -->
 			<div class="item item-divider">
@@ -50,14 +47,14 @@
 			    Friends
 			</div>
 			<!-- ***************** SEARCH BAR ******************* -->
-			<div class="item-input-inset" style="height:40px">
+			<div class="item-input-inset" style="height:50px">
 				<div class="item item-input-wrapper" style="height:30px">
-			       	<i class="icon ion-search placeholder-icon" style="height:30px"></i>
+			       	<i class="icon ion-search placeholder-icon" ></i>
 			   		<input type="text" ng-model="query" placeholder="Search">
 			    </div>
 
 			    <button class="button button-icon" ng-click="addFriend()">
-			    	<h3 style="margin:10px; color:grey">Add</h3>
+			    	<h3 style="margin:10px; color:grey">New</h3>
 		  		</button>
 			</div>
 			    
