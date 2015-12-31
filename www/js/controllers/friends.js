@@ -77,18 +77,18 @@ angular.module('FriendsController', [])
 		};
 
 		//Fonction d'ajout d'un groupe d'amis
-		$scope.addGroup = function() {
+		/*$scope.addGroup = function() {
 			//TODO
 			alert("Ajout groupe!");
 
-		};
+		};*/
 
 		//Fonction d'ajout d'un ami
-		$scope.addFriend = function() {
+		/*$scope.addFriend = function() {
 			//TODO
 			alert($scope.query);
 
-		};
+		};*/
 
     });
     
