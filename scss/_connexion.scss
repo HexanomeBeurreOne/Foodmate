@@ -13,6 +13,27 @@
 .card-login {
   color: white;
   text-align: center;
-  min-height: 25px;
+  min-height: 30px;
+  padding-top: 5px;
   font-family: helvetica;
+  margin: 10px 20px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.card-login > *{
+  display: inline-block;
+}
+
+.login-separator-wrapper {
+  margin: 10px 20px;
+}
+
+.login-separator-wrapper > * {
+    display: inline-block;
+}
+
+.login-separator {
+  border-top: 1px solid #000;
+  width: 30%;
+  height: 1px;
 }
