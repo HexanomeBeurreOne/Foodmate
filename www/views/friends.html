@@ -1,6 +1,6 @@
-<ion-view view-title="Invite your friends">
+<ion-view view-title="Invite tes amis">
     <div class="bar bar-header bar-light">
-		<h1 class="title">Invite your Friends</h1>
+		<h1 class="title">Invite tes amis</h1>
 	</div>
 
     <ion-content scrollbar-y="true">
@@ -8,23 +8,20 @@
 		<div class="list">
 			<!-- ******************* DATE ************************* -->
 			<div class="item item-divider">
-			    Date & Time
+			    Heure & Jour
 			</div>
 
 			<div class="item">
 				<div class="item-input-inset" style="height:40px">
-				<div class="item item-input-wrapper" style="height:30px">
-			   		<input type="date" placeholder="{{01/01/1994 | date}}">
-			    </div>
+					<div class="item item-input-wrapper" style="height:30px">
+				   		 <input type="datetime-local" id="exampleInput" name="input" ng-model="date" placeholder="HH:mm dd/MM/yyyy" style="text-align:center; width:100%"/>
+				    </div>
+				</div>
 
-			    Time
-			</div>
-
-			       
 			</div>
 			<!-- ******************* GROUPS ************************* -->
 			<div class="item item-divider">
-			    Groups
+			    Groupes
 			</div>
 
 		  	<div class="item item-text-wrap">
@@ -37,37 +34,35 @@
 				
 				<!-- ****** NEW GROUP ******* -->
 		  		<div style="display:inline-block">
-		  			<button class="button button-icon" ng-click="addGroup()">
-			  			<img src="img/ionic.png" style="width:80px">
+		  			<button class="button button-icon">
+			  			<img src="img/groups/newgroup.jpg" style="width:80px">
 			  		</button>
-			  		<p style="text-align:center">New</p>
+			  		<p style="text-align:center">Nouveau</p>
 		  		</div>
 		  			
 		  	</div>
 			
 			<!-- ******************* FRIENDS ************************* -->
 			<div class="item item-divider">
-			    Friends
+			    Amis
 			</div>
 			<!-- ***************** SEARCH BAR ******************* -->
-			<div class="item-input-inset" style="height:40px">
+			<div class="item-input-inset" style="height:50px">
 				<div class="item item-input-wrapper" style="height:30px">
-			       	<i class="icon ion-search placeholder-icon" style="height:30px"></i>
+			       	<i class="icon ion-search placeholder-icon" ></i>
 			   		<input type="text" ng-model="query" placeholder="Search">
 			    </div>
 
-			    <button class="button button-icon" ng-click="addFriend()">
-			    	<h3 style="margin:10px; color:grey">Add</h3>
+			    <button class="button button-icon">
+			    	<h3 style="margin:10px; font-size:14px; color:grey">Nouveau</h3>
 		  		</button>
 			</div>
 			    
 
 			<!-- ****************** AVATARS ********************** -->
 		  	<div class="item item-avatar item-button-right" ng-repeat="contact in contacts | filter:query">
-		  		<div ng-if="{{searchActivate}}">
-		  			test OK
-		  		</div>
-			    <img ng-src="{{contact.picture}}">
+
+			    <img ng-src="{{contact.picture}}"/>
 			    <h2>{{contact.name}}</h2>
 			    <p>{{contact.description}}</p>
 
@@ -85,7 +80,7 @@
     <!-- FOOTER -->
 	<a href="#/app/choix-menus">
 		<div class="bar bar-footer bar-balanced">
-			<div class="title">Create</div>
+			<div class="title">Créer l'invitation</div>
 		</div>
 	</a>
 </ion-view>
