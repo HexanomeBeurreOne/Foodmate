@@ -36,16 +36,12 @@ angular.module('FriendsController', [])
 		    {
 		      $scope.contacts[$index].contactIcon = "ion-checkmark-circled";
 		      $scope.contacts[$index].buttonColor = 'green';
-		      // on annule l'interval updateTimerInterval si on appuie sur pause
-		      //$interval.cancel(updateTimerInterval);
 		    }
 		    else 
 		    	//deja selectionne -> on deselectionne
 		    {
 		      $scope.contacts[$index].contactIcon = "ion-plus-circled";
 		      $scope.contacts[$index].buttonColor = 'grey';
-		      // on instancie un $interval que l'on nomme updateTimerInterval qui va appeler la fonction updateInterval toutes les 100ms
-		      //updateTimerInterval = $interval(updateTimer,100);
 		    }
 		    
 		};
