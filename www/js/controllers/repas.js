@@ -3,8 +3,11 @@
 
 angular.module('RepasController', [])
 
-    .controller('RepasCtrl', function ($scope, $rootScope, $http) {
+    .controller('RepasCtrl', ['$scope', '$rootScope', '$http', '$stateParams', function ($scope, $rootScope, $http, $stateParams) {
       $scope.viewName= "Repas";
+
+      $rootScope.currentMealId = $stateParams.id;
+      $scope.currentMealId = $rootScope.currentMealId;
 
       // Creations du classement fictifs
 	    $http.get('data/restos.json')
@@ -32,4 +35,4 @@ angular.module('RepasController', [])
 			.error(function(err) {
 				alert("Failed reading contacts.json")
 		});
-    });
+  }]);
