@@ -3,7 +3,10 @@
 
 angular.module('FriendsController', [])
 
-    .controller('FriendsCtrl', function ($scope, $rootScope, $http) {
+    .controller('FriendsCtrl', function ($scope, $rootScope, $http, $state) {
+    	$scope.mealModification = $rootScope.mealModification;
+    	$scope.currentMealId = $rootScope.currentMealId;
+
     	//Creation de groupes fictifs
     	$http.get('data/profile.json')
 			.success(function(data) {
@@ -17,12 +20,27 @@ angular.module('FriendsController', [])
 	    $http.get('data/contacts.json')
 			.success(function(data) {
 				$scope.contacts = data.contacts;
+
+				if ($scope.mealModification === true) {
+		    		/* ************ Certains amis sont déjà ajoutés !!! *************** */
+		    		$scope.friends = $rootScope.repas[$scope.currentMealId].friendsId;
+		    		for (var i = 0; i < $scope.friends.length; i++) {
+		    			console.log($scope.friends[i]);
+				      	$scope.contacts[$scope.friends[i]].contactIcon = "ion-checkmark-circled";
+		      			$scope.contacts[$scope.friends[i]].buttonColor = 'green';
+		      			$scope.contacts[$scope.friends[i]].disable = true;
+		    		};
+		    	};
+
+
 			})
 			.error(function(err) {
-				alert("Failed reading contacts.json")
+				$scope.contacts = data.contacts;
+				alert("Failed reading contacts.json");
 			});
 
-		//Date fictive
+
+		/* ******************** DATE DU JOUR *************************** */
 		$scope.date = new Date();
 		$scope.date.setHours(12);
 		$scope.date.setMinutes(0);
@@ -34,14 +52,27 @@ angular.module('FriendsController', [])
 		    if ($scope.contacts[$index].contactIcon === "ion-plus-circled")
 		    	//contact pas encore selectionne
 		    {
-		      $scope.contacts[$index].contactIcon = "ion-checkmark-circled";
-		      $scope.contacts[$index].buttonColor = 'green';
+		    	// Affichage
+				$scope.contacts[$index].contactIcon = "ion-checkmark-circled";
+				$scope.contacts[$index].buttonColor = 'green';
+
+				// Ajout a la liste
+				$scope.friends.push($index);
+				console.log($scope.friends);
 		    }
 		    else 
 		    	//deja selectionne -> on deselectionne
 		    {
-		      $scope.contacts[$index].contactIcon = "ion-plus-circled";
-		      $scope.contacts[$index].buttonColor = 'grey';
+		    	// Affichage
+				$scope.contacts[$index].contactIcon = "ion-plus-circled";
+				$scope.contacts[$index].buttonColor = 'grey';
+
+				//Retret liste
+		      	var indexRemove = $scope.friends.indexOf($index);
+
+		      	if (indexRemove > -1) {
+				    $scope.friends.splice(indexRemove, 1);
+				}
 		    }
 		    
 		};
@@ -54,9 +85,14 @@ angular.module('FriendsController', [])
 				if ($scope.contacts[members[i].id].contactIcon === "ion-plus-circled")
 					//non selectionne
 		    	{
+		    		// Affichage
 		    		allSelected = false;
 		    		$scope.contacts[members[i].id].contactIcon = "ion-checkmark-circled";
 		      		$scope.contacts[members[i].id].buttonColor = 'green';
+
+		      		// Ajout a la liste
+		      		$scope.friends.push(members[i].id);
+		      		
 		    	}
 			};
 
@@ -65,8 +101,16 @@ angular.module('FriendsController', [])
 			{
 				for (var i = 0;i <= members.length - 1; i++) 
 				{
+					//Affichage
 		    		$scope.contacts[members[i].id].contactIcon = "ion-plus-circled";
 		      		$scope.contacts[members[i].id].buttonColor = 'grey';
+
+		      		//Retret liste
+		      		var indexRemove = $scope.friends.indexOf(members[i].id);
+
+		      		if (indexRemove > -1) {
+					    $scope.friends.splice(indexRemove, 1);
+					}
 				};
 			}
 
@@ -85,6 +129,12 @@ angular.module('FriendsController', [])
 			alert($scope.query);
 
 		};*/
+
+		//Rooting vers repas
+		$scope.goToRepas = function() {
+			$state.go('app.repas');
+			$rootScope.repas[$scope.currentMealId].friendsId = $scope.friends;
+		};
 
     });
     

@@ -21,6 +21,7 @@ angular.module('RepasController', [])
 	    $http.get('data/repas.json')
 			.success(function(data) {
 				$scope.repas = data.repas;
+				$rootScope.repas = $scope.repas;
 			})
 			.error(function(err) {
 				alert("Failed reading repas.json")
