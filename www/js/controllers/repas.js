@@ -3,9 +3,10 @@
 
 angular.module('RepasController', [])
 
-    .controller('RepasCtrl', function ($scope, $rootScope, $http, $state) {
+    .controller('RepasCtrl', ['$scope', '$rootScope', '$http', '$stateParams', function ($scope, $rootScope, $http, $stateParams) {
+
       $scope.viewName= "Repas";
-      $rootScope.currentMealId = 0;
+      $rootScope.currentMealId = $stateParams.id;
       $scope.currentMealId = $rootScope.currentMealId;
 
       // Recuperation des restaurants
@@ -42,4 +43,5 @@ angular.module('RepasController', [])
 			$rootScope.mealModification = true;
 			$state.go('app.friends');
 		};
-    });
+    }
+  }]);
