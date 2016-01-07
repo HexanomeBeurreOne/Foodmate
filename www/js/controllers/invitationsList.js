@@ -31,4 +31,8 @@ angular.module('InvitationsListController', [])
         return time;
       }
 
+      $scope.getInvitationUrl= function (id) {
+        var url = '#/app/home/repas/' + id;
+        return url;
+      }
     });

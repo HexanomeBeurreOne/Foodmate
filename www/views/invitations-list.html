@@ -5,7 +5,7 @@
           Aujourd'hui
         </div>
         <!-- TODO: Link an invitation, /invitation/id-->
-        <a ng-repeat="invitation in invitations" class="item invitation" href="#/app/home/repas">
+        <a ng-repeat="invitation in invitations" class="item invitation" href="{{getInvitationUrl(invitation.id)}}">
           <div class="invitation-header">
             <div class "invitation-hour">
               <span>{{getTime(invitation.mealTime)}}</span>
@@ -26,10 +26,10 @@
             </div>
           </div>
           <div class="invitation-friends">
-            <!-- <img class="friend-avatar friend-item" src="{{contacts[invitation.hostId].picture}}"> -->
+            <img class="friend-avatar friend-item" src="{{contacts[invitation.hostId].picture}}">
             <div class="friend-separator friend-item"></div>
             <div ng-repeat="friendId in invitation.friendsId">
-              <!-- <img class="friend-avatar friend-item" src="{{contacts[friendId].picture}}"> -->
+              <img class="friend-avatar friend-item" src="{{contacts[friendId].picture}}">
             </div>
           </div>
         </a>
