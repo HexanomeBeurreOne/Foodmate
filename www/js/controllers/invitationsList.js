@@ -2,8 +2,16 @@
 
 
 angular.module('InvitationsListController', [])
+  
 
-    .controller('InvitationsListCtrl', function ($scope, $rootScope) {
+    .controller('InvitationsListCtrl', function ($scope, $rootScope, $location, $ionicNavBarDelegate) {
+
+      var path = $location.path();
+       if (path.indexOf('list-invitations') != -1)
+         $ionicNavBarDelegate.showBackButton(false);
+       else
+         $ionicNavBarDelegate.showBackButton(true);
+
       $scope.invitations = [
         {
           id: '1',

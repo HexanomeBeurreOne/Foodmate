@@ -3,7 +3,15 @@
 
 angular.module('RepasController', [])
 
-    .controller('RepasCtrl', function ($scope, $rootScope, $http) {
+    .controller('RepasCtrl', function ($scope, $rootScope, $http, $location, $ionicNavBarDelegate) {
+
+    	var path = $location.path();
+       if (path.indexOf('list-invitations') != -1)
+         $ionicNavBarDelegate.showBackButton(false);
+       else
+         $ionicNavBarDelegate.showBackButton(true);
+
+
       $scope.viewName= "Repas";
 
       // Creations du classement fictifs

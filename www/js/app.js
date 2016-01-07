@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 
-angular.module('foodmate', ['ionic', 'HomeController', 'InvitationsListController', 'FriendsController', 'ProfileController', 'ChoixMenusController', 'RepasController'])
+angular.module('foodmate', ['ionic', 'ConnectionController', 'InvitationsListController', 'FriendsController', 'ProfileController', 'ChoixMenusController', 'RepasController'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -27,12 +27,12 @@ angular.module('foodmate', ['ionic', 'HomeController', 'InvitationsListControlle
     abstract: true,
     templateUrl: 'views/racine.html'
   })
-  .state('app.home', {
-    url: '/home',
+  .state('app.connection', {
+    url: '/connection',
     views: {
       'app': {
-        templateUrl: 'views/home.html',
-        controller: 'HomeCtrl'
+        templateUrl: 'views/connection.html',
+        controller: 'ConnectionCtrl'
       }
     }
   })
@@ -85,5 +85,5 @@ angular.module('foodmate', ['ionic', 'HomeController', 'InvitationsListControlle
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/home');
+  $urlRouterProvider.otherwise('/app/connection');
 });
