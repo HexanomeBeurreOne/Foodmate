@@ -20,10 +20,29 @@ angular.module('FriendsController', [])
 	    $http.get('data/contacts.json')
 			.success(function(data) {
 				$scope.contacts = data.contacts;
+
+				if ($scope.mealModification === true) {
+		    		/* ***************** Certains amis sont déjà ajoutés !!! ******************** */
+		    		$scope.friends = $rootScope.repas[$scope.currentMealId].friendsId;
+		    		for (var i = 0; i < $scope.friends.length; i++) {
+		    			console.log($scope.friends[i]);
+				      	$scope.contacts[$scope.friends[i]].contactIcon = "ion-checkmark-circled";
+		      			$scope.contacts[$scope.friends[i]].buttonColor = 'green';
+		      			$scope.contacts[$scope.friends[i]].disable = true;
+		    		};
+		    	};
+
+
 			})
 			.error(function(err) {
-				alert("Failed reading contacts.json")
+				$scope.contacts = data.contacts;
+				alert("Failed reading contacts.json");
 			});
+
+		
+   
+
+		
 
 		//Date fictive
 		$scope.date = new Date();
