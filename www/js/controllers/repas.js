@@ -3,10 +3,10 @@
 
 angular.module('RepasController', [])
 
-    .controller('RepasCtrl', function ($scope, $rootScope, $http) {
+    .controller('RepasCtrl', function ($scope, $rootScope, $http, $state) {
       $scope.viewName= "Repas";
-
-      // Creations du classement fictifs
+      $scope.
+      // Recuperation des restaurants
 	    $http.get('data/restos.json')
 			.success(function(data) {
 				$scope.restos = data.restos;
@@ -32,4 +32,11 @@ angular.module('RepasController', [])
 			.error(function(err) {
 				alert("Failed reading contacts.json")
 		});
+
+		//Fonction d'ajout d'un ami au repas
+		$scope.addNewFriendToMeal = function() {
+			$rootScope.currentMealId = 0;
+			$rootScope.mealModification = true;
+			$state.go('app.friends');
+		};
     });

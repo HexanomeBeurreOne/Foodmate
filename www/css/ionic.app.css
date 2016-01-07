@@ -9297,6 +9297,14 @@ a.button {
   max-width: 30px;
   max-height: 30px; }
 
+.friend-avatar-big {
+  object-fit: cover;
+  display: block;
+  border-radius: 100%;
+  margin-top: 10px;
+  max-width: 140px;
+  max-height: 140px; }
+
 .invitation-friends {
   display: inline-flex; }
 

@@ -27,6 +27,7 @@
 			  		</div>
 				</div>
 			</div>
+			<!-- ******************* FRIENDS ************************* -->
 			<div class="row-50 no-padding">
 				<a href="#amis" class="item item-icon-left">
 				    	<i class="icon ion-person-stalker"></i>
@@ -35,8 +36,12 @@
 			  	<div class="center">
 			  	</br>
 					<button class="button button-icon" ng-repeat="friendId in repas[0].friendsId | orderBy:'+name'">
-						<img src={{contacts[friendId].picture}} height="140" width="140">
+						<img class="friend-avatar-big" src={{contacts[friendId].picture}}>
 						<p>{{friend.name}}</p>
+					</button>
+					<!-- **************** ADD NEW FRIEND ********************** -->
+					<button class="button button-icon" ng-click="addNewFriendToMeal()">
+						<img class="friend-avatar-big" src="img/ionic.png">
 					</button>
 				</div>
 			</div>
