@@ -8,7 +8,7 @@
         <a ng-repeat="invitation in invitations" class="item invitation" href="#/app/home/repas">
           <div class="invitation-header">
             <div class "invitation-hour">
-              <span>{{invitation.hour}}</span>
+              <span>{{getTime(invitation.mealTime)}}</span>
             </div>
             <div class "invitation-state">
               <span ng-if="invitation.pending">
@@ -26,10 +26,10 @@
             </div>
           </div>
           <div class="invitation-friends">
-            <img class="friend-avatar friend-item" src="{{invitation.hostFriend.pictureUrl}}">
+            <!-- <img class="friend-avatar friend-item" src="{{contacts[invitation.hostId].picture}}"> -->
             <div class="friend-separator friend-item"></div>
-            <div ng-repeat="friend in invitation.friends">
-              <img class="friend-avatar friend-item" src="{{friend.pictureUrl}}">
+            <div ng-repeat="friendId in invitation.friendsId">
+              <!-- <img class="friend-avatar friend-item" src="{{contacts[friendId].picture}}"> -->
             </div>
           </div>
         </a>
