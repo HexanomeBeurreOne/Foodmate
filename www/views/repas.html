@@ -35,7 +35,7 @@
 			  	</a>
 			  	<div class="center">
 			  	</br>
-					<button class="button button-icon" ng-repeat="friendId in repas[0].friendsId | orderBy:'+name'">
+					<button class="button button-icon" ng-repeat="friendId in repas[currentMealId].friendsId | orderBy:'+name'">
 						<img class="friend-avatar-big" src={{contacts[friendId].picture}}>
 						<p>{{friend.name}}</p>
 					</button>

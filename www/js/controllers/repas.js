@@ -5,6 +5,8 @@ angular.module('RepasController', [])
 
     .controller('RepasCtrl', function ($scope, $rootScope, $http, $state) {
       $scope.viewName= "Repas";
+      $rootScope.currentMealId = 0;
+      $scope.currentMealId = $rootScope.currentMealId;
 
       // Recuperation des restaurants
 	    $http.get('data/restos.json')
