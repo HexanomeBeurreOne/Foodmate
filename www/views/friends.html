@@ -7,17 +7,19 @@
 
 		<div class="list">
 			<!-- ******************* DATE ************************* -->
-			<div class="item item-divider">
-			    Heure & Jour
-			</div>
-
-			<div class="item">
-				<div class="item-input-inset" style="height:40px">
-					<div class="item item-input-wrapper" style="height:30px">
-				   		 <input type="datetime-local" id="exampleInput" name="input" ng-model="date" placeholder="HH:mm dd/MM/yyyy" style="text-align:center; width:100%"/>
-				    </div>
+			<div ng-hide="{{mealModification}}" >
+				<div class="item item-divider">
+				    Heure & Jour
 				</div>
 
+				<div class="item">
+					<div class="item-input-inset" style="height:40px">
+						<div class="item item-input-wrapper" style="height:30px">
+					   		 <input type="datetime-local" id="exampleInput" name="input" ng-model="date" placeholder="HH:mm dd/MM/yyyy" style="text-align:center; width:100%"/>
+					    </div>
+					</div>
+
+				</div>
 			</div>
 			<!-- ******************* GROUPS ************************* -->
 			<div class="item item-divider">
@@ -80,7 +82,8 @@
     <!-- FOOTER -->
 	<a href="#/app/choix-menus">
 		<div class="bar bar-footer bar-balanced">
-			<div class="title">Créer l'invitation</div>
+			<div ng-hide="{{mealModification}}"  class="title">Créer l'invitation</div>
+			<div ng-show="{{mealModification}}" class="title">Ajouter</div>
 		</div>
 	</a>
 </ion-view>

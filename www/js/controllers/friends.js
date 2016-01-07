@@ -4,6 +4,9 @@
 angular.module('FriendsController', [])
 
     .controller('FriendsCtrl', function ($scope, $rootScope, $http) {
+    	$scope.mealModification = $rootScope.mealModification;
+    	$scope.currentMealId = $rootScope.currentMealId;
+
     	//Creation de groupes fictifs
     	$http.get('data/profile.json')
 			.success(function(data) {
