@@ -61,10 +61,8 @@
 
 			<!-- ****************** AVATARS ********************** -->
 		  	<div class="item item-avatar item-button-right" ng-repeat="contact in contacts | filter:query">
-		  		<div ng-if="{{searchActivate}}">
-		  			test OK
-		  		</div>
-			    <img ng-src="{{contact.picture}}">
+
+			    <img ng-src="{{contact.picture}}"/>
 			    <h2>{{contact.name}}</h2>
 			    <p>{{contact.description}}</p>
 

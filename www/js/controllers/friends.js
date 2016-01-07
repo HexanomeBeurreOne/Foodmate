@@ -31,13 +31,13 @@ angular.module('FriendsController', [])
 
 		//Fonction permettant de changer l'icon ajout/suppr d'un contact
 		$scope.switchContactIcon = function($index) {
-		    if ($scope.contacts[$index].contactIcon == "ion-plus-circled")
+		    if ($scope.contacts[$index].contactIcon === "ion-plus-circled")
 		    	//contact pas encore selectionne
 		    {
 		      $scope.contacts[$index].contactIcon = "ion-checkmark-circled";
 		      $scope.contacts[$index].buttonColor = 'green';
 		      // on annule l'interval updateTimerInterval si on appuie sur pause
-		      $interval.cancel(updateTimerInterval);
+		      //$interval.cancel(updateTimerInterval);
 		    }
 		    else 
 		    	//deja selectionne -> on deselectionne
@@ -45,7 +45,7 @@ angular.module('FriendsController', [])
 		      $scope.contacts[$index].contactIcon = "ion-plus-circled";
 		      $scope.contacts[$index].buttonColor = 'grey';
 		      // on instancie un $interval que l'on nomme updateTimerInterval qui va appeler la fonction updateInterval toutes les 100ms
-		      updateTimerInterval = $interval(updateTimer,100);
+		      //updateTimerInterval = $interval(updateTimer,100);
 		    }
 		    
 		};
@@ -55,7 +55,7 @@ angular.module('FriendsController', [])
 			var allSelected = true;
 			//On essaye de tout selectionner pour le groupe
 			for (var i = 0;i <= members.length - 1; i++) {
-				if ($scope.contacts[members[i].id].contactIcon == "ion-plus-circled")
+				if ($scope.contacts[members[i].id].contactIcon === "ion-plus-circled")
 					//non selectionne
 		    	{
 		    		allSelected = false;
