@@ -1,6 +1,7 @@
 {
 	"restos" : [
 		{
+			"id" : 0,
 			"name" : "RU Jussieux",
 			"color" : "#E82C0C",
 			"picture" : "img/resto-u.jpg",
@@ -23,6 +24,7 @@
 			]
 		},
 		{
+			"id" : 1,
 			"name" : "Beurk",
 			"color" : "#2F8CFF",
 			"picture" : "img/bistrot.jpg",
@@ -35,6 +37,7 @@
 			]
 		},
 		{
+			"id" : 2,
 			"name" : "Olivier",
 			"color" : "#0CE835",
 			"picture" : "img/resto-italien.jpg",

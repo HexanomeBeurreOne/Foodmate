@@ -7,21 +7,23 @@
 				   		<div><b>Restaurants</b></div>
 			  	</a>
 				<div class="col no-padding">
-			  		<div class="row row-top list card">
-					  <a href="#/app/home/choix-menus" class="item item-icon-left">
-					    <i class="icon ion-ios-location"></i>
-					    <div><b>Resto Universitaire</b></div>
-					  </a>
+			  		<div class="row row-top">
+			  			<span class="col card no-padding">
+							<a href="#/app/home/choix-menus" class="item item-icon-left">
+						    	<i class="icon ion-ios-location"></i>
+						    	<div><b>Resto Universitaire</b></div>
+						  	</a>
+						</span>
 			  		</div>
 			  		<div class="row">
-			  			<div class="col col-top card no-padding"  ng-repeat="restaurant in chosenRestaurants | orderBy:'+rank'">
+			  			<span class="col card no-padding"  ng-repeat="restaurant in chosenRestaurants | orderBy:'+rank'">
 								<div class="item item-divider">
-								{{restaurant.rank}}e /{{restaurant.votes}} pers.
+								{{restaurant.rank}}e | {{restaurant.votes}} p.
 								</div>
-								<div class="item item-text-wrap">
+								<p class="item item-text-wrap">
 								{{restaurant.name}}
-								</div>
-						</div>
+								</p>
+						</span>
 			  		</div>
 				</div>
 			</div>
@@ -32,9 +34,9 @@
 			  	</a>
 			  	<div class="center">
 			  	</br>
-					<button class="button button-icon" ng-repeat="friend in mealFriends | orderBy:'+name'">
-						<img src={{friend.picture}} height="120" width="120">
-						<div>{{friend.name}}</div>
+					<button class="button button-icon" ng-repeat="friendId in repas[0].friendsId | orderBy:'+name'">
+						<img src={{contacts[friendId].picture}} height="140" width="140">
+						<p>{{friend.name}}</p>
 					</button>
 				</div>
 			</div>

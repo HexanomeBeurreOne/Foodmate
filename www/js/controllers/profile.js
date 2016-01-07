@@ -16,17 +16,10 @@ angular.module('ProfileController', [])
     $rootScope.choixResto = {};
   }
 
-  $http.get('data/restaurants.json')
-  .success(function(data) {
-    $scope.dataRestos = data.restaurants;
-  })
-  .error(function(err) {
-    alert("Failed reading restaurants.json");
-  });
-
-  $http.get('data/regime.json')
+  $http.get('data/profile.json')
   .success(function(data) {
     $scope.dataRegimes = data.regimes;
+    $scope.dataRestos = data.restaurants;
   })
   .error(function(err) {
     alert("Failed reading restaurants.json");
