@@ -2,8 +2,9 @@
 	"repas" : [
 		{
 			"id" : 0,
-			"timestamp" : 1452163598,
+			"mealTime" : 1452163598,
 			"friendsId" : [1,2,3],
+			"hostId" : 1,
 			"chosenRestaurants" : [
 				{
 					"name" : "RU",
@@ -27,8 +28,9 @@
 		},
 		{
 			"id" : 1,
-			"timestamp" : 1452163598,
+			"mealTime" : 1452163598,
 			"friendsId" : [1,2,3],
+			"hostId" : 2,
 			"chosenRestaurants" : [
 				{
 					"name" : "RU",
