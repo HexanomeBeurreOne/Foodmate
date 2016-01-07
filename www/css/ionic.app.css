@@ -9322,7 +9322,9 @@ a.button {
   padding: 0px !important; }
 
 .login-page {
-  background-color: #fd7626; }
+  background-color: #fd7626;
+  min-height: 100%;
+  margin: 0; }
 
 .card-facebook {
   background-color: #3b5998; }
@@ -9352,9 +9354,8 @@ a.button {
   display: inline-block; }
 
 .login-separator {
-  border-top: 1px solid #000;
-  width: 30%;
-  height: 1px; }
+  text-align: center;
+  color: white; }
 
 .list-login {
   margin: 10px 20px; }
@@ -9364,3 +9365,8 @@ a.button {
 .login-logo {
   max-width: 100%;
   padding: 20px 30px; }
+
+.button-login {
+  margin: 10px 20px;
+  border-radius: 3px;
+  color: #fd7626; }
