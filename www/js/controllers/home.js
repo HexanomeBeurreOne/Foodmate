@@ -3,6 +3,10 @@
 
 angular.module('HomeController', [])
 
-    .controller('HomeCtrl', function ($scope, $rootScope) {
-      $scope.viewName= "Foodmate Home"
+    .controller('HomeCtrl', function ($scope, $rootScope, $ionicHistory) {
+      $scope.viewName= "Foodmate Home";
+
+      $ionicHistory.nextViewOptions({
+	    disableBack: true
+	  });
     });
