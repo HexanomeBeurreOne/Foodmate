@@ -3,7 +3,7 @@
 
 angular.module('RepasController', [])
 
-    .controller('RepasCtrl', ['$scope', '$rootScope', '$http', '$stateParams', function ($scope, $rootScope, $http, $stateParams) {
+    .controller('RepasCtrl', ['$scope', '$rootScope', '$http', '$state', '$stateParams', function ($scope, $rootScope, $http, $state, $stateParams) {
 
       $scope.viewName= "Repas";
       $rootScope.currentMealId = $stateParams.id;
@@ -43,5 +43,4 @@ angular.module('RepasController', [])
 			$rootScope.mealModification = true;
 			$state.go('app.friends');
 		};
-    }
   }]);
