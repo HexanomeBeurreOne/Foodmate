@@ -3,7 +3,7 @@
 
 angular.module('FriendsController', [])
 
-    .controller('FriendsCtrl', function ($scope, $rootScope, $http) {
+    .controller('FriendsCtrl', function ($scope, $rootScope, $http, $state) {
     	$scope.mealModification = $rootScope.mealModification;
     	$scope.currentMealId = $rootScope.currentMealId;
 
@@ -88,6 +88,11 @@ angular.module('FriendsController', [])
 			alert($scope.query);
 
 		};*/
+
+		//Rooting vers repas
+		$scope.goToRepas = function() {
+			$state.go('app.repas');
+		};
 
     });
     
