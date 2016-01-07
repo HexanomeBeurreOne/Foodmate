@@ -1,5 +1,33 @@
-	<ion-view view-title="Accueil">
-	    <ion-content>
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Connexion</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeLogin()">Fermer</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+  <img src="../img/logo_repas.jpg" class="center special-size">
+    <form ng-submit="doLogin()">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Nom utilisateur</span>
+          <input type="text" ng-model="loginData.username">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Mot de passe</span>
+          <input type="password" ng-model="loginData.password">
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Se connecter</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>
+
+
+<!--   <ion-modal-view>
+    <ion-content>
 
         <img src="../img/logo_repas.jpg" class="center special-size">
 
@@ -24,9 +52,9 @@
           </div>
            <div class="item item-text-wrap">
              <button class="button button-outline orange-border">
-							 <div class="orange">
+             <div class="orange">
                  <b>INSA</b>
-							 </div>
+             </div>
              </button>
              <button class="button button-outline">
                <i class="icon ion-social-facebook orange"></i>
@@ -37,5 +65,6 @@
            </div>
          </div>
 
-		</ion-content>
-	</ion-view>
+  </ion-content>
+</ion-modal-view>
+ -->

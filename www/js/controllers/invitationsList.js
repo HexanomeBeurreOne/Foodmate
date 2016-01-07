@@ -4,13 +4,43 @@
 angular.module('InvitationsListController', [])
   
 
-    .controller('InvitationsListCtrl', function ($scope, $rootScope, $location, $ionicNavBarDelegate) {
+    .controller('InvitationsListCtrl', function ($scope, $rootScope, $ionicModal, $timeout) {
 
-      var path = $location.path();
-       if (path.indexOf('list-invitations') != -1)
-         $ionicNavBarDelegate.showBackButton(false);
-       else
-         $ionicNavBarDelegate.showBackButton(true);
+
+   
+
+      // Form data for the login modal
+    $scope.loginData = {};
+
+    // Create the login modal that we will use later
+    $ionicModal.fromTemplateUrl('views/connexion.html', {
+      scope: $scope
+    }).then(function(modal) {
+      $scope.modal = modal;
+    });
+
+    // Triggered in the login modal to close it
+    $scope.closeLogin = function() {
+      $scope.modal.hide();
+    };
+
+    // Open the login modal
+    $scope.login = function() {
+      $scope.modal.show();
+    };
+
+    // Perform the login action when the user submits the login form
+    $scope.doLogin = function() {
+      console.log('Doing login', $scope.loginData);
+
+      // Simulate a login delay. Remove this and replace with your login
+      // code if using a login system
+      $timeout(function() {
+        $scope.closeLogin();
+      }, 1000);
+    };
+
+      
 
       $scope.invitations = [
         {
