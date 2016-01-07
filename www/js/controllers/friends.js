@@ -5,12 +5,12 @@ angular.module('FriendsController', [])
 
     .controller('FriendsCtrl', function ($scope, $rootScope, $http) {
     	//Creation de groupes fictifs
-    	$http.get('data/friendGroups.json')
+    	$http.get('data/profile.json')
 			.success(function(data) {
 				$scope.groups = data.groups;
 			})
 			.error(function(err) {
-				alert("Failed reading friendGroups.json")
+				alert("Failed reading profile.json")
 			});
 
     	// Creations de d'amis fictifs

@@ -1,0 +1,29 @@
+{
+  "regimes" : ["Halal", "Cacher", "Sans sel", "Sans arachide", "Sans gluten"],
+  "restaurants" : [
+    {
+      "type" : "Restaurants Universitaires",
+      "nom" : ["RU Jussieu", "Grillon"]
+    },
+    {
+      "type" : "Snacks",
+      "nom" : ["Quick", "Hammamet"]
+    },
+    {
+      "type" : "Restaurants",
+      "nom" : ["Popotte and Co", "La Mère Jean"]
+    }
+  ],
+  "groups" : [
+    {
+      "name" : "Sport'Et",
+      "picture" : "img/groups/sportet.jpg",
+      "members" : [{"id" : 2}, {"id" : 3}]
+    },
+    {
+      "name" : "Hexa",
+      "picture" : "img/groups/hexa.jpg",
+      "members" : [{"id" : 0}, {"id" : 1}, {"id" : 2}, {"id" : 3}]
+    }
+  ]
+}

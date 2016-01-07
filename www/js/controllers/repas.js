@@ -7,20 +7,29 @@ angular.module('RepasController', [])
       $scope.viewName= "Repas";
 
       // Creations du classement fictifs
-	    $http.get('data/chosenRestaurants.json')
+	    $http.get('data/restos.json')
 			.success(function(data) {
-				$scope.chosenRestaurants = data.chosenRestaurants;
+				$scope.restos = data.restos;
 			})
 			.error(function(err) {
 				alert("Failed reading chosenRestaurants.json")
-			});
+		});
 
-		// Creations des amis fictifs du repas
-	    $http.get('data/mealFriends.json')
+		// Recuperation du repas
+	    $http.get('data/repas.json')
 			.success(function(data) {
-				$scope.mealFriends = data.mealFriends;
+				$scope.repas = data.repas;
 			})
 			.error(function(err) {
-				alert("Failed reading mealFriends.json")
-			});
+				alert("Failed reading repas.json")
+		});
+
+		// Recuperation des contacts
+	    $http.get('data/contacts.json')
+			.success(function(data) {
+				$scope.contacts = data.contacts;
+			})
+			.error(function(err) {
+				alert("Failed reading contacts.json")
+		});
     });
