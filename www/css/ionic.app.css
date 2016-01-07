@@ -9321,6 +9321,9 @@ a.button {
 .no-padding {
   padding: 0px !important; }
 
+.login-page {
+  background-color: #fd7626; }
+
 .card-facebook {
   background-color: #3b5998; }
 
@@ -9352,3 +9355,12 @@ a.button {
   border-top: 1px solid #000;
   width: 30%;
   height: 1px; }
+
+.list-login {
+  margin: 10px 20px; }
+  .list-login input {
+    margin-left: 10px; }
+
+.login-logo {
+  max-width: 100%;
+  padding: 20px 30px; }
