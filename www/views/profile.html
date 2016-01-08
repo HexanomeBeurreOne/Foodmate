@@ -18,11 +18,11 @@
       </div>
       <a class="item item-icon-left" href="#">
         <i class="icon ion-person"></i>
-        Cyril Canete
+        {{details.name}}
       </a>
       <a class="item item-icon-left" href="#">
         <i class="icon ion-email"></i>
-        cyril.canete@gmail.com
+        {{details.mail}}
       </a>
       <a class="item item-icon-left" href="#">
         <i class="icon ion-locked"></i>
@@ -34,11 +34,11 @@
       </div>
       <a class="item item-icon-left" href="#">
         <i class="icon ion-social-facebook"></i>
-        Cyril Canete
+        {{details.facebook ? details.facebook : "Lier un compte Facebook"}}
       </a>
       <a class="item item-icon-left" href="#">
         <i class="icon ion-social-google"></i>
-        Lier un compte google
+        {{details.google ? details.google : "Lier un compte Google"}}
       </a>
 
       <div class="item item-divider">
