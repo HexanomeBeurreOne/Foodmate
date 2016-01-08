@@ -3,8 +3,9 @@
 
 angular.module('ProfileController', [])
 
-.controller('ProfileCtrl', function ($scope, $rootScope, $http) {
+.controller('ProfileCtrl', function ($scope, $rootScope, $http, $state) {
   $scope.viewName = "Profil";
+
   $scope.prefRegime = true;
   $scope.prefResto = false;
 
@@ -34,4 +35,10 @@ angular.module('ProfileController', [])
     $scope.prefRegime = false;
     $scope.prefResto = true;
   };
+
+  $scope.doLogout = function() {
+    $rootScope.logged = false;
+    $state.go('app.invitations-list');
+  };
+
 });
