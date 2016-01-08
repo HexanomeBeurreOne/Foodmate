@@ -1,5 +1,4 @@
 # Foodmate
-=====================
 Ionic project to schedule meals with friends 
 
 ### Run this project
