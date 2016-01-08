@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 
-angular.module('foodmate', ['ionic', 'ConnexionController', 'InvitationsListController', 'FriendsController', 'ProfileController', 'ProfileAlimentController', 'ChoixMenusController', 'RepasController'])
+angular.module('foodmate', ['ionic', 'ConnexionController', 'InvitationsListController', 'FriendsController', 'ProfileController', 'ProfileAlimentController', 'ProfileRestauController', 'ChoixMenusController', 'RepasController'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -56,6 +56,15 @@ angular.module('foodmate', ['ionic', 'ConnexionController', 'InvitationsListCont
       }
     }
   })
+  .state('app.profile-restau', {
+     url: '/home/profile/restau',
+     views: {
+       'app': {
+         templateUrl: 'views/profile-restau.html',
+         controller: 'ProfileRestauCtrl'
+       }
+     }
+   })
  .state('app.invitations-list', {
     url: '/home/list-invitations',
     views: {

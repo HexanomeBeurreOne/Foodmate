@@ -6,15 +6,16 @@
   </ion-nav-buttons>
 
   <ion-content>
-
-      <ion-list>
-        <div class="item item-divider">
-          Sélectionnez vos préférences alimentaires
-        </div>
-        <div ng-repeat="regime in dataRegimes">
-          <ion-checkbox ng-model="choixRegime[regime]">{{regime}}</ion-checkbox>
-        </div>
-      </ion-list>
+    <div class="card">
+      <div class="item item-text-wrap">
+        Veuillez sélectionner vos préférences alimentaires
+      </div>
+    </div>
+    <ion-list>
+      <div ng-repeat="regime in dataRegimes">
+        <ion-checkbox ng-model="choixRegime[regime]">{{regime}}</ion-checkbox>
+      </div>
+    </ion-list>
 
 	</ion-content>
 </ion-view>
