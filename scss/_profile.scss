@@ -5,3 +5,14 @@
 .list-profile > .item-divider {
   text-align: left;
 }
+
+.profile.profile-image {
+  background-color: white;
+}
+
+.profile-image > img {
+    object-fit: cover;
+    width: 100%;
+    border-radius: 100%;
+    border: 2px solid white;
+}
