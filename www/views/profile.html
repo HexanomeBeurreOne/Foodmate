@@ -1,4 +1,10 @@
 <ion-view view-title="Profil">
+  <ion-nav-buttons side="secondary">
+    <button class="button button-clear button-positive" ng-click="doLogout()">
+          Déconnexion
+    </button>
+  </ion-nav-buttons>
+
   <div class="has-tabs-top tabs-striped tabs-top tabs-background-positive tabs-color-light">
 	    <div class="tabs">
 	      <a class="tab-item" ng-click="afficherRegime()" ng-class="{active: prefRegime}">
