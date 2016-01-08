@@ -1,4 +1,11 @@
 {
+  "details" : {
+    "name" : "Victor Mcbernite",
+    "mail" : "victor.mcbernite@insa-lyon.fr",
+    "facebook" : "Victor McBernite",
+    "google" : null,
+    "picture" : "img/friends/cyril.jpg"
+  },
   "regimes" : ["Halal", "Cacher", "Sans sel", "Sans arachide", "Sans gluten"],
   "restaurants" : [
     {

@@ -1,0 +1,28 @@
+<ion-view view-title="Préférences Restaurants">
+  <ion-nav-buttons side="secondary">
+    <button class="button button-clear button-balanced" ng-click="">
+          Sauvegarder
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content>
+    <div class="card">
+      <div class="item item-text-wrap">
+        Veuillez sélectionner vos restaurants préférés
+      </div>
+    </div>
+    <ion-list>
+      <div ng-repeat="typeResto in dataRestos">
+
+        <div class="item item-divider">
+          {{typeResto.type}}
+        </div>
+
+        <div ng-repeat="resto in typeResto.nom">
+          <ion-checkbox ng-model="choixResto[typeResto.type][resto]">{{resto}}</ion-checkbox>
+        </div>
+
+      </div>
+    </ion-list>
+	</ion-content>
+</ion-view>

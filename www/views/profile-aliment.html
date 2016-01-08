@@ -1,0 +1,21 @@
+<ion-view view-title="Préférences alimentaires">
+  <ion-nav-buttons side="secondary">
+    <button class="button button-clear button-balanced" ng-click="">
+          Sauvegarder
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content>
+    <div class="card">
+      <div class="item item-text-wrap">
+        Veuillez sélectionner vos préférences alimentaires
+      </div>
+    </div>
+    <ion-list>
+      <div ng-repeat="regime in dataRegimes">
+        <ion-checkbox ng-model="choixRegime[regime]">{{regime}}</ion-checkbox>
+      </div>
+    </ion-list>
+
+	</ion-content>
+</ion-view>
