@@ -7,6 +7,6 @@ angular.module('HomeController', [])
       $scope.viewName= "Foodmate Home";
 
       $ionicHistory.nextViewOptions({
-	    disableBack: true
-	  });
+	       disableBack: true
+      });
     });
