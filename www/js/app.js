@@ -29,7 +29,7 @@ angular.module('foodmate', ['ionic', 'ConnexionController', 'InvitationsListCont
   })
 
    .state('app.repas', {
-      url: '/home/repas',
+      url: '/home/repas/:id',
       views: {
         'app': {
           templateUrl: 'views/repas.html',

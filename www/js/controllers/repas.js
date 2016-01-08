@@ -3,32 +3,44 @@
 
 angular.module('RepasController', [])
 
-    .controller('RepasCtrl', function ($scope, $rootScope, $http, $location, $ionicNavBarDelegate) {
-
-    	var path = $location.path();
-       if (path.indexOf('list-invitations') != -1)
-         $ionicNavBarDelegate.showBackButton(false);
-       else
-         $ionicNavBarDelegate.showBackButton(true);
-
+    .controller('RepasCtrl', ['$scope', '$rootScope', '$http', '$state', '$stateParams', function ($scope, $rootScope, $http, $state, $stateParams) {
 
       $scope.viewName= "Repas";
+      $rootScope.currentMealId = $stateParams.id;
+      $scope.currentMealId = $rootScope.currentMealId;
 
-      // Creations du classement fictifs
-	    $http.get('data/chosenRestaurants.json')
+      // Recuperation des restaurants
+	    $http.get('data/restos.json')
 			.success(function(data) {
-				$scope.chosenRestaurants = data.chosenRestaurants;
+				$scope.restos = data.restos;
 			})
 			.error(function(err) {
 				alert("Failed reading chosenRestaurants.json")
-			});
+		});
 
-		// Creations des amis fictifs du repas
-	    $http.get('data/mealFriends.json')
+		// Recuperation du repas
+	    $http.get('data/repas.json')
 			.success(function(data) {
-				$scope.mealFriends = data.mealFriends;
+				$scope.repas = data.repas;
+				$rootScope.repas = $scope.repas;
 			})
 			.error(function(err) {
-				alert("Failed reading mealFriends.json")
-			});
-    });
+				alert("Failed reading repas.json")
+		});
+
+		// Recuperation des contacts
+	    $http.get('data/contacts.json')
+			.success(function(data) {
+				$scope.contacts = data.contacts;
+			})
+			.error(function(err) {
+				alert("Failed reading contacts.json")
+		});
+
+		//Fonction d'ajout d'un ami au repas
+		$scope.addNewFriendToMeal = function() {
+			$rootScope.currentMealId = 0;
+			$rootScope.mealModification = true;
+			$state.go('app.friends');
+		};
+  }]);

@@ -9320,3 +9320,79 @@ a.button {
 
 .no-padding {
   padding: 0px !important; }
+
+.friend-avatar-big {
+  object-fit: cover;
+  display: block;
+  border-radius: 100%;
+  margin-top: 10px;
+  max-width: 140px;
+  max-height: 140px; }
+
+.blue-glow {
+  animation: pulseblue 0.9s infinite alternate; }
+
+@keyframes pulseblue {
+  from {
+    box-shadow: 0px 0px 2px 2px #0066cc; }
+  to {
+    box-shadow: 0px 0px 4px 4px #0066cc; } }
+
+.green-glow {
+  animation: pulsegreen 1.1s infinite alternate; }
+
+@keyframes pulsegreen {
+  from {
+    box-shadow: 0px 0px 2px 2px #27ae60; }
+  to {
+    box-shadow: 0px 0px 4px 4px #27ae60; } }
+
+.login-page {
+  background-color: #fd7626;
+  min-height: 100%;
+  margin: 0; }
+
+.card-facebook {
+  background-color: #3b5998; }
+
+.card-google {
+  background-color: #d9432f; }
+
+.card-insa {
+  background-color: #5f6062; }
+
+.card-login {
+  color: white;
+  text-align: center;
+  min-height: 30px;
+  padding-top: 5px;
+  font-family: helvetica;
+  margin: 10px 20px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3); }
+
+.card-login > * {
+  display: inline-block; }
+
+.login-separator-wrapper {
+  margin: 10px 20px; }
+
+.login-separator-wrapper > * {
+  display: inline-block; }
+
+.login-separator {
+  text-align: center;
+  color: white; }
+
+.list-login {
+  margin: 10px 20px; }
+  .list-login input {
+    margin-left: 10px; }
+
+.login-logo {
+  max-width: 100%;
+  padding: 20px 30px; }
+
+.button-login {
+  margin: 10px 20px;
+  border-radius: 3px;
+  color: #fd7626; }

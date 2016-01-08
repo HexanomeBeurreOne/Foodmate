@@ -3,3 +3,31 @@
     padding: 0px !important;
 }
 
+.friend-avatar-big {
+    object-fit: cover;
+    display: block;
+    border-radius: 100%;
+    margin-top: 10px;
+    max-width: 140px;
+    max-height: 140px;
+}
+
+.blue-glow
+{
+	animation:pulseblue 0.9s infinite alternate;
+}
+
+@keyframes pulseblue {
+  from { box-shadow:0px 0px 2px 2px #0066cc; }
+  to { box-shadow:0px 0px 4px 4px #0066cc; }
+}
+
+.green-glow
+{
+	animation:pulsegreen 1.1s infinite alternate;
+}
+
+@keyframes pulsegreen {
+  from { box-shadow:0px 0px 2px 2px #27ae60; }
+  to { box-shadow:0px 0px 4px 4px #27ae60; }
+}

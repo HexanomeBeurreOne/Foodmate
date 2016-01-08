@@ -1,46 +1,49 @@
 {
 	"contacts" : [
 		{
+			"id" : 0,
 			"name" : "Victor",
 			"description" : "Allergique Gluten #Fragile",
-			"picture" : "img/images.jpg",
+			"picture" : "img/friends/victor.jpg",
 			"contactIcon" : "ion-plus-circled",
-			"buttonColor" : "grey"
+			"buttonColor" : "grey",
+			"disable" : false
 		},
 		{
+			"id" : 1,
 			"name" : "Cyril",
 			"description" : "Back off, man. I'm a scientist.",
-			"picture" : "img/images.jpg",
+			"picture" : "img/friends/cyril.jpg",
 			"contactIcon" : "ion-plus-circled",
-			"buttonColor" : "grey"
+			"buttonColor" : "grey",
+			"disable" : false
 		},
 		{
+			"id" : 2,
 			"name" : "Gui",
 			"description" : "I'm GUI!",
-			"picture" : "img/images.jpg",
+			"picture" : "img/friends/gui.jpg",
 			"contactIcon" : "ion-plus-circled",
-			"buttonColor" : "grey"
+			"buttonColor" : "grey",
+			"disable" : false
 		},
 		{
-			"name" : "Gui",
-			"description" : "I'm GUI!",
-			"picture" : "img/images.jpg",
+			"id" : 3,
+			"name" : "Quentin",
+			"description" : "J'ai toefl",
+			"picture" : "img/friends/quentin.jpg",
 			"contactIcon" : "ion-plus-circled",
-			"buttonColor" : "grey"
+			"buttonColor" : "grey",
+			"disable" : false
 		},
 		{
-			"name" : "Gui",
-			"description" : "I'm GUI!",
-			"picture" : "img/images.jpg",
+			"id" : 4,
+			"name" : "Gatien",
+			"description" : "J'suis un malade!",
+			"picture" : "img/friends/gatien.jpg",
 			"contactIcon" : "ion-plus-circled",
-			"buttonColor" : "grey"
-		},
-		{
-			"name" : "Gui",
-			"description" : "I'm GUI!",
-			"picture" : "img/images.jpg",
-			"contactIcon" : "ion-plus-circled",
-			"buttonColor" : "grey"
+			"buttonColor" : "grey",
+			"disable" : false
 		}	
 	]
 }
