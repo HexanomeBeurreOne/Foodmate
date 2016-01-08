@@ -4,18 +4,44 @@
 angular.module('InvitationsListController', [])
   
 
-    .controller('InvitationsListCtrl', function ($scope, $rootScope, $http, $ionicModal, $timeout) {
+  .controller('InvitationsListCtrl', function ($scope, $rootScope, $http, $ionicModal, $timeout, $state) {
 
-      // Form data for the login modal
+
+    $scope.goToProfileView = function () {
+      $state.go('app.profile');
+    };
+
+    // fonction qui s'effectue à chaque fois que l'on arrive sur la vue sans problèmes
+    $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
+
+      // on regarde dans le rootScope si l'utilisateur est connecté ou pas
+      // si le rootScope n'a pas encore été défini on attribue par défaut la valeur false
+      $scope.logged = $rootScope.logged ? $rootScope.logged : false;
+
+      // lorsque le controleur a terminé de charger la Modal (asynchrone)
+      $timeout(function(){
+
+        // si l'utilisateur est déconnecté
+        if($scope.logged===false) {
+          // on affiche la modal de connexion
+          $scope.modal.show();
+        }  
+       },0)
+    })
+ 
+    // Form data for the login modal
     $scope.loginData = {};
 
     // Create the login modal that we will use later
     $ionicModal.fromTemplateUrl('views/connexion.html', {
-      scope: $scope
+      scope: $scope,
+      focusFirstInput: true,
+      backdropClickToClose: false,
+      hardwareBackButtonClose: false
     }).then(function(modal) {
       $scope.modal = modal;
     });
-
+   
     // Triggered in the login modal to close it
     $scope.closeLogin = function() {
       $scope.modal.hide();
@@ -28,7 +54,10 @@ angular.module('InvitationsListController', [])
 
     // Perform the login action when the user submits the login form
     $scope.doLogin = function() {
-      console.log('Doing login', $scope.loginData);
+      //console.log('Doing login', $scope.loginData);
+
+      $scope.logged = true;
+      $rootScope.logged = true;
 
       // Simulate a login delay. Remove this and replace with your login
       // code if using a login system
@@ -37,34 +66,34 @@ angular.module('InvitationsListController', [])
       }, 1000);
     };
 
-  		// Recuperation du repas
-	    $http.get('data/repas.json')
-			.success(function(data) {
-				$scope.invitations = data.repas;
-			})
-			.error(function(err) {
-				alert("Failed reading repas.json")
-  		});
+		// Recuperation du repas
+    $http.get('data/repas.json')
+		.success(function(data) {
+			$scope.invitations = data.repas;
+		})
+		.error(function(err) {
+			alert("Failed reading repas.json")
+		});
 
-  		// Recuperation des contacts
-	    $http.get('data/contacts.json')
-			.success(function(data) {
-				$scope.contacts = data.contacts;
-			})
-			.error(function(err) {
-				alert("Failed reading contacts.json")
-  		});
+		// Recuperation des contacts
+    $http.get('data/contacts.json')
+		.success(function(data) {
+			$scope.contacts = data.contacts;
+		})
+		.error(function(err) {
+			alert("Failed reading contacts.json")
+		});
 
-      $scope.getTime = function (timestamp) {
-        var date = new Date(1000*timestamp);
-        var hours = date.getHours();
-        var minutes = date.getMinutes();
-        var time = hours + ":" + minutes;
-        return time;
-      }
+    $scope.getTime = function (timestamp) {
+      var date = new Date(1000*timestamp);
+      var hours = date.getHours();
+      var minutes = date.getMinutes();
+      var time = hours + ":" + minutes;
+      return time;
+    }
 
-      $scope.getInvitationUrl= function (id) {
-        var url = '#/app/home/repas/' + id;
-        return url;
-      }
-    });
+    $scope.getInvitationUrl= function (id) {
+      var url = '#/app/home/repas/' + id;
+      return url;
+    }
+  });
