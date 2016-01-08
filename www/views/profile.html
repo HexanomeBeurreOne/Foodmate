@@ -44,40 +44,15 @@
       <div class="item item-divider">
         Vos préférences
       </div>
-      <a class="item item-icon-left" href="#">
+      <a class="item item-icon-left" href="#/app/home/profile/aliment">
         <i class="icon ion-fork"></i>
-        Allergies
+        Modifier préférences alimentaires
       </a>
       <a class="item item-icon-left" href="#">
         <i class="icon ion-location"></i>
-        Restaurants
+        Modifier restaurants favoris
       </a>
-
     </div>
 
-		<div ng-show="prefRegime">
-      <div class="list">
-        <div ng-repeat="regime in dataRegimes">
-          <ion-checkbox ng-model="choixRegime[regime]">{{regime}}</ion-checkbox>
-        </div>
-	    </div>
-    </div>
-
-		<div ng-show="prefResto">
-      <div class="list">
-        <div ng-repeat="typeResto in dataRestos">
-
-          <div class="item item-divider">
-            {{typeResto.type}}
-          </div>
-
-          <div ng-repeat="resto in typeResto.nom">
-            <ion-checkbox ng-model="choixResto[typeResto.type][resto]">{{resto}}</ion-checkbox>
-          </div>
-
-        </div>
-	    </div>
-
-		</div>
 	</ion-content>
 </ion-view>
