@@ -23,6 +23,15 @@ angular.module('RepasController', [])
 		$scope.selectedResto = $rootScope.selectedResto ? $rootScope.selectedResto[0].restoName : "Aucun restaurant selectionné";
 	});
 
+	$scope.responseMeal = function (response) {
+		$scope.repas.pending = false;
+		$scope.repas.going = response;
+	}
+
+	$scope.waitMeal = function () {
+		$scope.repas.pending = true;
+		$scope.repas.going = null;
+	}
 
 	//Fonction d'ajout d'un ami au repas
 	$scope.addNewFriendToMeal = function() {

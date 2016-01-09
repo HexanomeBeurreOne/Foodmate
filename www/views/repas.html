@@ -3,15 +3,15 @@
       <div class="list card">
         <div class="item item-icon-right">
           <h2>Demain - 18:30</h2>
-          <i class="icon ion-help-circled" style="color:orange" ng-if="repas.pending"></i>
-          <i class="icon ion-checkmark-circled" style="color:green" ng-if="!repas.pending && repas.going"></i>
-          <i class="icon ion-close-circled" style="color:red" ng-if="!repas.pending && !repas.going"></i>
+          <i class="icon ion-help-circled" style="color:orange" ng-if="repas.pending" ng-click="waitMeal()"></i>
+          <i class="icon ion-checkmark-circled" style="color:green" ng-if="!repas.pending && repas.going" ng-click="waitMeal()"></i>
+          <i class="icon ion-close-circled" style="color:red" ng-if="!repas.pending && !repas.going" ng-click="waitMeal()"></i>
         </div>
         <div class="item" ng-if="repas.pending">
-          <button class="button button-light button-repas">
+          <button class="button button-light button-repas" ng-click="responseMeal(true)">
             Accepter
           </button>
-          <button class="button button-light button-repas">
+          <button class="button button-light button-repas" ng-click="responseMeal(false)">
             Refuser
           </button>
         </div>
@@ -20,10 +20,10 @@
           <h3>Choix restaurant</h3>
         </div>
         <div class="item">
-          <div class="row">
-            <span class="col card no-padding"  ng-repeat="restaurant in repas.chosenRestaurants | orderBy:'+rank'">
+          <div class="row container-resto">
+            <span class="col card card-resto"  ng-repeat="restaurant in repas.chosenRestaurants | orderBy:'+rank'">
               <div class="item item-image">
-                <img src="{{restos[restaurant.id].picture}}">
+                <img class="img-resto" src="{{restos[restaurant.id].picture}}">
               </div>
               <div class="item item-divider">
                 <h4>{{restos[restaurant.id].name}}</h4>
@@ -31,11 +31,16 @@
               </div>
             </span>
           </div>
-          <p> Gérer votre choix </p>
+          <div class="card no-margin">
+            <a href="#/app/home/choix-menus" class="item item-icon-right">
+             <i class="icon ion-arrow-right-b"></i>
+             Choisir vos restaurants
+           </a>
+         </div>
         </div>
 
         <div class="item item-divider item-icon-right">
-          <i class="icon ion-plus-circled" style="color:green" ng-click="addNewFriendToMeal()"></i>
+          <i class="icon ion-plus-circled icon-add-participant" ng-click="addNewFriendToMeal()"></i>
           <h3>Participants</h3>
         </div>
         <div class="item">
