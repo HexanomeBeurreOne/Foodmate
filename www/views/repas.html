@@ -10,7 +10,7 @@
 		  			<div class="card row-down no-padding">
 						<a href="#/app/home/choix-menus" class="item item-icon-left">
 					    	<i class="icon ion-ios-location"></i>
-					    	<div><b>Resto Universitaire</b></div><!-- ******************* TODO : UNMOCK ************************* -->
+					    	<div><b>{{selectedResto}}</b></div><!-- ******************* TODO : UNMOCK ************************* -->
 					  	</a>
 					</div>
 		  			<div class="card row-top no-padding">
@@ -25,7 +25,7 @@
 				   		<div><b>Restaurants choisis par vos amis</b></div>
 			  		</div>
 			  		<div class="row">
-			  			<span class="col card no-padding"  ng-repeat="restaurant in restos | orderBy:'+rank'">
+			  			<span class="col card no-padding"  ng-repeat="restaurant in repas[currentMealId].chosenRestaurants | orderBy:'+rank'">
 								<div class="item item-divider">
 								{{restaurant.rank}}e | {{restaurant.votes}} p.
 								</div>

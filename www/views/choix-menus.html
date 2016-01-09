@@ -1,11 +1,18 @@
 <ion-view view-title="Choix menus">
+
+	<ion-nav-buttons side="secondary">
+      <button class="button button-clear button-positive" ng-click="valider()">
+        Valider
+      </button>
+    </ion-nav-buttons>
+
 	<div class="has-tabs-top tabs-striped tabs-top tabs-background-positive tabs-color-light">
 	    <div class="tabs">
 	      <a class="tab-item" ng-click="selected=menus" ng-class="{active: selected == menus}" href>
 	        Menus
 	      </a>
 
-	      <a class="tab-item" ng-click="selected=!menus" ng-class="{active: selected == !menus}" href=>
+	      <a class="tab-item" ng-click="selected=!menus" ng-class="{active: selected == !menus}" href>
 	        Restaurants
 	      </a>
 	    </div>
