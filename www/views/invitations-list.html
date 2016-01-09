@@ -1,13 +1,10 @@
 <ion-view view-title="Liste de vos invitations">
     <ion-nav-buttons side="secondary">
-      <button  ng-if="!logged" class="button button-clear button-positive" ng-click="login()">
-        Se connecter
-      </button>
-      <button  ng-if="logged" class="button button-clear button-positive" ng-click="goToProfileView()">
+      <button class="button button-clear button-positive" ng-click="goToProfileView()">
         Mon compte
       </button>
     </ion-nav-buttons>
-    <ion-content  ng-if="logged" class="has-header">
+    <ion-content class="has-header">
       <div class="list invitation">
         <!-- A div for each day -->
         <div ng-repeat="(day, dailyInvitations) in invitations">
@@ -48,7 +45,7 @@
         <!-- End of a day -->
       </div>
 	</ion-content>
-  <a  ng-if="logged" href="#/app/home/friends">
+  <a href="#/app/home/friends">
     <div class="bar bar-footer bar-balanced">
       <div class="title">Créer une invitation</div>
     </div>
