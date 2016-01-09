@@ -1,8 +1,4 @@
 <ion-view view-title="Invite tes amis">
-    <div class="bar bar-header bar-light">
-		<h1 class="title">Invite tes amis</h1>
-	</div>
-
     <ion-content scrollbar-y="true">
 
 		<div class="list">
@@ -34,7 +30,7 @@
 				  		</button>
 				  		<p style="text-align:center">{{group.name}}</p>
 			  		</div>
-					
+
 					<!-- ****** NEW GROUP ******* -->
 			  		<div style="display:inline-block">
 			  			<button class="button button-icon">
@@ -42,7 +38,7 @@
 				  		</button>
 				  		<p style="text-align:center">Nouveau</p>
 			  		</div>
-			  			
+
 			  	</div>
 			</div>
 			<!-- ******************* FRIENDS ************************* -->
@@ -60,7 +56,7 @@
 			    	<h3 style="margin:10px; font-size:14px; color:grey">Nouveau</h3>
 		  		</button>
 			</div>
-			    
+
 
 			<!-- ****************** AVATARS ********************** -->
 		  	<div class="item item-avatar item-button-right" ng-repeat="contact in contacts | filter:query">
@@ -86,4 +82,3 @@
 			<div ng-show="{{mealModification}}" class="title">Ajouter</div>
 		</button>
 </ion-view>
- 

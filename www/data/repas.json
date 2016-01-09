@@ -9,20 +9,17 @@
 			"going" : true,
 			"chosenRestaurants" : [
 				{
-					"name" : "RU",
-					"picture" : "img/ionic.png",
+					"id" : 0,
 					"rank" : 1,
 					"votes" : 3
 				},
 				{
-					"name" : "Castor & Pollux",
-					"picture" : "img/ionic.png",
+					"id" : 1,
 					"rank" : 3,
 					"votes" : 1
 				},
 				{
-					"name" : "Grillon",
-					"picture" : "img/ionic.png",
+					"id" : 2,
 					"rank" : 2,
 					"votes" : 1
 				}
@@ -37,20 +34,17 @@
 			"going" : null,
 			"chosenRestaurants" : [
 				{
-					"name" : "RU",
-					"picture" : "img/ionic.png",
+					"id" : 0,
 					"rank" : 1,
 					"votes" : 3
 				},
 				{
-					"name" : "Castor & Pollux",
-					"picture" : "img/ionic.png",
+					"id" : 1,
 					"rank" : 3,
 					"votes" : 1
 				},
 				{
-					"name" : "Grillon",
-					"picture" : "img/ionic.png",
+					"id" : 2,
 					"rank" : 2,
 					"votes" : 1
 				}
@@ -65,20 +59,17 @@
 			"going" : null,
 			"chosenRestaurants" : [
 				{
-					"name" : "RU",
-					"picture" : "img/ionic.png",
+					"id" : 0,
 					"rank" : 1,
 					"votes" : 3
 				},
 				{
-					"name" : "Castor & Pollux",
-					"picture" : "img/ionic.png",
+					"id" : 1,
 					"rank" : 3,
 					"votes" : 1
 				},
 				{
-					"name" : "Grillon",
-					"picture" : "img/ionic.png",
+					"id" : 2,
 					"rank" : 2,
 					"votes" : 1
 				}
@@ -93,20 +84,17 @@
 			"going" : null,
 			"chosenRestaurants" : [
 				{
-					"name" : "RU",
-					"picture" : "img/ionic.png",
+					"id" : 0,
 					"rank" : 1,
 					"votes" : 3
 				},
 				{
-					"name" : "Castor & Pollux",
-					"picture" : "img/ionic.png",
+					"id" : 1,
 					"rank" : 3,
 					"votes" : 1
 				},
 				{
-					"name" : "Grillon",
-					"picture" : "img/ionic.png",
+					"id" : 2,
 					"rank" : 2,
 					"votes" : 1
 				}

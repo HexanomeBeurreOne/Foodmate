@@ -1,33 +1,35 @@
+.item-repas {
+  text-align: center;
+}
 
-.no-padding {
+.button-repas {
+  width: 50%;
+  min-height: 10px;
+}
+
+.card-resto {
     padding: 0px !important;
+    margin: 5px;
 }
 
-.friend-avatar-big {
-    object-fit: cover;
-    display: block;
-    border-radius: 100%;
-    margin-top: 10px;
-    max-width: 80px;
-    max-height: 80px;
+.img-resto {
+  height: 65px;
+  object-fit: cover;
 }
 
-.blue-glow
-{
-	animation:pulseblue 0.9s infinite alternate;
+.container-resto {
+  padding: 5px 0px;
 }
 
-@keyframes pulseblue {
-  from { box-shadow:0px 0px 2px 2px #0066cc; }
-  to { box-shadow:0px 0px 4px 4px #0066cc; }
+.container-resto > :first-child {
+  margin-left: 0px;
 }
 
-.green-glow
-{
-	animation:pulsegreen 2.8s infinite ease-in-out;
+.container-resto > :last-child {
+  margin-right: 0px;
 }
 
-@keyframes pulsegreen {
-  0%,5%,95%,100% { box-shadow:0px 0px 1px 1px #00FFA8; }
-  50% { box-shadow:0px 0px 4px 4px #00a2ff; }
+.icon-add-participant {
+  color:green;
+  font-size: 25px!important;
 }
