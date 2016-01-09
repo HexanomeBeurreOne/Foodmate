@@ -12,6 +12,7 @@ angular.module('InvitationsListController', [])
     $http.get('data/repas.json')
     .success(function(data) {
       $rootScope.repas = data.repas;
+      $scope.invitations = data.repas;
     })
     .error(function(err) {
       alert("Failed reading repas.json");
@@ -21,6 +22,7 @@ angular.module('InvitationsListController', [])
     $http.get('data/contacts.json')
     .success(function(data) {
       $rootScope.contacts = data.contacts;
+      $scope.contacts = data.contacts;
     })
     .error(function(err) {
       alert("Failed reading contacts.json");
@@ -44,11 +46,11 @@ angular.module('InvitationsListController', [])
       alert("Failed reading restos.json");
     });
 
-    // fonction qui s'appelle une fois que tous les appels asynchrones ont été effectués
+    /*// fonction qui s'appelle une fois que tous les appels asynchrones ont été effectués
     $timeout(function() {
       $scope.invitations = $rootScope.repas;
       $scope.contacts = $rootScope.contacts;
-    }, 0);
+    }, 0);*/
 
     // fonction pour se rendre sur la vue de profil
     $scope.goToProfileView = function () {
