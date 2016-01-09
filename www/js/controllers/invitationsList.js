@@ -2,7 +2,7 @@
 
 
 angular.module('InvitationsListController', [])
-  
+
 
   .controller('InvitationsListCtrl', function ($scope, $rootScope, $http, $ionicModal, $timeout, $state) {
 
@@ -71,7 +71,6 @@ angular.module('InvitationsListController', [])
         }
        },0);
     });
- 
     // Form data for the login modal
     $scope.loginData = {};
 
@@ -84,7 +83,7 @@ angular.module('InvitationsListController', [])
     }).then(function(modal) {
       $scope.modal = modal;
     });
-   
+
     // Triggered in the login modal to close it
     $scope.closeLogin = function() {
       $scope.modal.hide();
@@ -109,14 +108,6 @@ angular.module('InvitationsListController', [])
       }, 1000);
     };
 
-	
-    $scope.getTime = function (timestamp) {
-      var date = new Date(1000*timestamp);
-      var hours = date.getHours();
-      var minutes = date.getMinutes();
-      var time = hours + ":" + minutes;
-      return time;
-    };
 
     $scope.getInvitationUrl= function (id) {
       var url = '#/app/home/repas/' + id;
@@ -127,5 +118,72 @@ angular.module('InvitationsListController', [])
     $scope.saveMealIndex = function(id) {
       $rootScope.lastMealIndex = id;
     };
+
+
+    $scope.getSortedRepas = function (repas) {
+      var sortedRepas = {};
+      var date;
+      for (var i = 0; i < repas.length; i++) {
+        date = $scope.getFullDate(repas[i].mealTime);
+        if(sortedRepas[date]) {
+          sortedRepas[date].push(repas[i]);
+        }
+        else {
+          sortedRepas[date] = [];
+          sortedRepas[date].push(repas[i]);
+        }
+      }
+      console.log(sortedRepas);
+      return sortedRepas;
+    }
+
+    $scope.getCropedNameFromId = function (id) {
+      var name = $scope.contacts[id].name;
+      var familyName = $scope.contacts[id].name;
+      return name + " " + familyName.substring(0,1);
+
+    }
+
+		// Recuperation du repas
+    $http.get('data/repas.json')
+		.success(function(data) {
+			$scope.invitations = $scope.getSortedRepas(data.repas);
+		})
+		.error(function(err) {
+			alert("Failed reading repas.json")
+		});
+
+		// Recuperation des contacts
+    $http.get('data/contacts.json')
+		.success(function(data) {
+			$scope.contacts = data.contacts;
+		})
+		.error(function(err) {
+			alert("Failed reading contacts.json")
+		});
+
+    $scope.getFullDate = function (timestamp) {
+      var time = $scope.getTime(timestamp);
+      return time.date + " " + time.month + " " + time.year;
+    }
+
+    $scope.getTimeToPrint = function (timestamp) {
+      var time = $scope.getTime(timestamp);
+      return time.hour + ":" + time.min;
+    };
+
+    $scope.getTime = function (UNIX_timestamp){
+      var time = {};
+      var a = new Date(UNIX_timestamp * 1000);
+      var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      time.year = a.getFullYear();
+      time.month = months[a.getMonth()];
+      time.date = a.getDate();
+      time.hour = a.getHours();
+      time.min = a.getMinutes();
+      time.sec = a.getSeconds();
+      return time;
+    }
+
 
   });

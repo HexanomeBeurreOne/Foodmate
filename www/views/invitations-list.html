@@ -7,40 +7,45 @@
         Mon compte
       </button>
     </ion-nav-buttons>
-    <ion-content  ng-if="logged">
+    <ion-content  ng-if="logged" class="has-header">
       <div class="list invitation">
-        <div class="item item-divider">
-          Aujourd'hui
+        <!-- A div for each day -->
+        <div ng-repeat="(day, dailyInvitations) in invitations">
+          <div class="item item-divider">
+            {{day}}
+          </div>
+          <!-- Begin of a meal -->
+          <a ng-repeat="invitation in dailyInvitations" class="item invitation" href="#/app/home/repas/{{invitation.id}}">
+            <div class="invitation-header">
+              <div class "invitation-hour">
+                <span>{{getTimeToPrint(invitation.mealTime)}}</span>
+              </div>
+              <div class "invitation-state">
+                <span ng-if="invitation.pending">
+                  <i class="icon ion-help-circled" style="color:orange"></i>
+                  <span> {{getCropedNameFromId(invitation.hostId)}} vous a invité</span>
+                </span>
+                <span ng-if="!invitation.pending && invitation.going">
+                  <i class="icon ion-checkmark-circled" style="color:green"></i>
+                  <span> Invitation de {{getCropedNameFromId(invitation.hostId)}} acceptée </span>
+                </span>
+                <span ng-if="!invitation.pending && !invitation.going">
+                  <i class="icon ion-close-circled" style="color:red"></i>
+                  <span> Invitation de {{getCropedNameFromId(invitation.hostId)}} refusée </span>
+               </span>
+              </div>
+            </div>
+            <div class="invitation-friends">
+              <img class="friend-avatar friend-item" src="{{contacts[invitation.hostId].picture}}">
+              <div class="friend-separator friend-item"></div>
+              <div ng-repeat="friendId in invitation.friendsId">
+                <img class="friend-avatar friend-item" src="{{contacts[friendId].picture}}">
+              </div>
+            </div>
+          </a>
+          <!-- End of a meal -->
         </div>
-        <!-- TODO: Link an invitation, /invitation/id-->
-        <a ng-repeat="invitation in invitations" class="item invitation" href="{{getInvitationUrl(invitation.id)}}" ng-click="saveMealIndex(invitation.id)">
-          <div class="invitation-header">
-            <div class "invitation-hour">
-              <span>{{getTime(invitation.mealTime)}}</span>
-            </div>
-            <div class "invitation-state">
-              <span ng-if="invitation.pending">
-                <i class="icon ion-help-circled" style="color:orange"></i>
-                <span> Invitation en attente </span>
-              </span>
-              <span ng-if="!invitation.pending && invitation.going">
-                <i class="icon ion-checkmark-circled" style="color:green"></i>
-                <span> Invitation acceptée </span>
-              </span>
-              <span ng-if="!invitation.pending && !invitation.going">
-                <i class="icon ion-close-circled" style="color:red"></i>
-                <span> Invitation refusée </span>
-             </span>
-            </div>
-          </div>
-          <div class="invitation-friends">
-            <img class="friend-avatar friend-item" src="{{contacts[invitation.hostId].picture}}">
-            <div class="friend-separator friend-item"></div>
-            <div ng-repeat="friendId in invitation.friendsId">
-              <img class="friend-avatar friend-item" src="{{contacts[friendId].picture}}">
-            </div>
-          </div>
-        </a>
+        <!-- End of a day -->
       </div>
 	</ion-content>
   <a  ng-if="logged" href="#/app/home/friends">
@@ -50,16 +55,3 @@
   </a>
 
 </ion-view>
-
-
-<!-- <ion-view view-title="Accueil" ng-if="!logged">
-  <ion-nav-buttons side="secondary">
-      <button class="button button-light" ng-click="login()">
-        Se connecter
-      </button>
-  </ion-nav-buttons>
-  <ion-content>
-    <h1 class="text-center">Aucun utilisateur connecté.</h1>
-    <h2 class="text-center">Veuillez vous connecter.</h2>
-  </ion-content>
-</ion-view> -->

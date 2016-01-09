@@ -83,6 +83,34 @@
 					"votes" : 1
 				}
 			]
+		},
+		{
+			"id" : 3,
+			"mealTime" : 1452567598,
+			"friendsId" : [1,2,3],
+			"hostId" : 3,
+			"pending" : true,
+			"going" : null,
+			"chosenRestaurants" : [
+				{
+					"name" : "RU",
+					"picture" : "img/ionic.png",
+					"rank" : 1,
+					"votes" : 3
+				},
+				{
+					"name" : "Castor & Pollux",
+					"picture" : "img/ionic.png",
+					"rank" : 3,
+					"votes" : 1
+				},
+				{
+					"name" : "Grillon",
+					"picture" : "img/ionic.png",
+					"rank" : 2,
+					"votes" : 1
+				}
+			]
 		}
 	]
 }
