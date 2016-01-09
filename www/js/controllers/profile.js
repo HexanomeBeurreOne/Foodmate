@@ -6,15 +6,9 @@ angular.module('ProfileController', [])
 .controller('ProfileCtrl', function ($scope, $rootScope, $http, $state) {
   $scope.viewName = "Profil";
 
-  $http.get('data/profile.json')
-  .success(function(data) {
-    $scope.details = data.details;
-    $scope.dataRegimes = data.regimes;
-    $scope.dataRestos = data.restaurants;
-  })
-  .error(function(err) {
-    alert("Failed reading restaurants.json");
-  });
+  $scope.details = $rootScope.profile["details"];
+  $scope.dataRegimes = $rootScope.profile["regimes"];
+  $scope.dataRestos = $rootScope.profile["restaurants"];
 
   $scope.doLogout = function() {
     $rootScope.logged = false;

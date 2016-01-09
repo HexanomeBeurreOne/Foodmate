@@ -31,7 +31,7 @@
 		{
 			"id" : 1,
 			"mealTime" : 1452163598,
-			"friendsId" : [3,4,5],
+			"friendsId" : [3,4],
 			"hostId" : 2,
 			"pending" : true,
 			"going" : null,

@@ -13,7 +13,7 @@
           Aujourd'hui
         </div>
         <!-- TODO: Link an invitation, /invitation/id-->
-        <a ng-repeat="invitation in invitations" class="item invitation" href="{{getInvitationUrl(invitation.id)}}">
+        <a ng-repeat="invitation in invitations" class="item invitation" href="{{getInvitationUrl(invitation.id)}}" ng-click="saveMealIndex(invitation.id)">
           <div class="invitation-header">
             <div class "invitation-hour">
               <span>{{getTime(invitation.mealTime)}}</span>
