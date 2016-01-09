@@ -13,16 +13,14 @@ angular.module('RepasController', [])
 	$scope.restos = $rootScope.restos;
 
 	// Récupération du repas
-	$scope.repas = $rootScope.repas;
+	$scope.repas = $rootScope.repas[$rootScope.currentMealId];
 
 	// Récupération des contacts
 	$scope.contacts = $rootScope.contacts;
 
-	console.log($rootScope.repas, $rootScope.restos, $rootScope.contacts);
-
 	$scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
-	// on récupère le restaurant le plus selectionné par l'utilisateur
-	$scope.selectedResto = $rootScope.selectedResto ? $rootScope.selectedResto[0].restoName : "Aucun restaurant selectionné";
+		// on récupère le restaurant le plus selectionné par l'utilisateur
+		$scope.selectedResto = $rootScope.selectedResto ? $rootScope.selectedResto[0].restoName : "Aucun restaurant selectionné";
 	});
 
 

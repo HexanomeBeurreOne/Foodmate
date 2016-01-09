@@ -1,7 +1,11 @@
 <ion-view view-title="Repas">
     <ion-content>
-        <div class="item item-repas">
+      <div class="list card">
+        <div class="item item-icon-right">
           <h2>Demain - 18:30</h2>
+          <i class="icon ion-help-circled" style="color:orange" ng-if="repas.pending"></i>
+          <i class="icon ion-checkmark-circled" style="color:green" ng-if="!repas.pending && repas.going"></i>
+          <i class="icon ion-close-circled" style="color:red" ng-if="!repas.pending && !repas.going"></i>
         </div>
 
         <div class="item item-divider item-icon-left">
@@ -10,27 +14,29 @@
         </div>
         <div class="item">
           <div class="row">
-            <span class="col card no-padding"  ng-repeat="restaurant in restos | orderBy:'+rank'">
-              <div class="item item-divider">
-              {{restaurant.rank}}e | {{restaurant.votes}} p.
+            <span class="col card no-padding"  ng-repeat="restaurant in repas.chosenRestaurants | orderBy:'+rank'">
+              <div class="item item-image">
+                <img src="{{restos[restaurant.id].picture}}">
               </div>
-              <p class="item item-text-wrap">
-              {{restaurant.name}}
-              </p>
-                  </span>
+              <div class="item item-divider">
+                <h4>{{restos[restaurant.id].name}}</h4>
+                <p>{{restaurant.votes}} votes</p>
+              </div>
+            </span>
           </div>
           <p> Gérer votre choix </p>
         </div>
 
-        <div class="item item-divider item-icon-left">
-          <i class="icon ion-person-stalker"></i>
+        <div class="item item-divider item-icon-right">
+          <i class="icon ion-plus-circled" style="color:green" ng-click="addNewFriendToMeal()"></i>
           <h3>Participants</h3>
         </div>
         <div class="item">
           <div class="list">
-              <div class="item item-avatar" ng-repeat="friendId in repas[currentMealId].friendsId | orderBy:'+name'">
+              <div class="item item-avatar" ng-repeat="friendId in repas.friendsId | orderBy:'+name'">
                 <img src="{{contacts[friendId].picture}}">
-                <h2>{{contacts[friendId].name}}</h2>
+                <h2>{{contacts[friendId].name}} {{contacts[friendId].familyName}}</h2>
+                <p> Choix restaurants </p>
               </div>
           </div>
         </div>
