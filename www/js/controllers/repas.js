@@ -3,44 +3,34 @@
 
 angular.module('RepasController', [])
 
-    .controller('RepasCtrl', ['$scope', '$rootScope', '$http', '$state', '$stateParams', function ($scope, $rootScope, $http, $state, $stateParams) {
+.controller('RepasCtrl', ['$scope', '$rootScope', '$http', '$state', '$stateParams', function ($scope, $rootScope, $http, $state, $stateParams) {
 
-      $scope.viewName= "Repas";
-      $rootScope.currentMealId = $stateParams.id;
-      $scope.currentMealId = $rootScope.currentMealId;
+	$scope.viewName= "Repas";
+	$rootScope.currentMealId = $stateParams.id;
+	$scope.currentMealId = $rootScope.currentMealId;
 
-      // Recuperation des restaurants
-	    $http.get('data/restos.json')
-			.success(function(data) {
-				$scope.restos = data.restos;
-			})
-			.error(function(err) {
-				alert("Failed reading chosenRestaurants.json")
-		});
+	// Récupération des restaurants
+	$scope.restos = $rootScope.restos;
 
-		// Recuperation du repas
-	    $http.get('data/repas.json')
-			.success(function(data) {
-				$scope.repas = data.repas;
-				$rootScope.repas = $scope.repas;
-			})
-			.error(function(err) {
-				alert("Failed reading repas.json")
-		});
+	// Récupération du repas
+	$scope.repas = $rootScope.repas;
 
-		// Recuperation des contacts
-	    $http.get('data/contacts.json')
-			.success(function(data) {
-				$scope.contacts = data.contacts;
-			})
-			.error(function(err) {
-				alert("Failed reading contacts.json")
-		});
+	// Récupération des contacts
+	$scope.contacts = $rootScope.contacts;
 
-		//Fonction d'ajout d'un ami au repas
-		$scope.addNewFriendToMeal = function() {
-			$rootScope.currentMealId = 0;
-			$rootScope.mealModification = true;
-			$state.go('app.friends');
-		};
-  }]);
+	console.log($rootScope.repas, $rootScope.restos, $rootScope.contacts);
+
+	$scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
+	// on récupère le restaurant le plus selectionné par l'utilisateur
+	$scope.selectedResto = $rootScope.selectedResto ? $rootScope.selectedResto[0].restoName : "Aucun restaurant selectionné";
+	});
+
+
+	//Fonction d'ajout d'un ami au repas
+	$scope.addNewFriendToMeal = function() {
+		$rootScope.currentMealId = $scope.currentMealId;
+		$rootScope.mealModification = true;
+		$state.go('app.friends');
+	};
+
+}]);

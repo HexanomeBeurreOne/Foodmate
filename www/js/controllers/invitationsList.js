@@ -6,7 +6,53 @@ angular.module('InvitationsListController', [])
 
   .controller('InvitationsListCtrl', function ($scope, $rootScope, $http, $ionicModal, $timeout, $state) {
 
+    // chargement de tous les fichiers JSON dans le rootScope au lancement de l'appli
 
+    // Récuperation du repas
+    $http.get('data/repas.json')
+    .success(function(data) {
+      $rootScope.repas = data.repas;
+      $scope.invitations = data.repas;
+    })
+    .error(function(err) {
+      alert("Failed reading repas.json");
+    });
+
+    // Récuperation des contacts
+    $http.get('data/contacts.json')
+    .success(function(data) {
+      $rootScope.contacts = data.contacts;
+      $scope.contacts = data.contacts;
+    })
+    .error(function(err) {
+      alert("Failed reading contacts.json");
+    });
+
+    // Récuperation du profil
+    $http.get('data/profile.json')
+    .success(function(data) {
+      $rootScope.profile = data;
+    })
+    .error(function(err) {
+      alert("Failed reading profile.json");
+    });
+
+    // Récuperation des restos
+    $http.get('data/restos.json')
+    .success(function(data) {
+      $rootScope.restos = data.restos;
+    })
+    .error(function(err) {
+      alert("Failed reading restos.json");
+    });
+
+    /*// fonction qui s'appelle une fois que tous les appels asynchrones ont été effectués
+    $timeout(function() {
+      $scope.invitations = $rootScope.repas;
+      $scope.contacts = $rootScope.contacts;
+    }, 0);*/
+
+    // fonction pour se rendre sur la vue de profil
     $scope.goToProfileView = function () {
       $state.go('app.profile');
     };
@@ -20,15 +66,13 @@ angular.module('InvitationsListController', [])
 
       // lorsque le controleur a terminé de charger la Modal (asynchrone)
       $timeout(function(){
-
         // si l'utilisateur est déconnecté
         if($scope.logged===false) {
           // on affiche la modal de connexion
           $scope.modal.show();
         }
-       },0)
+       },0);
     });
-
     // Form data for the login modal
     $scope.loginData = {};
 
@@ -65,6 +109,18 @@ angular.module('InvitationsListController', [])
         $scope.closeLogin();
       }, 1000);
     };
+
+
+    $scope.getInvitationUrl= function (id) {
+      var url = '#/app/home/repas/' + id;
+      return url;
+    };
+
+
+    $scope.saveMealIndex = function(id) {
+      $rootScope.lastMealIndex = id;
+    };
+
 
     $scope.getSortedRepas = function (repas) {
       var sortedRepas = {};
