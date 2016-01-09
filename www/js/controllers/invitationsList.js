@@ -83,6 +83,13 @@ angular.module('InvitationsListController', [])
       return sortedRepas;
     }
 
+    $scope.getCropedNameFromId = function (id) {
+      var name = $scope.contacts[id].name;
+      var familyName = $scope.contacts[id].name;
+      return name + " " + familyName.substring(0,1);
+
+    }
+
 		// Recuperation du repas
     $http.get('data/repas.json')
 		.success(function(data) {

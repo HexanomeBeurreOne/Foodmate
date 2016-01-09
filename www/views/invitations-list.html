@@ -23,15 +23,15 @@
               <div class "invitation-state">
                 <span ng-if="invitation.pending">
                   <i class="icon ion-help-circled" style="color:orange"></i>
-                  <span> Invitation en attente </span>
+                  <span> {{getCropedNameFromId(invitation.hostId)}} vous a invité</span>
                 </span>
                 <span ng-if="!invitation.pending && invitation.going">
                   <i class="icon ion-checkmark-circled" style="color:green"></i>
-                  <span> Invitation acceptée </span>
+                  <span> Invitation de {{getCropedNameFromId(invitation.hostId)}} acceptée </span>
                 </span>
                 <span ng-if="!invitation.pending && !invitation.going">
                   <i class="icon ion-close-circled" style="color:red"></i>
-                  <span> Invitation refusée </span>
+                  <span> Invitation de {{getCropedNameFromId(invitation.hostId)}} refusée </span>
                </span>
               </div>
             </div>
@@ -55,16 +55,3 @@
   </a>
 
 </ion-view>
-
-
-<!-- <ion-view view-title="Accueil" ng-if="!logged">
-  <ion-nav-buttons side="secondary">
-      <button class="button button-light" ng-click="login()">
-        Se connecter
-      </button>
-  </ion-nav-buttons>
-  <ion-content>
-    <h1 class="text-center">Aucun utilisateur connecté.</h1>
-    <h2 class="text-center">Veuillez vous connecter.</h2>
-  </ion-content>
-</ion-view> -->

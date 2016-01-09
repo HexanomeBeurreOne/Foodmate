@@ -3,6 +3,7 @@
 		{
 			"id" : 0,
 			"name" : "Victor",
+			"familyName" : "Nouvellet",
 			"description" : "Allergique Gluten #Fragile",
 			"picture" : "img/friends/victor.jpg",
 			"contactIcon" : "ion-plus-circled",
@@ -12,6 +13,7 @@
 		{
 			"id" : 1,
 			"name" : "Cyril",
+			"familyName" : "Canete",
 			"description" : "Back off, man. I'm a scientist.",
 			"picture" : "img/friends/cyril.jpg",
 			"contactIcon" : "ion-plus-circled",
@@ -21,6 +23,7 @@
 		{
 			"id" : 2,
 			"name" : "Gui",
+			"familyName" : "Berthier",
 			"description" : "I'm GUI!",
 			"picture" : "img/friends/gui.jpg",
 			"contactIcon" : "ion-plus-circled",
@@ -30,6 +33,7 @@
 		{
 			"id" : 3,
 			"name" : "Quentin",
+			"familyName" : "Bayart",
 			"description" : "J'ai toefl",
 			"picture" : "img/friends/quentin.jpg",
 			"contactIcon" : "ion-plus-circled",
@@ -39,11 +43,12 @@
 		{
 			"id" : 4,
 			"name" : "Gatien",
+			"familyName" : "Pascaud",
 			"description" : "J'suis un malade!",
 			"picture" : "img/friends/gatien.jpg",
 			"contactIcon" : "ion-plus-circled",
 			"buttonColor" : "grey",
 			"disable" : false
-		}	
+		}
 	]
 }
