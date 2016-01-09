@@ -8,7 +8,7 @@ angular.module('FriendsController', [])
 	$scope.currentMealId = $rootScope.currentMealId;
 
 	//Creation de groupes fictifs
-	$scope.groups = $rootScope.profile["groups"];
+	$scope.groups = $rootScope.profile.groups;
 
 	// Creations de d'amis fictifs
 	$scope.contacts = $rootScope.contacts;
