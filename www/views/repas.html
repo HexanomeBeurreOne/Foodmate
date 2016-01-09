@@ -7,7 +7,14 @@
           <i class="icon ion-checkmark-circled" style="color:green" ng-if="!repas.pending && repas.going"></i>
           <i class="icon ion-close-circled" style="color:red" ng-if="!repas.pending && !repas.going"></i>
         </div>
-
+        <div class="item" ng-if="repas.pending">
+          <button class="button button-light button-repas">
+            Accepter
+          </button>
+          <button class="button button-light button-repas">
+            Refuser
+          </button>
+        </div>
         <div class="item item-divider item-icon-left">
           <i class="icon ion-location"></i>
           <h3>Choix restaurant</h3>
