@@ -169,7 +169,7 @@ angular.module('ChoixMenusController', [])
 
 		$rootScope.selectedResto = $scope.selectedResto;
 
-		//console.log( JSON.stringify($scope.selectedResto));
+		console.log( JSON.stringify($scope.selectedResto));
 	}
 
 	$scope.valider = function() {
