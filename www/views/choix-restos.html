@@ -1,0 +1,53 @@
+<ion-view view-title="Choix restaurants">
+
+	<!-- <ion-nav-buttons side="secondary">
+	      <button class="button button-clear button-positive" ng-click="valider()">
+	        Valider
+	      </button>
+	    </ion-nav-buttons> -->
+
+	<!-- <div class="has-tabs-top tabs-striped tabs-top tabs-background-positive tabs-color-light">
+	    <div class="tabs">
+	      <a class="tab-item" ng-click="selected=menus" ng-class="{active: selected == menus}" href>
+	        Menus
+	      </a>
+	
+	      <a class="tab-item" ng-click="selected=!menus" ng-class="{active: selected == !menus}" href>
+	        Restaurants
+	      </a>
+	    </div>
+	</div> -->
+
+
+	<ion-content>
+
+
+		<div ng-repeat="resto in restos" class="list card">
+
+		  <div class="item item-avatar">
+		    <img src="{{resto.picture}}">
+		   	<a ng-if="!chosen" class="text-right button button-large button-icon ion-ios-circle-outline" style="float:right" ng-click="selectResto(resto.name)"></a>
+		   	<a ng-if="chosen" class="text-right button button-large button-icon ion-ios-checkmark balanced" style="float:right" ng-click="unselectResto(resto.name)"></a>
+	    	<h2>{{resto.name}}</h2>
+	    	<p>Distance par rapport à IF</p>
+		  </div>
+
+		  <div class="item item-body">
+		    <div class="card menu-card" ng-repeat="menu in resto.menus">
+		    	
+		    	<img ng-class="{hide: selected == !photos}" class="item item-image full-image" src="{{menu.picture}}" ng-click="selected=!photos" height="200">
+		    	<div ng-class="{hide: selected == photos}" ng-click="selected=photos" >
+			    	<div class="item item-divider">
+			    		{{menu.name}}
+			    	</div>
+			    	<div class="item item-text-wrap">
+						<h2>{{menu.price | currency:"€"}}</h2>
+			    	</div>
+		    	</div>
+		    </div>
+		  </div>
+
+		</div>
+	</ion-content>
+
+</ion-view>
