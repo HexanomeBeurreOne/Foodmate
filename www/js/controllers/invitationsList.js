@@ -8,6 +8,14 @@ angular.module('InvitationsListController', [])
 
     // chargement de tous les fichiers JSON dans le rootScope au lancement de l'appli
 
+    $rootScope.repas = {};
+    $rootScope.contacts = {};
+    $rootScope.profile = {};
+    $rootScope.restos = {};
+    $scope.invitations = {};
+    $scope.contacts = {};
+
+
     // Récuperation du repas
     $http.get('data/repas.json')
     .success(function(data) {
@@ -62,7 +70,7 @@ angular.module('InvitationsListController', [])
 
       // on regarde dans le rootScope si l'utilisateur est connecté ou pas
       // si le rootScope n'a pas encore été défini on attribue par défaut la valeur false
-      $scope.logged = $rootScope.logged ? $rootScope.logged : false;
+      $scope.logged = $rootScope.logged ? $rootScope.logged : true;
 
       // lorsque le controleur a terminé de charger la Modal (asynchrone)
       $timeout(function(){
@@ -140,11 +148,13 @@ angular.module('InvitationsListController', [])
     }
 
     $scope.getCropedNameFromId = function (id) {
-      var name = $scope.contacts[id].name;
-      var familyName = $scope.contacts[id].name;
-      return name + " " + familyName.substring(0,1);
-
-    }
+      if($scope.contacts[id]) {
+        var name = $scope.contacts[id].name;
+        var familyName = $scope.contacts[id].name;
+        return name + " " + familyName.substring(0,1);
+      }
+      return null;
+    };
 
 		// Recuperation du repas
     $http.get('data/repas.json')

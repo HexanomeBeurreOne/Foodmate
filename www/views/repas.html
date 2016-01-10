@@ -1,59 +1,57 @@
 <ion-view view-title="Repas">
     <ion-content>
-		<div class="col no-padding">
-			<div class="row-50 no-padding">				
-				<div class="col no-padding">
-				<div class="item item-icon-left">
-				    	<i class="icon ion-ios-information-outline"></i>
-				   		<div><b>Où et quand ?</b></div>
-			  		</div>
-		  			<div class="card row-down no-padding">
-						<a href="#/app/home/choix-restos" class="item item-icon-left">
-					    	<i class="icon ion-ios-location"></i>
-					    	<div><b>{{selectedResto}}</b></div><!-- ******************* TODO : UNMOCK ************************* -->
-					  	</a>
-					</div>
-		  			<div class="card row-top no-padding">
-						<div class="item item-icon-left">
-					    	<i class="icon ion-clock"></i>
-					    	<div><b>Aujourd'hui à 12h00</b></div><!-- ******************* TODO : UNMOCK ************************* -->
-					  	</div>
-					</div>
+      <div class="list card">
+        <div class="item item-icon-right">
+          <h2>Demain - 18:30</h2>
+          <i class="icon ion-help-circled" style="color:orange" ng-if="repas.pending" ng-click="waitMeal()"></i>
+          <i class="icon ion-checkmark-circled" style="color:green" ng-if="!repas.pending && repas.going" ng-click="waitMeal()"></i>
+          <i class="icon ion-close-circled" style="color:red" ng-if="!repas.pending && !repas.going" ng-click="waitMeal()"></i>
+        </div>
+        <div class="item" ng-if="repas.pending">
+          <button class="button button-light button-repas" ng-click="responseMeal(true)">
+            Accepter
+          </button>
+          <button class="button button-light button-repas" ng-click="responseMeal(false)">
+            Refuser
+          </button>
+        </div>
+        <div class="item item-divider item-icon-left">
+          <i class="icon ion-location"></i>
+          <h3>Choix restaurant</h3>
+        </div>
+        <div class="item">
+          <div class="row container-resto">
+            <span class="col card card-resto"  ng-repeat="restaurant in repas.chosenRestaurants | orderBy:'+rank'">
+              <div class="item item-image">
+                <img class="img-resto" src="{{restos[restaurant.id].picture}}">
+              </div>
+              <div class="item item-divider">
+                <h4>{{restos[restaurant.id].name}}</h4>
+                <p>{{restaurant.votes}} votes</p>
+              </div>
+            </span>
+          </div>
+          <div class="card no-margin">
+            <a href="#/app/home/choix-menus" class="item item-icon-right">
+             <i class="icon ion-arrow-right-b"></i>
+             Choisir vos restaurants
+           </a>
+         </div>
+        </div>
 
-			  		<div class="item item-icon-left">
-				    	<i class="icon ion-android-restaurant"></i>
-				   		<div><b>Restaurants choisis par vos amis</b></div>
-			  		</div>
-			  		<div class="row">
-			  			<span class="col card no-padding"  ng-repeat="restaurant in repas[currentMealId].chosenRestaurants | orderBy:'+rank'">
-								<div class="item item-divider">
-								{{restaurant.rank}}e | {{restaurant.votes}} p.
-								</div>
-								<p class="item item-text-wrap">
-								{{restaurant.name}}
-								</p>
-						</span>
-			  		</div>
-				</div>
-			</div>
-			<!-- ******************* FRIENDS ************************* -->
-			<div class="row-50 no-padding">
-				<a href="#amis" class="item item-icon-left">
-				    	<i class="icon ion-person-stalker"></i>
-				   		<div><b>Amis</b></div>
-			  	</a>
-			  	<div class="center">
-			  	</br>
-					<button class="button button-icon" ng-repeat="friendId in repas[currentMealId].friendsId | orderBy:'+name'">
-						<img class="friend-avatar-big green-glow" src={{contacts[friendId].picture}}>
-						<p>{{friend.name}}</p>
-					</button>
-					<!-- **************** ADD NEW FRIEND ********************** -->
-					<button class="button button-icon" ng-click="addNewFriendToMeal()">
-						<img class="friend-avatar-big" src="img/ionic.png">
-					</button>
-				</div>
-			</div>
-		</div>
+        <div class="item item-divider item-icon-right">
+          <i class="icon ion-plus-circled icon-add-participant" ng-click="addNewFriendToMeal()"></i>
+          <h3>Participants</h3>
+        </div>
+        <div class="item">
+          <div class="list">
+              <div class="item item-avatar" ng-repeat="friendId in repas.friendsId | orderBy:'+name'">
+                <img src="{{contacts[friendId].picture}}">
+                <h2>{{contacts[friendId].name}} {{contacts[friendId].familyName}}</h2>
+                <p> Choix restaurants </p>
+              </div>
+          </div>
+        </div>
+      </div>
 	</ion-content>
 </ion-view>
