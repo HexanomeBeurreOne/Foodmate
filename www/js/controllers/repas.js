@@ -9,6 +9,20 @@ angular.module('RepasController', [])
 	$rootScope.currentMealId = $stateParams.id;
 	$scope.currentMealId = $rootScope.currentMealId;
 
+	$scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
+		if($rootScope.chosenResto) {
+			if($rootScope.chosenResto[$scope.currentMealId]) {
+				$scope.chosenResto = "";
+				for (var i = 0; i < $rootScope.chosenResto[$scope.currentMealId].length; i++) {
+					$scope.chosenResto += $rootScope.chosenResto[$scope.currentMealId][i] + ', ';
+				};
+			}
+		} else {
+			$scope.chosenResto = "Choisir vos restaurants";
+		}
+	});
+	
+
 	// Récupération des restaurants
 	$scope.restos = $rootScope.restos;
 
