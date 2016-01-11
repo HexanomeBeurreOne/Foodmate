@@ -56,8 +56,8 @@ angular.module('InvitationsListController', [])
 
     $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
       //$scope.repas = $rootScope.repas;
-      console.log("refresh invitations")
       $scope.invitations = $scope.getSortedRepas($rootScope.repas);
+      console.log($scope.invitations);
     });
 
     /*// fonction qui s'appelle une fois que tous les appels asynchrones ont été effectués
