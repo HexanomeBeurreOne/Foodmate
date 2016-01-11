@@ -1,6 +1,6 @@
 <ion-view view-title="Préférences alimentaires">
   <ion-nav-buttons side="secondary">
-    <button class="button button-clear button-balanced" ng-click="">
+    <button class="button button-clear button-balanced" ng-click="saveSettings()">
           Sauvegarder
     </button>
   </ion-nav-buttons>
@@ -13,7 +13,7 @@
     </div>
     <ion-list>
       <div ng-repeat="regime in dataRegimes">
-        <ion-checkbox ng-model="choixRegime[regime]">{{regime}}</ion-checkbox>
+        <ion-checkbox ng-checked="{{regime.checked}}" ng-model="choixRegime[regime]" ng-click="toggleChecked($index)">{{regime.type}}</ion-checkbox>
       </div>
     </ion-list>
 
