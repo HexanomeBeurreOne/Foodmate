@@ -76,7 +76,7 @@ angular.module('InvitationsListController', [])
 
       // on regarde dans le rootScope si l'utilisateur est connecté ou pas
       // si le rootScope n'a pas encore été défini on attribue par défaut la valeur false
-      $scope.logged = $rootScope.logged ? $rootScope.logged : true;
+      $scope.logged = $rootScope.logged ? $rootScope.logged : false;
 
       // lorsque le controleur a terminé de charger la Modal (asynchrone)
       $timeout(function(){
