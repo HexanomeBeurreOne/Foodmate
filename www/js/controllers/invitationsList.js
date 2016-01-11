@@ -80,6 +80,8 @@ angular.module('InvitationsListController', [])
           $scope.modal.show();
         }
        },0);
+
+      $rootScope.mealModification = false;
     });
     // Form data for the login modal
     $scope.loginData = {};
