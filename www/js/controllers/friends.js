@@ -13,6 +13,9 @@ angular.module('FriendsController', [])
 	// Creations de d'amis fictifs
 	$scope.contacts = $rootScope.contacts;
 
+	// init friends
+	$scope.friends = [];
+
 	if ($scope.mealModification === true) {
 		/* ************ Certains amis sont déjà ajoutés !!! *************** */
 		$scope.friends = $rootScope.repas[$scope.currentMealId].friendsId;
