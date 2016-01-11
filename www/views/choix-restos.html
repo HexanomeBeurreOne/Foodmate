@@ -26,14 +26,14 @@
 
 		  <div class="item item-avatar">
 		    <img src="{{resto.picture}}">
-		   	<a id="{{resto.name}}" class="text-right button button-icon ion-ios-circle-outline" style="float:right;font-size:40px" ng-click="toggleSelectResto(resto.name, $event)"></a><!-- 
+		   	<a class="text-right button button-icon ion-ios-circle-outline" style="float:right;font-size:40px" ng-click="toggleSelectResto(resto.name, $event)"></a><!-- 
 		   	<a ng-if="chosen" class="text-right button button-large button-icon ion-ios-checkmark balanced" style="float:right" ng-click="unselectResto(resto.name)"></a> -->
 	    	<h2>{{resto.name}}</h2>
 	    	<p>Distance par rapport à IF</p>
 		  </div>
 
 		  <div class="item item-body">
-		    <div class="card menu-card  flip-container" ng-repeat="menu in resto.menus" ng-click="flip($event)">
+		    <div class="card menu-card  flip-container" ng-repeat="menu in resto.menus" ng-click="flip($event)">	
 		    	<div class="flipper">
 		    		<div class="front">
 			    		<img class="item item-image full-image" src="{{menu.picture}}"  height="200">

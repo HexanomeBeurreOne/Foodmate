@@ -3,7 +3,7 @@
 
 angular.module('ChoixRestosController', [])
 
-.controller('ChoixRestosCtrl', function ($scope, $rootScope) {
+.controller('ChoixRestosCtrl', function ($scope, $rootScope, $timeout) {
 	$scope.viewName= "Choix restos";
 
 	$scope.restos = $rootScope.restos;
@@ -28,22 +28,22 @@ angular.module('ChoixRestosController', [])
 		$scope.chosenResto[$scope.currentMealId] = $rootScope.chosenResto[$scope.currentMealId];
 	}
 
-/*	$scope.chosen = function(resto, $event){
-		console.log("chosen");
+/*	$scope.chosen = function(resto, $index){
+		console.log("chosen", resto, $scope.chosenResto[$scope.currentMealId][$index]);
 		var restoIndex = $scope.chosenResto[$scope.currentMealId].indexOf(resto);
 		if(restoIndex!=-1){
 			console.log("in if chosen");
-			angular.element($event.currentTarget).toggleClass("ion-ios-circle-outline ion-ios-checkmark balanced");	
+			//angular.element($scope.).toggleClass("ion-ios-circle-outline ion-ios-checkmark balanced");	
 		}
 
-	};
-
-	$scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
+	};*//*
+	$scope.selectChosen = function() {
 		for(var i=0; i<$scope.chosenResto[$scope.currentMealId].length; i++){
-			var restoId = $scope.chosenResto[$scope.currentMealId][i];
-			angular.element(document.querySelector('#'+restoId)).toggleClass("ion-ios-circle-outline ion-ios-checkmark balanced");
+			var restoId = 'resto-'+$scope.chosenResto[$scope.currentMealId][i];
+			angular.element(document.getElementById(restoId)).append("<h1>TEST</h1>");//toggleClass("ion-ios-circle-outline ion-ios-checkmark balanced");
 		};
-	});
+	}
+	
 */
 
 	// change l'icone de selection d'un resto
@@ -67,5 +67,7 @@ angular.module('ChoixRestosController', [])
 	$scope.flip = function($event) {
 		angular.element($event.currentTarget).toggleClass("flip");
 	};
+
+	
 
 });
