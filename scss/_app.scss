@@ -113,7 +113,7 @@ div.custom-overlay > span.price {
   margin: 0!important;
 }
 
-.flip-container:hover .flipper, .flip-container.hover .flipper, .flip-container.flip .flipper {
+.flip-container.flip .flipper {
   transform: rotateY(180deg);
 }
 
@@ -121,10 +121,6 @@ div.custom-overlay > span.price {
 .flip-container {
   perspective: 1000;
 }
-  /* flip the pane when hovered */
-  .flip-container:hover .flipper, .flip-container.hover .flipper {
-    transform: rotateY(180deg);
-  }
 
 /* flip speed goes here */
 .flipper {

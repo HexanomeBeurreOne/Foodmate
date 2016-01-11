@@ -77,8 +77,8 @@
     </ion-content>
 
     <!-- FOOTER -->
-		<button class="bar bar-footer bar-balanced" ng-click="goToRepas()">
-			<div ng-hide="{{mealModification}}"  class="title">Créer l'invitation</div>
-			<div ng-show="{{mealModification}}" class="title">Ajouter</div>
+		<button class="bar bar-footer bar-balanced" >
+			<div ng-hide="{{mealModification}}"  class="title" ng-click="createMeal()">Créer l'invitation</div>
+			<div ng-show="{{mealModification}}" class="title" ng-click="goToRepas()">Ajouter</div>
 		</button>
 </ion-view>

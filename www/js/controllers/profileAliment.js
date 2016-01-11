@@ -7,6 +7,18 @@ angular.module('ProfileAlimentController', [])
   $scope.viewName = "Préférences alimentaires";
 
   $scope.dataRegimes = $rootScope.profile.regimes;
-  $scope.dataRestos = $rootScope.profile.restaurants;
+
+  $scope.saveSettings = function(){
+  	$state.go("app.profile");
+  };
+
+  $scope.toggleChecked = function($index) {
+  	if ($rootScope.profile.regimes[$index].checked === false) {
+  		$rootScope.profile.regimes[$index].checked = true;
+  	}
+  	else {
+  		$rootScope.profile.regimes[$index].checked = false;
+  	};
+  };
 
 });

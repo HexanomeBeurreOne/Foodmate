@@ -6,19 +6,67 @@
     "google" : null,
     "picture" : "img/friends/cyril.jpg"
   },
-  "regimes" : ["Halal", "Cacher", "Sans sel", "Sans arachide", "Sans gluten"],
+  "regimes" : [
+    {
+      "type" : "Halal",
+      "checked" : false
+    },
+    { 
+      "type" : "Cacher",
+      "checked" : false
+    },
+    {
+      "type" : "Sans sel",
+      "checked" : false
+    },
+    {
+      "type" : "Sans arachide",
+      "checked" : false
+    },
+    { 
+      "type" : "Sans gluten",
+      "checked" : false
+    }
+  ],
   "restaurants" : [
     {
       "type" : "Restaurants Universitaires",
-      "nom" : ["RU Jussieu", "Grillon"]
+      "nom" : [
+        {
+          "type" : "RU Jussieu",
+          "checked" : false
+        },
+        { 
+          "type" : "Grillon",
+          "checked" : false
+        }
+      ]
     },
     {
       "type" : "Snacks",
-      "nom" : ["Quick", "Hammamet"]
+      "nom" : [
+        {
+          "type" : "Quick",
+          "checked" : false
+        },
+        { 
+          "type" : "Hammamet",
+          "checked" : false
+        }
+      ]
     },
     {
       "type" : "Restaurants",
-      "nom" : ["Popotte and Co", "La Mère Jean"]
+      "nom" : [
+        {
+          "type" : "Popotte and Co",
+          "checked" : false
+        },
+        { 
+          "type" : "La Mère Jean",
+          "checked" : false
+        }
+      ]
     }
   ],
   "groups" : [
