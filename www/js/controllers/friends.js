@@ -25,6 +25,7 @@ angular.module('FriendsController', [])
 			$scope.contacts[$scope.friends[i]].buttonColor = 'green';
 			$scope.contacts[$scope.friends[i]].disable = true;
 		};
+		$rootScope.repas[$scope.currentMealId].friendsId = $scope.repas[$scope.currentMealId].friendsId;
 	};
 
 
@@ -46,7 +47,6 @@ angular.module('FriendsController', [])
 
 			// Ajout a la liste
 			$scope.friends.push($index);
-			console.log($scope.friends);
 		}
 		else 
 	    	//deja selectionne -> on deselectionne

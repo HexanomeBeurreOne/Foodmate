@@ -34,8 +34,6 @@ angular.module('RepasController', [])
 	// Récupération du repas
 	$scope.repas = $rootScope.repas[$rootScope.currentMealId];
 
-		console.log($scope.repas.mealTime);
-
 	// Récupération des contacts
 	$scope.contacts = $rootScope.contacts;
 
