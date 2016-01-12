@@ -2,9 +2,9 @@
 	"repas" : [
 		{
 			"id" : 0,
-			"mealTime" : 1452163598,
-			"friendsId" : [0,1,2],
-			"hostId" : 1,
+			"mealTime" : 1452596400,
+			"friendsId" : [0,1,3],
+			"hostId" : 2,
 			"pending" : false,
 			"going" : true,
 			"chosenRestaurants" : [
@@ -27,9 +27,9 @@
 		},
 		{
 			"id" : 1,
-			"mealTime" : 1452163598,
+			"mealTime" : 1452597300,
 			"friendsId" : [3,4],
-			"hostId" : 2,
+			"hostId" : 0,
 			"pending" : true,
 			"going" : null,
 			"chosenRestaurants" : [
@@ -52,8 +52,8 @@
 		},
 		{
 			"id" : 2,
-			"mealTime" : 1452163598,
-			"friendsId" : [1,2,3],
+			"mealTime" : 1452683400,
+			"friendsId" : [4,0],
 			"hostId" : 3,
 			"pending" : true,
 			"going" : null,
@@ -77,9 +77,9 @@
 		},
 		{
 			"id" : 3,
-			"mealTime" : 1452567598,
-			"friendsId" : [1,2,3],
-			"hostId" : 3,
+			"mealTime" : 1452682200,
+			"friendsId" : [2,3],
+			"hostId" : 4,
 			"pending" : true,
 			"going" : null,
 			"chosenRestaurants" : [
