@@ -16,6 +16,7 @@ angular.module('RepasController', [])
 				for (var i = 0; i < $rootScope.chosenResto[$scope.currentMealId].length; i++) {
 					$scope.chosenResto += $rootScope.chosenResto[$scope.currentMealId][i] + ', ';
 				}
+				$scope.chosenResto = $scope.chosenResto.slice(0,$scope.chosenResto.length-2);
 			} else {
 				$scope.chosenResto = "Choisir vos restaurants";
 			}
