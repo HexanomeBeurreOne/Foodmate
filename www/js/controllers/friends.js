@@ -152,8 +152,7 @@ angular.module('FriendsController', [])
 	$scope.createMeal = function() {
 		var newDate = angular.element(document.getElementById("exampleInput")).val();
 		var timeStamp = new Date(newDate).getTime()/1000 - 3600;
-		$rootScope.repas.push({"id" : $rootScope.repas.length,"mealTime" : timeStamp,"friendsId" : $scope.friends,"hostId" : 1,"pending" : true,"going" : null,"chosenRestaurants" : [{"id" : 0,"rank" : 1,"votes" : 3},{"id" : 1,"rank" : 3,"votes" : 1},{"id" : 2,"rank" : 2,"votes" : 1}]});
-		console.log($rootScope.repas);
+		$rootScope.repas.push({"id" : $rootScope.repas.length,"mealTime" : timeStamp,"friendsId" : $scope.friends[$scope.currentMealId],"hostId" : 1,"pending" : true,"going" : null,"chosenRestaurants" : [{"id" : 0,"rank" : 1,"votes" : 3},{"id" : 1,"rank" : 3,"votes" : 1},{"id" : 2,"rank" : 2,"votes" : 1}]});
 		$state.go('app.invitations-list');
 	}
 });
