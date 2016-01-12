@@ -13,18 +13,42 @@ angular.module('FriendsController', [])
 	// Creations de d'amis fictifs
 	$scope.contacts = $rootScope.contacts;
 
-	// init friends
-	$scope.friends = [];
+
+	// si chosenResto n'existe pas dans le rootScope
+	if(!$rootScope.friends) {
+		$rootScope.friends = [];
+		$rootScope.friends[$scope.currentMealId] = [];
+		$scope.friends = [];
+		$scope.friends[$scope.currentMealId] = [];
+	}
+	// si friends[$scope.currentMealId] n'existe pas dans le rootScope
+	else if(!$rootScope.friends[$scope.currentMealId]) {
+		$rootScope.friends[$scope.currentMealId] = [];
+		$scope.friends = [];
+		$scope.friends[$scope.currentMealId] = [];
+	} 
+	// sinon
+	else {
+		$scope.friends = [];
+		$scope.friends[$scope.currentMealId] = $rootScope.friends[$scope.currentMealId];
+	}
+
 
 	if ($scope.mealModification === true) {
 		/* ************ Certains amis sont déjà ajoutés !!! *************** */
-		$scope.friends = $rootScope.repas[$scope.currentMealId].friendsId;
-		for (var i = 0; i < $scope.friends.length; i++) {
-			console.log($scope.friends[i]);
-			$scope.contacts[$scope.friends[i]].contactIcon = "ion-checkmark-circled";
-			$scope.contacts[$scope.friends[i]].buttonColor = 'green';
-			$scope.contacts[$scope.friends[i]].disable = true;
+		$scope.friends[$scope.currentMealId] = $rootScope.repas[$scope.currentMealId].friendsId;
+		for (var i = 0; i < $scope.contacts.length; i++) {
+			$scope.contacts[i].contactIcon = "ion-plus-circled";
+			$scope.contacts[i].buttonColor = "grey";
+			$scope.contacts[i].disable = false;
 		};
+		for (var i = 0; i < $scope.friends[$scope.currentMealId].length; i++) {
+			$scope.contacts[$scope.friends[$scope.currentMealId][i]].contactIcon = "ion-checkmark-circled";
+			$scope.contacts[$scope.friends[$scope.currentMealId][i]].buttonColor = 'green';
+			$scope.contacts[$scope.friends[$scope.currentMealId][i]].disable = true;
+		};
+		console.log($rootScope.friends[$scope.currentMealId]);
+		$rootScope.friends[$scope.currentMealId] = $scope.friends[$scope.currentMealId];
 		$rootScope.repas[$scope.currentMealId].friendsId = $scope.repas[$scope.currentMealId].friendsId;
 	};
 
@@ -46,7 +70,7 @@ angular.module('FriendsController', [])
 	    	$scope.contacts[$index].buttonColor = 'green';
 
 			// Ajout a la liste
-			$scope.friends.push($index);
+			$scope.friends[$scope.currentMealId].push($index);
 		}
 		else 
 	    	//deja selectionne -> on deselectionne
@@ -56,10 +80,10 @@ angular.module('FriendsController', [])
 	    	$scope.contacts[$index].buttonColor = 'grey';
 
 			//Retret liste
-			var indexRemove = $scope.friends.indexOf($index);
+			var indexRemove = $scope.friends[$scope.currentMealId].indexOf($index);
 
 			if (indexRemove > -1) {
-				$scope.friends.splice(indexRemove, 1);
+				$scope.friends[$scope.currentMealId].splice(indexRemove, 1);
 			}
 		}
 
@@ -79,7 +103,7 @@ angular.module('FriendsController', [])
 	    		$scope.contacts[members[i].id].buttonColor = 'green';
 
 	      		// Ajout a la liste
-	      		$scope.friends.push(members[i].id);
+	      		$scope.friends[$scope.currentMealId].push(members[i].id);
 	      		
 	      	}
 	      };
@@ -94,10 +118,10 @@ angular.module('FriendsController', [])
 				$scope.contacts[members[i].id].buttonColor = 'grey';
 
 	      		//Retret liste
-	      		var indexRemove = $scope.friends.indexOf(members[i].id);
+	      		var indexRemove = $scope.friends[$scope.currentMealId].indexOf(members[i].id);
 
 	      		if (indexRemove > -1) {
-	      			$scope.friends.splice(indexRemove, 1);
+	      			$scope.friends[$scope.currentMealId].splice(indexRemove, 1);
 	      		}
 	      	};
 	      }
@@ -122,13 +146,12 @@ angular.module('FriendsController', [])
 		$state.go('app.repas',{id: $scope.currentMealId});
 
 		// TODO : pb modif rootScope.repas 
-		$rootScope.repas[$scope.currentMealId].friendsId = $scope.friends;
+		$rootScope.repas[$scope.currentMealId].friendsId = $scope.friends[$scope.currentMealId];
 	};
 
 	$scope.createMeal = function() {
 		var newDate = angular.element(document.getElementById("exampleInput")).val();
 		var timeStamp = new Date(newDate).getTime()/1000 - 3600;
-		//var newMeal = '{"id" : 0,"mealTime" : '+timeStamp+',"friendsId" : '+$scope.friends+',"hostId" : 1,"pending" : false,"going" : true,"chosenRestaurants" : [{"id" : 0,"rank" : 1,"votes" : 3},{"id" : 1,"rank" : 3,"votes" : 1},{"id" : 2,"rank" : 2,"votes" : 1}]}';
 		$rootScope.repas.push({"id" : $rootScope.repas.length,"mealTime" : timeStamp,"friendsId" : $scope.friends,"hostId" : 1,"pending" : true,"going" : null,"chosenRestaurants" : [{"id" : 0,"rank" : 1,"votes" : 3},{"id" : 1,"rank" : 3,"votes" : 1},{"id" : 2,"rank" : 2,"votes" : 1}]});
 		console.log($rootScope.repas);
 		$state.go('app.invitations-list');
