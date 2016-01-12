@@ -1,22 +1,5 @@
 <ion-view view-title="Choix restaurants">
 
-	<!-- <ion-nav-buttons side="secondary">
-	      <button class="button button-clear button-positive" ng-click="valider()">
-	        Valider
-	      </button>
-	    </ion-nav-buttons> -->
-
-	<!-- <div class="has-tabs-top tabs-striped tabs-top tabs-background-positive tabs-color-light">
-	    <div class="tabs">
-	      <a class="tab-item" ng-click="selected=menus" ng-class="{active: selected == menus}" href>
-	        Menus
-	      </a>
-	
-	      <a class="tab-item" ng-click="selected=!menus" ng-class="{active: selected == !menus}" href>
-	        Restaurants
-	      </a>
-	    </div>
-	</div> -->
 	<ion-nav-buttons side="secondary">
       <button class="button button-clear button-balanced" ng-click="valider()">
         Valider
@@ -26,13 +9,12 @@
 
 	<ion-content>
 
-
 		<div ng-repeat="resto in restos" class="list card">
 
 		  <div class="item item-avatar">
 		    <img src="{{resto.picture}}">
-		   	<a class="text-right button button-icon ion-ios-circle-outline" style="float:right;font-size:40px" ng-click="toggleSelectResto(resto.name, $event)"></a><!-- 
-		   	<a ng-if="chosen" class="text-right button button-large button-icon ion-ios-checkmark balanced" style="float:right" ng-click="unselectResto(resto.name)"></a> -->
+		   	<a ng-class="isAlreadySelected(resto.name)" class="text-right button button-icon" style="float:right;font-size:40px" ng-click="toggleSelectResto(resto.name, $event)"></a>
+		   	<!-- <a ng-show="isAlreadySelected(resto.name)" class="text-right button button-icon ion-ios-checkmark balanced" style="float:right;font-size:40px" ng-click="toggleSelectResto(resto.name, $event)"></a> -->
 	    	<h2>{{resto.name}}</h2>
 	    	<p>Distance par rapport à IF</p>
 		  </div>

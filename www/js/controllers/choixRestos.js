@@ -28,27 +28,18 @@ angular.module('ChoixRestosController', [])
 		$scope.chosenResto[$scope.currentMealId] = $rootScope.chosenResto[$scope.currentMealId];
 	}
 
-/*	$scope.chosen = function(resto, $index){
-		console.log("chosen", resto, $scope.chosenResto[$scope.currentMealId][$index]);
-		var restoIndex = $scope.chosenResto[$scope.currentMealId].indexOf(resto);
-		if(restoIndex!=-1){
-			console.log("in if chosen");
-			//angular.element($scope.).toggleClass("ion-ios-circle-outline ion-ios-checkmark balanced");	
-		}
-
-	};*//*
-	$scope.selectChosen = function() {
+	$scope.isAlreadySelected = function(resto) {
 		for(var i=0; i<$scope.chosenResto[$scope.currentMealId].length; i++){
-			var restoId = 'resto-'+$scope.chosenResto[$scope.currentMealId][i];
-			angular.element(document.getElementById(restoId)).append("<h1>TEST</h1>");//toggleClass("ion-ios-circle-outline ion-ios-checkmark balanced");
+			//var restoId = 'resto-'+$scope.chosenResto[$scope.currentMealId][i];
+			//angular.element(document.getElementById(restoId)).append("<h1>TEST</h1>");//toggleClass("ion-ios-circle-outline ion-ios-checkmark balanced");
+			if ($scope.chosenResto[$scope.currentMealId][i] == resto) return "ion-ios-checkmark balanced";
 		};
-	}
-	
-*/
+		return "ion-ios-circle-outline";
+	};
 
 	// change l'icone de selection d'un resto
 	$scope.toggleSelectResto = function(resto, $event){
-		angular.element($event.currentTarget).toggleClass("ion-ios-circle-outline ion-ios-checkmark balanced");	
+		angular.element($event.currentTarget).toggleClass("ion-ios-checkmark balanced");	
 		var restoIndex = $scope.chosenResto[$scope.currentMealId].indexOf(resto);
 		if(restoIndex==-1){
 			$scope.chosenResto[$scope.currentMealId].push(resto);
