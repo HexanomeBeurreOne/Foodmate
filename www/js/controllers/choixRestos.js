@@ -3,7 +3,7 @@
 
 angular.module('ChoixRestosController', [])
 
-.controller('ChoixRestosCtrl', function ($scope, $rootScope, $timeout) {
+.controller('ChoixRestosCtrl', function ($scope, $rootScope, $timeout, $state) {
 	$scope.viewName= "Choix restos";
 
 	$scope.restos = $rootScope.restos;
@@ -68,6 +68,9 @@ angular.module('ChoixRestosController', [])
 		angular.element($event.currentTarget).toggleClass("flip");
 	};
 
+	$scope.valider = function() {
+		$state.go('app.repas',{id: $rootScope.currentMealId});
+	}
 	
 
 });
