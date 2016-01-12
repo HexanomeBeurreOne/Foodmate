@@ -44,6 +44,8 @@
 				    	</div>
 				    	<div class="item item-text-wrap">
 							<h2>{{menu.price | currency:"€"}}</h2>
+							<h2>Régimes particuliers : </h2>
+							<h3 ng-repeat="regime in menu.regimes">{{regime}}</h3>
 				    	</div>
 			    	</div>
 		    	</div>
