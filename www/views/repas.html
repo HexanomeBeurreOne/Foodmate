@@ -2,7 +2,7 @@
     <ion-content>
       <div class="list card">
         <div class="item item-icon-right">
-          <h2>Demain - 18:30</h2>
+          <h2>{{getFullDateTime(repas.mealTime)}}</h2>
           <i class="icon ion-help-circled" style="color:orange" ng-if="repas.pending" ng-click="waitMeal()"></i>
           <i class="icon ion-checkmark-circled" style="color:green" ng-if="!repas.pending && repas.going" ng-click="waitMeal()"></i>
           <i class="icon ion-close-circled" style="color:red" ng-if="!repas.pending && !repas.going" ng-click="waitMeal()"></i>

@@ -16,10 +16,14 @@ angular.module('RepasController', [])
 				for (var i = 0; i < $rootScope.chosenResto[$scope.currentMealId].length; i++) {
 					$scope.chosenResto += $rootScope.chosenResto[$scope.currentMealId][i] + ', ';
 				}
+			} else {
+				$scope.chosenResto = "Choisir vos restaurants";
 			}
 		} else {
 			$scope.chosenResto = "Choisir vos restaurants";
 		}
+
+		if($scope.chosenResto.length == 0) $scope.chosenResto = "Choisir vos restaurants";
 	});
 	
 
@@ -28,6 +32,8 @@ angular.module('RepasController', [])
 
 	// Récupération du repas
 	$scope.repas = $rootScope.repas[$rootScope.currentMealId];
+
+		console.log($scope.repas.mealTime);
 
 	// Récupération des contacts
 	$scope.contacts = $rootScope.contacts;
@@ -53,5 +59,23 @@ angular.module('RepasController', [])
 		$rootScope.mealModification = true;
 		$state.go('app.friends');
 	};
+
+	$scope.getTime = function (UNIX_timestamp){
+      var time = {};
+      var a = new Date(UNIX_timestamp * 1000);
+      var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      time.year = a.getFullYear();
+      time.month = months[a.getMonth()];
+      time.date = a.getDate();
+      time.hour = a.getHours();
+      time.min = a.getMinutes();
+      time.sec = a.getSeconds();
+      return time;
+    };
+
+	$scope.getFullDateTime = function (timestamp) {
+      var time = $scope.getTime(timestamp);
+      return time.date + " " + time.month + " " + time.year + ' | ' + time.hour + ":" + time.min;
+    };
 
 }]);

@@ -151,7 +151,6 @@ angular.module('InvitationsListController', [])
           sortedRepas[date].push(repas[i]);
         }
       }
-      console.log(sortedRepas);
       return sortedRepas;
     }
 
